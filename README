@@ -1,17 +1,18 @@
 Textura - a tiny MVC framework
 ==============================
-This is Textura, a very minimal MVC framework written in PHP. The main goals of this project is purely educational,
-it is not intended to be used in a production environment (not yet anyway). Use it at your own risk, I will not
-take responsibility for any usage of this project.
+This is Textura, a very minimal MVC framework written in PHP. The main goals of this project is
+purely educational, it is not intended to be used in a production environment (not yet anyway). Use
+it at your own risk, I will not take responsibility for any usage of this project.
 
-Since this is a school project for me new parts will be added to the project as the course progresses. I don't
-know exactly what parts of the framework is needed to pass the course, but my final goal for the term is that
-this project will be usable as a starting point for building your own framework.
+Since this is a school project for me new parts will be added to the project as the course
+progresses. I don't know exactly what parts of the framework is needed to pass the course, but my
+final goal for the term is that this project will be usable as a starting point for building your
+own framework.
 
 Licence
 =======
-Textura is licenced under the GPL (Version 3 or later). Please see the file COPYING for details about the licence.
-The licence only applies to the following files:
+Textura is licenced under the GPL (Version 3 or later). Please see the file COPYING for details
+about the licence. The licence only applies to the following files:
 router.php in the current directory
 All files under the src/textura directory
 
@@ -21,36 +22,41 @@ Design
 ======
 Textura is designed to be very simple. To get started, you will need just a few things.
 
-* Place a file called config.yml in the root of the site dir. That file will contain all your configuration.
-  For an example on how it should look, you can just copy or rename site/config.yml.sample. The configuration
-  file is written in YAML format, so for any syntax issues please checkout http://www.yaml.org/
+* Place a file called config.yml in the root of the site dir. That file will contain all your
+  configuration. For an example on how it should look, you can just copy or rename
+  site/config.yml.sample. The configuration file is written in YAML format, so for any syntax issues
+  please checkout http://www.yaml.org/
 
-* Place your controller classes in site/controllers. All controllers must inherit from Textura\Controller in
-  order to be loaded by Textura.
+* Place your controller classes in site/controllers. All controllers must inherit from
+  Textura\Controller in order to be loaded by Textura.
   
-  - When you define a (public) method in a controller class it automatically becomes an action that can be
-    called from the outside world. So if you have a controller handling /, the method foo will automatically
-    be called when the browser visits /foo.
+  - When you define a (public) method in a controller class it automatically becomes an action that
+    can be called from the outside world. So if you have a controller handling /, the method foo
+    will automatically be called when the browser visits /foo.
     
-  - In a controller you can automatically create "properties" by using $this->property syntax. For instance,
-    $this->username = 'Homer' sets the property username to 'Homer'.
+  - In a controller you can automatically create "properties" by using $this->property syntax. For
+    instance, $this->username = 'Homer' sets the property username to 'Homer'.
     
-  - There are also some "special" properties that are always available in the controller. $this->request refers
-    to the current request (an instance of the Textura\Request class), $this->response refers to the current
-    response (an instance of the Textura\Response class) and $this->application refers to the current application
-    (an instance of the Textura\Textura class). These special properties are *read-only* from controller code.
+  - There are also some "special" properties that are always available in the controller.
+    $this->request refers to the current request (an instance of the Textura\Request class),
+    $this->response refers to the current response (an instance of the Textura\Response class) and
+    $this->application refers to the current application (an instance of the Textura\Textura class).
+    These special properties are *read-only* from controller code.
     
   - If you intend to send data directly to the browser without using a template, you can use
-    $this->response->appendToBody to add content and $this->response->setHeader to set headers. Of course you
-    can also use stuff like echo and var_dump, but that way of sending data is discouraged.  
+    $this->response->appendToBody to add content and $this->response->setHeader to set headers.
+    Of course you can also use stuff like echo and var_dump, but that way of sending data is
+    discouraged.  
  
-* Place your views (HAML files) in site/views. The directory structure under the views directory should follow
-  the controller mapping, so if you have a controller that handles /foo your views for that controller should
-  be placed in views/foo. The file name of the template file should match the name of the action (method) in
-  your controller. If Textura cannot find a matching template it will simply ignore the missing file.
+* Place your views (HAML files) in site/views. The directory structure under the views directory
+  should follow the controller mapping, so if you have a controller that handles /foo your views for
+  that controller should be placed in views/foo. The file name of the template file should match the
+  name of the action (method) in your controller. If Textura cannot find a matching template it will
+  simply ignore the missing file.
   
-  All properties set in the controller can be used in the template. If you use $this->username = 'Homer' in
-  your controller code, you can refer to the same variable in the HAML template by using the $username variable.
+  All properties set in the controller can be used in the template. If you use
+  $this->username = 'Homer' in your controller code, you can refer to the same variable in the HAML
+  template by using the $username variable.
   
 * Models are not implemented yet. Roll your own.
 
@@ -58,8 +64,8 @@ Globals
 =======
 Globals are evil. Textura goes very when dealing with this problem.
 
-$_GET, $_POST, $_FILES, $_REQUEST, $COOKIES, $_SERVER and $_SESSION are *not* available when using Textura.
-The data in those variables can all be fetched from the Textura\Request object instead.
+$_GET, $_POST, $_FILES, $_REQUEST, $COOKIES, $_SERVER and $_SESSION are *not* available when using
+Textura. The data in those variables can all be fetched from the Textura\Request object instead.
 
 External dependencies
 =====================

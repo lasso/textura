@@ -72,11 +72,7 @@ class Router {
               // No default action. Lets try our parent instead
               if ($path != '/') continue;
               // No possible action found. Lets quit
-              $response->setHeader('Status', 404);
-              $response->appendToBody('Not found');
-              if ($request->debug)
-                \Textura\Debugger::debug_request($request, $response);
-              $response->send();
+              $response->send404();
               return;
             }
           }
@@ -103,10 +99,7 @@ class Router {
       if ($path == '/')
         $exit = true;
     } while (!$exit);
-    $response->setHeader('Status', 404);
-    $response->appendToBody('Not found');
-    if ($request->debug)
-      \Textura\Debugger::debug_request($request, $response);
+    $response->send404();
   }
 
   /**

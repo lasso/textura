@@ -1,4 +1,4 @@
-t<?php
+<?php
 /*
 Copyright 2012 Lars Olsson <lasso@lassoweb,se>
 

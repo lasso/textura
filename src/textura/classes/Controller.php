@@ -72,7 +72,7 @@ abstract class Controller {
    *
    * @param string $key
    * @param mixed $value
-   * @throws LogicException     If the user tries to set a reserved property
+   * @throws \LogicException     If the user tries to set a reserved property
    */
   public function __set($key, $value) {
     if (in_array($key, self::$RESERVED_INSTANCE_VARS)) {

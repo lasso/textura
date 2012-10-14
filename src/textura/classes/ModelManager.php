@@ -91,11 +91,15 @@ class ModelManager implements Singleton {
     $primary_key_field = $this->model_map[$model_class]['primary_key'];
     $properties = $model_instance->properties();
     unset($properties[$primary_key_field]);
-    if (empty($model_instance->$primary_key_field)) {
+    if (!(bool) $model_instance->$primary_key_field) {
       $model_instance->$primary_key_field = $this->db_manager->insertRow($table, $properties);
     }
     else {
-      $this->db_manager->updateRow($table, $model_instance->$primary_key_field, $properties);
+      $this->db_manager->updateRow(
+        $table,
+        array($primary_key_field => $model_instance->$primary_key_field),
+        $properties
+      );
     }
   }
 

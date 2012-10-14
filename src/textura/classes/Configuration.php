@@ -44,7 +44,7 @@ class Configuration {
    * Loads a configuration file
    *
    * @param string $config_file_path      The configuration file to load
-   * @throws LogicException               If the configuration file cannot be found
+   * @throws \LogicException               If the configuration file cannot be found
    */
   public function loadConfig($config_file_path) {
     if (file_exists($config_file_path) && is_readable($config_file_path)) {

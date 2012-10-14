@@ -1,4 +1,4 @@
-<?php
+t<?php
 /*
 Copyright 2012 Lars Olsson <lasso@lassoweb,se>
 
@@ -76,7 +76,7 @@ class SQLiteDBAdapter extends DBAdapter {
    *
    * @param string $table
    * @return array
-   * @throws LogicException
+   * @throws \LogicException
    */
   public function getFields($table) {
     if (!$this->tableExists($table)) {
@@ -127,9 +127,10 @@ class SQLiteDBAdapter extends DBAdapter {
     $query .= ') VALUES (';
     $index = 1;
     foreach (array_values($values) as $value) {
-      $cval = \SQLite3::escapeString($value);
-      if (is_string($cval)) $cval = "'$cval'";
-      $query .= $cval;
+      if (is_string($value)) {
+        $value = "'" . \SQLite3::escapeString($value) . "'";
+      }
+      $query .= $value;
       if ($index++ < $num_values) $query .= ', ';
     }
     $query .= ')';
@@ -137,7 +138,29 @@ class SQLiteDBAdapter extends DBAdapter {
     return $this->connection->lastInsertRowID();
   }
 
-  public function updateRow($table, $primary_key, array $values) {}
+  public function updateRow($table, array $primary_keys, array $values) {
+    $query = 'UPDATE ' . \SQLite3::escapeString($table) . ' SET ';
+    $num_values = count($values);
+    $index = 1;
+    foreach ($values as $key => $value) {
+      if (is_string($value)) {
+        $value = "'" . \SQLite3::escapeString($value) . "'";
+      }
+      $query .= \SQLite3::escapeString($key) . ' = ' . $value;
+      if ($index++ < $num_values) $query .= ', ';
+    }
+    $query .= ' WHERE ';
+    $num_values = count($primary_keys);
+    $index = 1;
+    foreach ($primary_keys as $key => $value) {
+      if (is_string($value)) {
+        $value = "'" . \SQLite3::escapeString($value) . "'";
+      }
+      $query .= \SQLite3::escapeString($key) . ' = ' . $value;
+      if ($index++ < $num_values) $query .= ' AND ';
+    }
+    $this->connection->exec($query);
+  }
 
   /**
    * Returns whether a specific table exists or not

@@ -47,8 +47,8 @@ class DBManager implements Singleton {
     return $this->adapter->insertRow($table, $values);
   }
 
-  public function updateRow($table, $primary_key_value, $values) {
-    return $this->adapter->updateRow($table, $primary_key_value, $values);
+  public function updateRow($table, array $primary_keys, array $values) {
+    return $this->adapter->updateRow($table, $primary_keys, $values);
   }
 
   /**
@@ -57,7 +57,7 @@ class DBManager implements Singleton {
    * @param string $adapter
    * @param array $params
    * @return mixed
-   * @throws LogicException     If the adapter cannot be found
+   * @throws \LogicException     If the adapter cannot be found
    */
   private function getAdapterInstance($adapter, $params) {
     switch (strtolower($adapter)) {

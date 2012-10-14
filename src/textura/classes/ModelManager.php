@@ -44,7 +44,6 @@ class ModelManager implements Singleton {
   public function getProperties($model_class) {
     // First, check if model is already loaded. If it is, just return the property list.
     if (array_key_exists($model_class, $this->model_map)) {
-      echo "1";
       return $this->model_map[$model_class]['properties'];
     }
     // The model is not loaded yet. Try to load it.

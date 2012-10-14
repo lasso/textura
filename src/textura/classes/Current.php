@@ -32,7 +32,7 @@ class Current {
 
   public static function init(Textura $application, Request $request, Response $response) {
     // Never allow initialization more than once!
-    if (!is_null(self::$application)) throw new LogicException("Already initialized");
+    if (!is_null(self::$application)) throw new \LogicException("Already initialized");
     self::$application = $application;
     self::$request = $request;
     self::$response = $response;

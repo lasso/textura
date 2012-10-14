@@ -78,9 +78,15 @@ class Router {
           }
           // Action exists. Lets call it
           $reflection_method = new \ReflectionMethod($controller, $action);
-          @$reflection_method->invokeArgs($controller, $params);  // We cannot stop the user
+          try {
+            $reflection_method->invokeArgs($controller, $params); // We cannot stop the user
                                                                   // from sending the wrong
                                                                   // number of params
+          }
+          catch (\LogicException $err) {
+            $response->send500($err);
+            return;
+          }
 
           // Check if the action has a view connected to it. If it has, render the template
           // and append the rendered data to the response

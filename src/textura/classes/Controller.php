@@ -76,7 +76,7 @@ abstract class Controller {
    */
   public function __set($key, $value) {
     if (in_array($key, self::$RESERVED_INSTANCE_VARS)) {
-      throw new LogicException("Cannot set reserved property $key");
+      throw new \LogicException("Cannot set reserved property $key");
     }
     $this->instance_vars[$key] = $value;
   }

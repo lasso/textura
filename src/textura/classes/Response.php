@@ -122,6 +122,25 @@ class Response {
     }
     $this->send();
   }
+
+  /**
+   * Send a 404 status code with the specified message to the browser
+   * 
+   * @param string $message     The message to send to the browser
+   */
+  public function send500(\Exception $error, $message = 'Internal server error') {
+    $this->clear();
+    $this->setHeader('Status', 500);
+    $this->appendToBody($message);
+    if (Current::request()->debug) {
+      $this->appendToBody(
+        '<p style="font-weight: bold; margin-bottom: 0px;">Backtrace</p>' .
+        '<p style="margin-top: 0px; white-space: pre-wrap;">' . $error->getTraceAsString() . '</p>'      
+      );
+      Debugger::debug_request(Current::request(), $this);
+    }
+    $this->send();
+  }
   
   /**
    * Sends the body to the browser

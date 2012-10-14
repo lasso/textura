@@ -52,7 +52,7 @@ class Configuration {
       $this->configuration = \Spyc::YAMLLoad($config_file_path);
     }
     else {
-      throw new LogicException("Unable to load configuration file $config_file_path");
+      throw new \LogicException("Unable to load configuration file $config_file_path");
     }
   }
 

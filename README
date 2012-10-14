@@ -66,11 +66,12 @@ things.
   $this->username = 'Homer' in your controller code, you can refer to the same
   variable in the HAML template by using the $username variable.
   
-* Models are not implemented yet. Roll your own.
+* Models are not yet fully implemented. While I work out the details, please
+  roll your own.
 
 Globals
 =======
-Globals are evil. Textura goes very when dealing with this problem.
+Globals are evil. Textura goes very far when dealing with this problem.
 
 $_GET, $_POST, $_FILES, $_REQUEST, $COOKIES, $_SERVER and $_SESSION are *not*
 available when using Textura. The data in those variables can all be fetched

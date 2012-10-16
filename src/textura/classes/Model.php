@@ -27,6 +27,10 @@ abstract class Model {
   private static $table = null;
   private static $properties = array();
 
+  public static function getById($id) {
+    return ModelManager::getInstance()->loadModelInstance(get_called_class(), $id);
+  }
+
   public function __construct() {
     $this->instance_properties = array();
     $available_properties = ModelManager::getInstance()->getPropertyNames(get_class($this));

@@ -47,6 +47,10 @@ class DBManager implements Singleton {
     return $this->adapter->insertRow($table, $values);
   }
 
+  public function selectRow($table, array $primary_keys, array $fields = null) {
+    return $this->adapter->selectRow($table, $primary_keys, $fields);
+  }
+
   public function updateRow($table, array $primary_keys, array $values) {
     return $this->adapter->updateRow($table, $primary_keys, $values);
   }

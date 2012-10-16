@@ -79,6 +79,23 @@ class ModelManager implements Singleton {
     }
   }
 
+  public function loadModelInstance($model_class, $primary_key_value) {
+    if (!array_key_exists($model_class, $this->model_map)) {
+      $this->loadModel($model_class);
+    }
+    $table = $this->model_map[$model_class]['table'];
+    $primary_key_field = $this->model_map[$model_class]['primary_key'];
+    $row = $this->db_manager->selectRow(
+      $table,
+      array($primary_key_field => $primary_key_value),
+      array_keys($this->model_map[$model_class]['properties'])
+    );
+    if (is_null($row)) return null;
+    $instance = new $model_class;
+    foreach ($row as $column_name => $column_value) $instance->$column_name = $column_value;
+    return $instance;
+  }
+
   /**
    * Saves a model instance
    *

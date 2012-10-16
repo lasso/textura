@@ -40,7 +40,7 @@ class Response {
 
   /**
    * Initializes a new Response object
-   * 
+   *
    * @return Textura\Response
    */
   public static function init() {
@@ -49,7 +49,7 @@ class Response {
 
   /**
    * Appends data to the body of the response
-   * 
+   *
    * @param mixed $data     Should be a string, but will be converted to a string if
    * of any other type.
    */
@@ -82,7 +82,7 @@ class Response {
 
   /**
    * Returns all headers of the response
-   * 
+   *
    * @return array
    */
   public function getAllHeaders() {
@@ -91,7 +91,7 @@ class Response {
 
   /**
    * Returns a specific header of the response. If the header is not set, null is returned.
-   * 
+   *
    * @param string $key
    * @return mixed
    */
@@ -110,7 +110,7 @@ class Response {
 
   /**
    * Send a 404 status code with the specified message to the browser
-   * 
+   *
    * @param string $message     The message to send to the browser
    */
   public function send404($message = 'Not found') {
@@ -125,23 +125,25 @@ class Response {
 
   /**
    * Send a 404 status code with the specified message to the browser
-   * 
+   *
    * @param string $message     The message to send to the browser
    */
   public function send500(\Exception $error, $message = 'Internal server error') {
     $this->clear();
     $this->setHeader('Status', 500);
     $this->appendToBody($message);
-    if (Current::request()->debug) {
+    if (Current::application()->getConfigurationOption('debugging.show_backtrace')) {
       $this->appendToBody(
         '<p style="font-weight: bold; margin-bottom: 0px;">Backtrace</p>' .
-        '<p style="margin-top: 0px; white-space: pre-wrap;">' . $error->getTraceAsString() . '</p>'      
+        '<p style="margin-top: 0px; white-space: pre-wrap;">' . $error->getTraceAsString() . '</p>'
       );
+    }
+    if (Current::request()->debug) {
       Debugger::debug_request(Current::request(), $this);
     }
     $this->send();
   }
-  
+
   /**
    * Sends the body to the browser
    */
@@ -160,7 +162,7 @@ class Response {
 
   /**
    * replaces the body of the response with $data
-   * 
+   *
    * @param mixed $data     Should be a strong, but will be converted to a string otherwise
    */
   public function setBody($data) {
@@ -170,7 +172,7 @@ class Response {
 
   /**
    * Sets a header in the response
-   * 
+   *
    * @param string $key       The headers to set
    * @param mixed $value      The value to use for the header
    */

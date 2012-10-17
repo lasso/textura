@@ -1,11 +1,20 @@
 ---
 controllers:
   controller_map:
-    - class: MainController
-      path: /
-      active: Yes
+    - class: MainController     # Name of controller class
+      path: /                   # Path that controller maps to
+      active: Yes               # Is the controller active (Yes/No)?
+      default_action: index     # What method to call if no action is specified
     - class: FooController
       path: /foo
       active: Yes
+      default_action: index
+database:
+  adapter: sqlite               # Name of adapter (only sqlite at the moment)
+  params:                       # Parameters sent to adapter (dependant on adapter type)
+    filename:                   # Path to SQLite database
 debugging:
-  allow_debugging: Yes
+  allow_debugging: No           # Should debug info be allowed to be sent to
+                                # the client (Yes/No)?
+  show_backtrace: No            # Should the backtrace be shown when an
+                                # error is thrown (Yes/No)?

@@ -18,9 +18,9 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-namespace Textura;
+namespace Textura\Model;
 
-class ModelManager implements Singleton {
+class ModelManager implements \Textura\Singleton {
 
   private $db_manager;
   private $model_map;
@@ -42,20 +42,13 @@ class ModelManager implements Singleton {
   }
 
   public function getProperties($model_class) {
-    // First, check if model is already loaded. If it is, just return the property list.
-    if (array_key_exists($model_class, $this->model_map)) {
-      return $this->model_map[$model_class]['properties'];
+    if (!$this->modelIsLoaded($model_class)) {
+      if (!$this->loadModel($model_class)) {
+        // Could not load model.
+        throw new \LogicException("Unable to find model definition for $model_class");
+      }
     }
-    // The model is not loaded yet. Try to load it.
-    if ($this->loadModel($model_class)) {
-      // Model successfully loaded. Return the property list.
-      return $this->model_map[$model_class]['properties'];
-    }
-    else {
-      // Could not load model.
-      trigger_error("Unable to find model definition for $model_class");
-      return null;
-    }
+    return $this->model_map[$model_class]['properties'];
   }
 
   public function getPropertyNames($model_class) {
@@ -63,37 +56,69 @@ class ModelManager implements Singleton {
   }
 
   public function getTable($model_class) {
-    // First, check if model is already loaded. If it is, just return the table name.
-    if (array_key_exists($model_class, $this->model_map)) {
-      return $this->model_map[$model_class]['table'];
+    if (!$this->modelIsLoaded($model_class)) {
+      if (!$this->loadModel($model_class)) {
+        // Could not load model.
+        throw new \LogicException("Unable to find model definition for $model_class");
+      }
     }
-    // The model is not loaded yet. Try to load it.
-    if ($this->loadModel($model_class)) {
-      // Model successfully loaded. Return the table.
-      return $this->model_map[$model_class]['table'];
-    }
-    else {
-      // Could not load model.
-      trigger_error("Unable to find model definition for $model_class");
-      return null;
-    }
+    return $this->model_map[$model_class]['table'];
   }
 
-  public function loadModelInstance($model_class, $primary_key_value) {
-    if (!array_key_exists($model_class, $this->model_map)) {
-      $this->loadModel($model_class);
+  public function loadSingleModelInstance($model_class, $primary_key_value) {
+    if (!$this->modelIsLoaded($model_class)) {
+      if (!$this->loadModel($model_class)) {
+        // Could not load model.
+        throw new \LogicException("Unable to find model definition for $model_class");
+      }
     }
     $table = $this->model_map[$model_class]['table'];
     $primary_key_field = $this->model_map[$model_class]['primary_key'];
-    $row = $this->db_manager->selectRow(
+    $rows = $this->db_manager->selectRows(
       $table,
       array($primary_key_field => $primary_key_value),
       array_keys($this->model_map[$model_class]['properties'])
     );
-    if (is_null($row)) return null;
+    switch (count($rows)) {
+      case 0: return null;
+      case 1:
+        $row = $rows[0];
+        break;
+      default:
+        trigger_error(
+          count($rows) .
+          ' returned when trying to load single instance with primary key' .
+          $primary_key_value,
+          E_USER_WARNING
+        );
+        $row = $rows[0];
+    }
     $instance = new $model_class;
     foreach ($row as $column_name => $column_value) $instance->$column_name = $column_value;
     return $instance;
+  }
+
+  public function loadModelInstances($model_class, array $conditions) {
+    if (!$this->modelIsLoaded($model_class)) {
+      if (!$this->loadModel($model_class)) {
+        // Could not load model.
+        throw new \LogicException("Unable to find model definition for $model_class");
+      }
+    }
+    $table = $this->model_map[$model_class]['table'];
+    $rows = $this->db_manager->selectRows(
+      $table,
+      $conditions,
+      array_keys($this->model_map[$model_class]['properties'])
+    );
+    if (count($rows) === 0) return $rows;
+    $instances = array();
+    foreach ($rows as $row) {
+      $instance = new $model_class;
+      foreach ($row as $column_name => $column_value) $instance->$column_name = $column_value;
+      $instances[] = $instance;
+    }
+    return $instances;
   }
 
   /**
@@ -143,7 +168,7 @@ class ModelManager implements Singleton {
     }
 
     if (empty($primary_key)) {
-      throw new LogExecption("Cannot load model $model_class. It has no primary key!");
+      throw new \LogicExecption("Cannot load model $model_class. It has no primary key!");
     }
 
     // Update model map
@@ -154,6 +179,10 @@ class ModelManager implements Singleton {
         'properties' => $properties
       );
     return true;
+  }
+
+  private function modelIsLoaded($model_class) {
+    return array_key_exists($model_class, $this->model_map);
   }
 
 }

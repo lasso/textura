@@ -34,6 +34,7 @@ function autoload($class_name) {
   $possible_paths =
           array(
               array(TEXTURA_SRC_DIR, 'textura', 'classes'),
+              array(TEXTURA_SRC_DIR, 'textura', 'classes', 'model'),
               array(TEXTURA_SRC_DIR, 'textura', 'interfaces'),
               array(TEXTURA_SITE_DIR),
               array(TEXTURA_CONTROLLER_DIR),

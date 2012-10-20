@@ -27,13 +27,41 @@ abstract class Model {
   private static $table = null;
   private static $properties = array();
 
-  public static function getById($id) {
-    return ModelManager::getInstance()->loadModelInstance(get_called_class(), $id);
+  /**
+   * Loads a single model instance by primary key. If no model instance can be found,
+   * null is returned.
+   *
+   * @param mixed $id
+   * @return Model
+   */
+  public static function load($id) {
+    return Model\ModelManager::getInstance()->loadSingleModelInstance(get_called_class(), $id);
+  }
+
+  /**
+   * Loads all  available instances of a particular model
+   *
+   * @return array
+   */
+  public static function loadAll() {
+    return Model\ModelManager::getInstance()->loadModelInstances(get_called_class(), array());
+  }
+
+  /**
+   * Loads model instances where $conditions are true. If no model instances matching the
+   * conditions can be found, an empty array is returned.
+   *
+   * @param array $conditions
+   * @return array An array with model instances
+   *
+   */
+  public static function loadBy(array $conditions) {
+    return Model\ModelManager::getInstance()->loadModelInstances(get_called_class(), $conditions);
   }
 
   public function __construct() {
     $this->instance_properties = array();
-    $available_properties = ModelManager::getInstance()->getPropertyNames(get_class($this));
+    $available_properties = Model\ModelManager::getInstance()->getPropertyNames(get_class($this));
     foreach ($available_properties as $current_property) {
       $this->instance_properties[$current_property] = null;
     }
@@ -44,7 +72,7 @@ abstract class Model {
   }
 
   public function save() {
-    return ModelManager::getInstance()->saveModelInstance($this);
+    return Model\ModelManager::getInstance()->saveModelInstance($this);
   }
 
   public function __get($key) {

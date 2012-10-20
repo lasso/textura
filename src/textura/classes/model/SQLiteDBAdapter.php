@@ -138,7 +138,7 @@ class SQLiteDBAdapter extends DBAdapter {
     return $this->connection->lastInsertRowID();
   }
 
-  public function selectRow($table, array $primary_keys, array $fields = null) {
+  public function selectRows($table, array $conditions, array $fields = null) {
     if (empty($fields)) {
       $fields_as_string = '*';
     }
@@ -148,25 +148,20 @@ class SQLiteDBAdapter extends DBAdapter {
       }
       $fields_as_string = implode(', ', $fields);
     }
-    $query = "SELECT $fields_as_string FROM " . \SQLite3::escapeString($table)
-             . ' WHERE ';
-    $num_keys = count($primary_keys);
-    $index = 1;
-    foreach ($primary_keys as $key => $value) {
-      if (is_string($value)) {
-        $value = "'" . \SQLite3::escapeString($value) . "'";
+    $query = "SELECT $fields_as_string FROM " . \SQLite3::escapeString($table);
+    $num_conditions = count($conditions);
+    if ($num_conditions > 0) {
+      $query .=  ' WHERE ';
+      $index = 1;
+      foreach ($conditions as $key => $value) {
+        if (is_string($value)) {
+          $value = "'" . \SQLite3::escapeString($value) . "'";
+        }
+        $query .= \SQLite3::escapeString($key) . ' = ' . $value;
+        if ($index++ < $num_conditions) $query .= ' AND ';
       }
-      $query .= \SQLite3::escapeString($key) . ' = ' . $value;
-      if ($index++ < $num_keys) $query .= ' AND ';
     }
-    $result = $this->query($query);
-    switch (count($result)) {
-      case 0: return null;
-      case 1: return $result[0];
-      default:
-        trigger_error(count($rows) . " returned for query $query.", E_USER_WARNING);
-        return $result[0];
-    }
+    return $this->query($query);
   }
 
   public function updateRow($table, array $primary_keys, array $values) {

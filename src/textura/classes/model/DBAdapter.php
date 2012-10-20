@@ -39,7 +39,7 @@ abstract class DBAdapter {
 
   abstract public function insertRow($table, array $values);
 
-  abstract public function selectRow($table, array $primary_keys, array $fields = null);
+  abstract public function selectRows($table, array $conditions, array $fields = null);
 
   abstract public function updateRow($table, array $primary_keys, array $values);
 }

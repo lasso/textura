@@ -18,9 +18,9 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-namespace Textura;
+namespace Textura\Model;
 
-class DBManager implements Singleton {
+class DBManager implements \Textura\Singleton {
 
   private $adapter;
 
@@ -29,14 +29,22 @@ class DBManager implements Singleton {
   private function __construct() {
     $this->adapter =
       $this->getAdapterInstance(
-        Current::application()->getConfigurationOption('database.adapter'),
-        Current::application()->getConfigurationOption('database.params')
+        \Textura\Current::application()->getConfigurationOption('database.adapter'),
+        \Textura\Current::application()->getConfigurationOption('database.params')
       );
   }
 
   public static function getInstance() {
     if (is_null(self::$instance)) self::$instance = new self;
     return self::$instance;
+  }
+
+  public function deleteSingleRow($table, array $primary_keys) {
+
+  }
+
+  public function deleteRows($table, array $conditions) {
+
   }
 
   public function getFields($table) {
@@ -47,8 +55,8 @@ class DBManager implements Singleton {
     return $this->adapter->insertRow($table, $values);
   }
 
-  public function selectRow($table, array $primary_keys, array $fields = null) {
-    return $this->adapter->selectRow($table, $primary_keys, $fields);
+  public function selectRows($table, array $conditions, array $fields = null) {
+    return $this->adapter->selectRows($table, $conditions, $fields);
   }
 
   public function updateRow($table, array $primary_keys, array $values) {

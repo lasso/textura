@@ -22,10 +22,19 @@ namespace Textura;
 
 abstract class DBAdapter {
 
-  // Constants for unified data types
-  const TYPE_INTEGER = 1;
-  const TYPE_FLOAT = 2;
-  const TYPE_STRING = 3;
+  // Constants defining operators that the adapter should handle
+  const OP_EQ   = '=';
+  const OP_GET  = '>=';
+  const OP_GT   = '>';
+  const OP_IN   = 'in';
+  const OP_LET  = '<=';
+  const OP_LT   = '<';
+
+  // Constants for column types that the adapter should handle
+  const TYPE_INTEGER  = 1;
+  const TYPE_FLOAT    = 2;
+  const TYPE_STRING   = 3;
+  const TYPE_MODEL    = 4;
 
   abstract public function __construct(array $params);
 
@@ -35,12 +44,21 @@ abstract class DBAdapter {
 
   abstract public function tableExists($table);
 
-  abstract protected function validateParams(array $params);
+  protected function isValidOperator($operator) {
+    return
+      $operator === self::OP_GET ||
+      $operator === self::OP_GT ||
+      $operator === self::OP_IN ||
+      $operator === self::OP_LET ||
+      $operator === self::OP_LT;
+  }
 
   abstract public function insertRow($table, array $values);
 
   abstract public function selectRows($table, array $conditions, array $fields = null);
 
   abstract public function updateRow($table, array $primary_keys, array $values);
+
+  abstract protected function validateParams(array $params);
 }
 ?>

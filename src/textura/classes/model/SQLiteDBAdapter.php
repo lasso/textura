@@ -127,10 +127,7 @@ class SQLiteDBAdapter extends DBAdapter {
     $query .= ') VALUES (';
     $index = 1;
     foreach (array_values($values) as $value) {
-      if (is_string($value)) {
-        $value = "'" . \SQLite3::escapeString($value) . "'";
-      }
-      $query .= $value;
+      $query .= $this->normalizeValue($value);
       if ($index++ < $num_values) $query .= ', ';
     }
     $query .= ')';
@@ -154,10 +151,36 @@ class SQLiteDBAdapter extends DBAdapter {
       $query .=  ' WHERE ';
       $index = 1;
       foreach ($conditions as $key => $value) {
-        if (is_string($value)) {
-          $value = "'" . \SQLite3::escapeString($value) . "'";
+        // If value is an array, the first element is the operation and the second element
+        // is the value.
+        if (is_array($value)) {
+          $op = strtolower($value[0]);
+          if (!$this->isValidOperator($op)) {
+            throw new \LogicException("Invalid operator $op");
+          }
+          $val = $value[1];
+          if ($op === DBAdapter::OP_IN) {
+            // List operator
+            if (!is_array($val)) throw new \LogicException("$val is not an array");
+            $num_arr_elems = count($val);
+            if ($num_arr_elems === 0) throw new \LogicException("$val is empty");
+            $query .= \SQLite3::escapeString($key) . ' IN (';
+            $index2 = 1;
+            foreach (array_values($val) as $arr_elem) {
+              $query .= $this->normalizeValue($arr_elem);
+              if ($index2++ < $num_arr_elems) $query .= ', ';
+            }
+            $query .= ')';
+          }
+          else {
+            // Normal comparison operator
+            $query .= \SQLite3::escapeString($key) . " $op " . $this->normalizeValue($val);
+          }
         }
-        $query .= \SQLite3::escapeString($key) . ' = ' . $value;
+        else {
+          // Not an array, use equality comparison
+          $query .= \SQLite3::escapeString($key) . ' = ' . $this->normalizeValue($value);
+        }
         if ($index++ < $num_conditions) $query .= ' AND ';
       }
     }
@@ -169,20 +192,14 @@ class SQLiteDBAdapter extends DBAdapter {
     $num_values = count($values);
     $index = 1;
     foreach ($values as $key => $value) {
-      if (is_string($value)) {
-        $value = "'" . \SQLite3::escapeString($value) . "'";
-      }
-      $query .= \SQLite3::escapeString($key) . ' = ' . $value;
+      $query .= \SQLite3::escapeString($key) . ' = ' . $this->normalizeValue($value);
       if ($index++ < $num_values) $query .= ', ';
     }
     $query .= ' WHERE ';
     $num_keys = count($primary_keys);
     $index = 1;
     foreach ($primary_keys as $key => $value) {
-      if (is_string($value)) {
-        $value = "'" . \SQLite3::escapeString($value) . "'";
-      }
-      $query .= \SQLite3::escapeString($key) . ' = ' . $value;
+      $query .= \SQLite3::escapeString($key) . ' = ' . $this->normalizeValue($value);
       if ($index++ < $num_keys) $query .= ' AND ';
     }
     $this->connection->exec($query);
@@ -247,6 +264,15 @@ class SQLiteDBAdapter extends DBAdapter {
         return DBAdapter::TYPE_STRING;
       default:
         return DBAdapter::TYPE_STRING;
+    }
+  }
+
+  private function normalizeValue($value) {
+    if (is_string($value)) {
+      return "'" . \SQLite3::escapeString($value) . "'";
+    }
+    else {
+      return $value;
     }
   }
 

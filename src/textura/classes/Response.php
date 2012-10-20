@@ -134,6 +134,7 @@ class Response {
     $this->appendToBody($message);
     if (Current::application()->getConfigurationOption('debugging.show_backtrace')) {
       $this->appendToBody(
+        '<p style="font-weight: bold; margin-bottom: 0px;">Error: ' . $error->getMessage() . '</p> ' .
         '<p style="font-weight: bold; margin-bottom: 0px;">Backtrace</p>' .
         '<p style="margin-top: 0px; white-space: pre-wrap;">' . $error->getTraceAsString() . '</p>'
       );

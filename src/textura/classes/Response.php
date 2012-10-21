@@ -124,17 +124,23 @@ class Response {
   }
 
   /**
-   * Send a 404 status code with the specified message to the browser
-   *
-   * @param string $message     The message to send to the browser
+   * Send a 500 status code with the specified message to the browser
+   * 
+   * @param \Exception $error     The execption that was thrown. This parameter is used for
+   *                              printing errors/printing beacktraces is enabled.
+   * @param string $message       The message to send to the browser
    */
   public function send500(\Exception $error, $message = 'Internal server error') {
     $this->clear();
     $this->setHeader('Status', 500);
     $this->appendToBody($message);
-    if (Current::application()->getConfigurationOption('debugging.show_backtrace')) {
+    if (Current::application()->getConfigurationOption('debugging.show_errors')) {
       $this->appendToBody(
-        '<p style="font-weight: bold; margin-bottom: 0px;">Error: ' . $error->getMessage() . '</p> ' .
+        '<p style="font-weight: bold; margin-bottom: 0px;">Error: ' . $error->getMessage() . '</p> '
+      );
+    }
+    if (Current::application()->getConfigurationOption('debugging.show_backtraces')) {
+      $this->appendToBody(
         '<p style="font-weight: bold; margin-bottom: 0px;">Backtrace</p>' .
         '<p style="margin-top: 0px; white-space: pre-wrap;">' . $error->getTraceAsString() . '</p>'
       );

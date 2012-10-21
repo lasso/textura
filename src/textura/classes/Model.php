@@ -22,6 +22,15 @@ namespace Textura;
 
 abstract class Model {
 
+  // Available property types. Thes are the types that can be used by any model regardless of
+  // what database is used
+  const PROPERTY_TYPE_INTEGER     = 1;
+  const PROPERTY_TYPE_JSON        = 2;
+  const PROPERTY_TYPE_FLOAT       = 3;
+  const PROPERTY_TYPE_MODEL       = 4;      // Refers to another model class
+  const PROPERTY_TYPE_SERIALIZED  = 5;
+  const PROPERTY_TYPE_STRING      = 6;
+
   private $instance_properties;
 
   private static $table = null;

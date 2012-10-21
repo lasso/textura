@@ -16,5 +16,7 @@ database:
 debugging:
   allow_debugging: No           # Should debug info be allowed to be sent to
                                 # the client (Yes/No)?
-  show_backtrace: No            # Should the backtrace be shown when an
-                                # error is thrown (Yes/No)?
+  show_errors: No               # Should the error message be shown when an
+                                # exception is thrown (Yes/No)?
+  show_backtraces: No           # Should the backtrace be shown when an
+                                # exception is thrown (Yes/No)?

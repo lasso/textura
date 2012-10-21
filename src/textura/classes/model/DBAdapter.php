@@ -33,8 +33,8 @@ abstract class DBAdapter {
   // Constants for column types that the adapter should handle
   const TYPE_INTEGER  = 1;
   const TYPE_FLOAT    = 2;
-  const TYPE_STRING   = 3;
-  const TYPE_MODEL    = 4;
+  const TYPE_MODEL    = 3;
+  const TYPE_STRING   = 4;
 
   abstract public function __construct(array $params);
 

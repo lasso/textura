@@ -12,7 +12,14 @@ controllers:
 database:
   adapter: sqlite               # Name of adapter (only sqlite at the moment)
   params:                       # Parameters sent to adapter (dependant on adapter type)
-    filename:                   # Path to SQLite database
+    filename: /path/to/db       # Path to SQLite database
+    log_queries: Yes            # Should queries be logged (Yes/No)?
+    log_method: file            # Where should queries be logged ('file' or 'db')
+                                # Only 'file' is implemented at the moment
+    log_placement:              # If log_method is set to 'file', this parameter
+                                # represents the filename where the logs should be stored.
+                                # If log_method is 'db', this parameter represents the
+                                # table name taht should be used for logging.
 debugging:
   allow_debugging: No           # Should debug info be allowed to be sent to
                                 # the client (Yes/No)?

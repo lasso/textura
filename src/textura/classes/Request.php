@@ -32,6 +32,7 @@ class Request {
   private $post_params;
   private $server_params;
   private $session;
+  private $validation_errors;
 
   private function __construct() {
     $this->cookies = $_COOKIE;
@@ -40,6 +41,7 @@ class Request {
     $this->post_params = $_POST;
     $this->server_params = $_SERVER;
     $this->session = isset($_SESSION) ? $_SESSION : null;
+    $this->validation_errors = array();
     unset($_COOKIE);
     unset($_FILES);
     unset($_GET);
@@ -54,6 +56,15 @@ class Request {
 
   public static function init() {
     return new self();
+  }
+
+  /**
+   * Returns the list of validation errors (if any) for the current request
+   *
+   * @return array
+   */
+  public function getValidationErrors() {
+    return $this->validation_errors;
   }
 
   /**
@@ -108,6 +119,48 @@ class Request {
    */
   public function isTrace() {
     return strtolower($this->server_params['REQUEST_METHOD']) == 'trace';
+  }
+
+  /**
+   * Returns whether the current request is considered a "valid" GET request or not.
+   *
+   * @param array $required_params
+   * @return boolean
+   */
+  public function isValidGet($required_params = array()) {
+    return $this->isValid('get', $required_params);
+  }
+
+  /**
+   * Returns whether the current request is considered a "valid" POST request or not.
+   *
+   * @param array $required_params
+   * @return boolean
+   */
+  public function isValidPost($required_params = array()) {
+    return $this->isValid('post', $required_params);
+  }
+
+  /**
+   * Returns whether the current request is considered a "valid" XHR request or not.
+   *
+   * @param array $required_params
+   * @param string $name      If this parameter is set, only the specified request method will be
+   *                          considered valid. If it is not set, any request method will be
+   *                          considered valid.
+   * @return boolean
+   */
+  public function isValidXhr($required_params = array(), $request_method = null) {
+    return
+      $this->isXhr()
+      && $this->isValid(
+        (
+          $request_method ?
+          strtolower($request_method) :
+          $this->request_method
+        ),
+        $required_params
+      );
   }
 
   /**
@@ -183,6 +236,33 @@ class Request {
         trigger_error("Unknown request property $key", E_USER_WARNING);
         return null;
     }
+  }
+
+  /**
+   * Returns whether the current request is considered "valid" or not. A request is considered valid
+   * if it uses the correct request type and and all required parameters are present.
+   *
+   * @param string $request_method
+   * @param array $required_params
+   * @return boolean
+   */
+  private function isValid($request_method, $required_params = array()) {
+    // Reset validation errors
+    $this->validation_errors = array();
+
+    $meth = 'is' . ucfirst(strtolower($request_method));
+    if (!$this->$meth()) {
+      $this->validation_errors[] = array('WRONG_REQUEST_TYPE', null);
+    }
+    if (count($required_params) > 0) {
+      $haystack = strtolower($request_method) . '_params';
+      foreach ($required_params as $current_required_param) {
+        if (!array_key_exists($current_required_param, $this->$haystack)) {
+          $this->validation_errors[] = array('MISSING_PARAMETER', $current_required_param);
+        }
+      }
+    }
+    return count($this->validation_errors) === 0;
   }
 
 }

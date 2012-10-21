@@ -125,7 +125,7 @@ class Response {
 
   /**
    * Send a 500 status code with the specified message to the browser
-   * 
+   *
    * @param \Exception $error     The execption that was thrown. This parameter is used for
    *                              printing errors/printing beacktraces is enabled.
    * @param string $message       The message to send to the browser
@@ -165,6 +165,21 @@ class Response {
     foreach ($this->headers as $key => $value) {
       header("$key: $value");
     }
+  }
+
+  /**
+   * redirects the client to another location.
+   *
+   * @param string $location
+   * @param integer $status
+   * @param string $message
+   */
+  public function sendRedirect($location, $status = 302, $message = 'Found') {
+    $this->clear();
+    $this->setHeader('Status', $status);
+    $this->setHeader('Location', $location);      // TODO: Force absolute URL?
+    $this->appendToBody($message);
+    $this->send();
   }
 
   /**

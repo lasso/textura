@@ -26,6 +26,7 @@ class SQLiteDBAdapter extends DBAdapter {
   private $filename;
   private $flags;
   private $encryption_key;
+  private $logger;
 
   public function __construct(array $params) {
     $filtered_params = $this->validateParams($params);
@@ -38,6 +39,19 @@ class SQLiteDBAdapter extends DBAdapter {
             array_key_exists('encryption_key', $filtered_params) ?
             $filtered_params['encryption_key'] :
             null;
+    $this->log_queries =
+      isset($filtered_params['log_queries']) ?
+      $filtered_params['log_queries'] :
+      false;
+    // Check if query logging should be enabled
+    $this->logger =
+      isset($filtered_params['log_queries'])
+      && isset($filtered_params['log_method'])
+      && in_array($filtered_params['log_method'], array('db', 'file')) ?
+      $filtered_params['log_method'] == 'file' ?
+      new \Textura\FileLogger($filtered_params['log_placement']) :
+      null : // No support for db logging of queries yet
+      null;
   }
 
   /**
@@ -67,6 +81,7 @@ class SQLiteDBAdapter extends DBAdapter {
    */
   public function exec($sql) {
     if (!$this->isConnected()) $this->connect();
+    if ($this->logger) $this->logger->info($query);
     $this->connection->exec($sql);
   }
 
@@ -105,6 +120,7 @@ class SQLiteDBAdapter extends DBAdapter {
    */
   public function query($query) {
     if (!$this->isConnected()) $this->connect();
+    if ($this->logger) $this->logger->info($query);
     return $this->getResultAsArray($this->connection->query($query));
   }
 
@@ -224,7 +240,9 @@ class SQLiteDBAdapter extends DBAdapter {
   protected function validateParams(array $params) {
     $filtered_params = array();
     $required_params = array('filename');
-    $optional_params = array('flags', 'encryption_key');
+    $optional_params = array(
+      'flags', 'encryption_key', 'log_queries', 'log_method', 'log_placement'
+    );
     foreach ($required_params as $current_required_param) {
       if (!array_key_exists($current_required_param, $params)) {
         throw new \LogicException("Required param $current_required_param missing");

@@ -81,7 +81,7 @@ class SQLiteDBAdapter extends DBAdapter {
    */
   public function exec($sql) {
     if (!$this->isConnected()) $this->connect();
-    if ($this->logger) $this->logger->info($query);
+    if ($this->logger) $this->logger->info($sql);
     $this->connection->exec($sql);
   }
 

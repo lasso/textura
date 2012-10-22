@@ -22,6 +22,7 @@ namespace Textura;
 
 class Router {
 
+  private static $controller_classes = null;
   private static $controller_map = null;  // Map holding the list of active controllers
   private static $default_actions = null; // Map holding default actions for active controllers
 
@@ -108,6 +109,13 @@ class Router {
     $response->send404();
   }
 
+  public static function getControllerPath($controller_class) {
+    if (!array_key_exists($controller_class, self::$controller_classes)) {
+      throw new \LogicException("Controller class $controller_class is not mapped in router.");
+    }
+    return self::$controller_classes[$controller_class];
+  }
+
   /**
    * Returns the default action for a controller class
    *
@@ -140,7 +148,7 @@ class Router {
    * @return string           The path where the template file should be found
    */
   private static function getTemplatePath($path, $action) {
-    $view_path = PathBuilder::build_path(TEXTURA_SITE_DIR, 'views', ltrim($path, '/'), $action) . '.haml';
+    $view_path = PathBuilder::buildPath(TEXTURA_SITE_DIR, 'views', ltrim($path, '/'), $action) . '.haml';
     return (file_exists($view_path) && is_readable($view_path) ? $view_path : null);
   }
 
@@ -151,7 +159,7 @@ class Router {
    * @param Response $response
    */
   private static function renderTemplate($controller, $template_path, $response) {
-    require_once(PathBuilder::build_path(TEXTURA_SRC_DIR, 'phamlp', 'haml', 'HamlParser.php'));
+    require_once(PathBuilder::buildPath(TEXTURA_SRC_DIR, 'phamlp', 'haml', 'HamlParser.php'));
     $haml_parser = new \HamlParser();
     ob_start();
     // Extract $controller instance vars into global scope so that they can be referenced by HAML
@@ -171,12 +179,14 @@ class Router {
    * default actions for all controllers.
    */
   private static function initializeControllerMap() {
+    self::$controller_classes = array();
     self::$controller_map = array();
     self::$default_actions = array();
     $controller_map_configuration =
       Current::application()->getConfigurationOption('controllers.controller_map');
     foreach ($controller_map_configuration as $controller) {
       if ($controller['active']) {
+        self::$controller_classes[$controller['class']] = $controller['path'];
         self::$controller_map[$controller['path']] = $controller['class'];
         self::$default_actions[$controller['class']] =
           array_key_exists('default_path', $controller) ?

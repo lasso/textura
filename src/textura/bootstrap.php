@@ -42,7 +42,7 @@ function autoload($class_name) {
   );
 
   foreach ($possible_paths as $current_possible_path) {
-    $possible_full_path = \Textura\PathBuilder::build_path(array_merge($current_possible_path, $class_name_parts)) . '.php';
+    $possible_full_path = \Textura\PathBuilder::buildPath(array_merge($current_possible_path, $class_name_parts)) . '.php';
     if (file_exists($possible_full_path) && is_readable($possible_full_path)) {
       require_once($possible_full_path);
       return;

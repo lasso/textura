@@ -22,13 +22,13 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 require_once(implode(DIRECTORY_SEPARATOR, array('src', 'textura', 'classes', 'PathBuilder.php')));
 
 define('TEXTURA_ROOT_DIR', dirname(__FILE__));
-define('TEXTURA_SITE_DIR', \Textura\PathBuilder::build_path(TEXTURA_ROOT_DIR, 'site'));
-define('TEXTURA_CONTROLLER_DIR', \Textura\PathBuilder::build_path(TEXTURA_SITE_DIR, 'controllers'));
-define('TEXTURA_MODEL_DIR', \Textura\PathBuilder::build_path(TEXTURA_SITE_DIR, 'models'));
-define('TEXTURA_SRC_DIR', \Textura\PathBuilder::build_path(TEXTURA_ROOT_DIR, 'src'));
+define('TEXTURA_SITE_DIR', \Textura\PathBuilder::buildPath(TEXTURA_ROOT_DIR, 'site'));
+define('TEXTURA_CONTROLLER_DIR', \Textura\PathBuilder::buildPath(TEXTURA_SITE_DIR, 'controllers'));
+define('TEXTURA_MODEL_DIR', \Textura\PathBuilder::buildPath(TEXTURA_SITE_DIR, 'models'));
+define('TEXTURA_SRC_DIR', \Textura\PathBuilder::buildPath(TEXTURA_ROOT_DIR, 'src'));
 
 // Bootstap autoloading
-require_once(\Textura\PathBuilder::build_path(TEXTURA_SRC_DIR, 'textura', 'bootstrap.php'));
+require_once(\Textura\PathBuilder::buildPath(TEXTURA_SRC_DIR, 'textura', 'bootstrap.php'));
 
 // Initialize global state
 \Textura\Current::init(

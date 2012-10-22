@@ -49,6 +49,67 @@ abstract class Controller {
   }
 
   /**
+   * Returns a route to an action in another controller
+   *
+   * @return string
+   * @throws \LogicException
+   */
+  public function r() {
+    $num_args = func_num_args();
+    if ($num_args < 2) {
+      throw new \LogicException("Not enough parameters");
+    }
+    $args = func_get_args();
+    $controller_class = $args[0] instanceof Controller ? get_class($args[0]) : $args[0];
+    if ($num_args > 2) {
+      if ($num_args == 3 && is_array($args[2])) {
+        // Action with parameters, parameters as array
+        return PathBuilder::buildRoute($controller_class, $args[1], $args[2]);
+      }
+      else {
+        // Action with parameters, paramaters as separate arguments
+        $params = array();
+        for ($i = 2; $i < $num_args; $i++) $params[] = $args[$i];
+        return PathBuilder::buildRoute($controller_class, $args[1], $params);
+      }
+    }
+    else {
+      // Action without parameters
+      return PathBuilder::buildRoute($controller_class, $args[1]);
+    }
+  }
+
+  /**
+   * Returns a route to an action within the current controller
+   *
+   * @return string
+   * @throws \LogicException
+   */
+  public function rs() {
+    $num_args = func_num_args();
+    if ($num_args < 1) {
+      throw new \LogicException("Not enough parameters");
+    }
+    $args = func_get_args();
+    if ($num_args > 1) {
+      if ($num_args == 2 && is_array($args[1])) {
+        // Action with parameters, parameters as array
+        return PathBuilder::buildRoute(get_class($this), $args[0], $args[1]);
+      }
+      else {
+        // Action with parameters, paramaters as separate arguments
+        $params = array();
+        for ($i = 1; $i < $num_args; $i++) $params[] = $args[$i];
+        return PathBuilder::buildRoute(get_class($this), $args[0], $params);
+      }
+    }
+    else {
+      // Action without parameters
+      return PathBuilder::buildRoute(get_class($this), $args[0]);
+    }
+  }
+
+  /**
    * Magic getter. Can be used to either retrieve either a built-in property or
    * a user-defined property. If $key cannot be found, null is returned.
    *

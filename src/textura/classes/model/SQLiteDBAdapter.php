@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-namespace Textura;
+namespace Textura\Model;
 
 class SQLiteDBAdapter extends DBAdapter {
 
@@ -77,12 +77,12 @@ class SQLiteDBAdapter extends DBAdapter {
   /**
    * Executes a query that does not return any rows.
    *
-   * @param type $sql
+   * @param string $query
    */
-  public function exec($sql) {
+  public function exec($query, $log_query = true) {
     if (!$this->isConnected()) $this->connect();
-    if ($this->logger) $this->logger->info($sql);
-    $this->connection->exec($sql);
+    if ($this->logger && $log_query) $this->logger->info($query);
+    $this->connection->exec($query);
   }
 
   /**
@@ -118,9 +118,9 @@ class SQLiteDBAdapter extends DBAdapter {
    * @param string $query
    * @return array
    */
-  public function query($query) {
+  public function query($query, $log_query = true) {
     if (!$this->isConnected()) $this->connect();
-    if ($this->logger) $this->logger->info($query);
+    if ($this->logger && $log_query) $this->logger->info($query);
     return $this->getResultAsArray($this->connection->query($query));
   }
 
@@ -149,6 +149,15 @@ class SQLiteDBAdapter extends DBAdapter {
     $query .= ')';
     $this->connection->exec($query);
     return $this->connection->lastInsertRowID();
+  }
+
+  public function normalizeValue($value) {
+    if (is_string($value)) {
+      return "'" . \SQLite3::escapeString($value) . "'";
+    }
+    else {
+      return $value;
+    }
   }
 
   public function selectRows($table, array $conditions, array $fields = null) {
@@ -282,15 +291,6 @@ class SQLiteDBAdapter extends DBAdapter {
         return DBAdapter::TYPE_STRING;
       default:
         return DBAdapter::TYPE_STRING;
-    }
-  }
-
-  private function normalizeValue($value) {
-    if (is_string($value)) {
-      return "'" . \SQLite3::escapeString($value) . "'";
-    }
-    else {
-      return $value;
     }
   }
 

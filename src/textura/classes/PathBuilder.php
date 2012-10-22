@@ -22,10 +22,38 @@ namespace Textura;
 
 class PathBuilder {
 
-  public static function build_path() {
+  public static function buildPath() {
     $args = func_get_args();
     if (count($args) == 1 && is_array($args[0])) $args = $args[0];
     return implode(DIRECTORY_SEPARATOR, array_map('strval', $args));
+  }
+
+  /**
+   * Return the route to a particular controller/action/parameter list.
+   *
+   * @param string $controller_class
+   * @param string $action
+   * @param array $params
+   * @return string
+   */
+  public static function buildRoute($controller_class, $action, array $params = array()) {
+    $route = $params;
+    array_unshift($route, $action);
+    $controller_path = Router::getControllerPath($controller_class);
+    if (strlen($controller_path) > 1) $controller_path = ltrim($controller_path, '/');
+    array_unshift($route, $controller_path);
+    array_unshift(
+      $route,
+      rtrim(
+        substr(
+          Current::request()->server_params['PHP_SELF'],
+          0,
+          strlen(Current::request()->server_params['PHP_SELF']) -
+            (strlen(Current::request()->server_params['PATH_INFO']) + strlen('router,php'))
+        ),
+        '/')
+    );
+    return implode('/', $route);
   }
 
 }

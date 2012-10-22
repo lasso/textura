@@ -35,7 +35,7 @@ class Configuration {
    */
   public function __construct($config_file_path = null) {
     if (is_null($config_file_path)) {
-      $config_file_path = PathBuilder::build_path(TEXTURA_SITE_DIR, 'config.yml');
+      $config_file_path = PathBuilder::buildPath(TEXTURA_SITE_DIR, 'config.yml');
     }
     $this->loadConfig($config_file_path);
   }
@@ -48,7 +48,7 @@ class Configuration {
    */
   public function loadConfig($config_file_path) {
     if (file_exists($config_file_path) && is_readable($config_file_path)) {
-      require_once(PathBuilder::build_path(TEXTURA_SRC_DIR, 'spyc', 'spyc.php'));
+      require_once(PathBuilder::buildPath(TEXTURA_SRC_DIR, 'spyc', 'spyc.php'));
       $this->configuration = \Spyc::YAMLLoad($config_file_path);
     }
     else {

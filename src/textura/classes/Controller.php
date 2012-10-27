@@ -110,6 +110,21 @@ abstract class Controller {
   }
 
   /**
+   * Returns a route to some static content.
+   *
+   * @return string
+   * @throws \LogicException
+   */
+  public function rst() {
+    $num_args = func_num_args();
+    if ($num_args < 1) {
+      throw new \LogicException("Not enough parameters");
+    }
+    $args = func_get_args();
+    return PathBuilder::BuildStaticRoute($args);
+  }
+
+  /**
    * Magic getter. Can be used to either retrieve either a built-in property or
    * a user-defined property. If $key cannot be found, null is returned.
    *

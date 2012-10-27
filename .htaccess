@@ -1,11 +1,24 @@
+<Files COPYING>
+  Deny from all
+</Files>
+
+<Files README>
+  Deny from all
+</Files>
+
 <IfModule mod_dir.c>
   DirectoryIndex router.php
 </IfModule>
 
 <IfModule mod_rewrite.c>
   RewriteEngine on
-  RewriteRule /public/(.*) site/public/$1 [NC,L] 
-  RewriteCond %{REQUEST_FILENAME} !-f
+
+  # Add /s and /static as aliases for static content
+  RewriteRule s/(.*) site/static/$1 [NC,L]
+  RewriteRule static/(.*) site/static/$1 [NC,L]
+
+  # Let router handle everything else
   RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule (.*) router.php/$1 [NC,L]
 </IfModule>

@@ -75,7 +75,7 @@ class DBManager implements \Textura\Singleton {
     switch (strtolower($adapter)) {
       case 'sqlite':
       case 'sqlite3':
-        $class = '\Textura\SQLiteDBAdapter';
+        $class = '\Textura\Model\SQLiteDBAdapter';
         break;
       default:
         throw new \LogicException("Unknown database adapter $adapter");

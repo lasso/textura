@@ -1,3 +1,5 @@
+Options -Indexes
+
 <Files COPYING>
   Deny from all
 </Files>
@@ -12,6 +14,12 @@
 
 <IfModule mod_rewrite.c>
   RewriteEngine on
+
+  # Depending on your Apache configuration, you might need to set
+  # the RewriteBase directive below to the URL where you want to
+  # deploy your Textura application.
+  #
+  # RewriteBase /some/nice/url
 
   # Add /s and /static as aliases for static content
   RewriteRule ^s/(.*) site/static/$1 [NC,L]

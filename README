@@ -33,41 +33,74 @@ things.
 
 * Place your controller classes in site/controllers. All controllers must
   inherit from Textura\Controller in order to be loaded by Textura.
-  
+
   - When you define a (public) method in a controller class it automatically
     becomes an action that can be called from the outside world. So if you have
     a controller handling /, the method foo will automatically be called when
     the browser visits /foo.
-    
+
   - In a controller you can automatically create "properties" by using
     $this->property syntax. For instance, $this->username = 'Homer' sets the
     property username to 'Homer'.
-    
+
   - There are also some "special" properties that are always available in the
-    controller. $this->request refers to the current request (an instance of the
-    Textura\Request class), $this->response refers to the current response
-    (an instance of the Textura\Response class) and $this->application refers to
-    the current application (an instance of the Textura\Textura class). These
-    special properties are *read-only* from controller code.
-    
+    controller.
+
+    - $this->action refers to the current action (a string)
+    - $this->application refers to the current application (an instance of the
+      Textura\Textura class).
+    - $this->controller refers to current controller (an instance of the
+      Textura\Controller class). When used in controller context this variable
+      simply points to the same object as $this, but it is more usable in view
+      context where it can be used to get the current controller.
+    - $this->request refers to the current request (an instance of the
+      Textura\Request class).
+    - $this->response refers to the current response (an instance of the
+      Textura\Response class)
+
+    These special properties should be considered *read-only* from
+    controller/view code.
+
   - If you intend to send data directly to the browser without using a template,
     you can use $this->response->appendToBody to add content and
     $this->response->setHeader to set headers. Of course you can also use stuff
-    like echo and var_dump, but that way of sending data is discouraged.  
- 
+    like echo and var_dump, but that way of sending data is discouraged.
+
 * Place your views (HAML files) in site/views. The directory structure under the
   views directory should follow the controller mapping, so if you have a
   controller that handles /foo your views for that controller should be placed
   in views/foo. The file name of the template file should match the name of the
   action (method) in your controller. If Textura cannot find a matching template
   it will simply ignore the missing file.
-  
+
   All properties set in the controller can be used in the template. If you use
   $this->username = 'Homer' in your controller code, you can refer to the same
-  variable in the HAML template by using the $username variable.
-  
-* Models are not yet fully implemented. While I work out the details, please
+  variable in the HAML template by using the $username variable. Also, all
+  "special" controller variables can be used:
+
+  - $action refers to the current action.
+  - $application refers to the current application.
+  - $controller refers to the current controller.
+  - $request refers to the current request.
+  - $response referes to the current response.
+
+* Models are only partially implemented. While I work out the details, please
   roll your own.
+
+* Static content should be placed in the site/static folder. Some shortcut
+  aliases (/s and /static) are defined in the .htacess directory in the top
+  level directory. If you want to use additional aliases please define them in
+  the same file.
+
+* Intra-application routing is available through the Controller class. The
+  following methods are available:
+
+  - Controller->r($controller, $action, array $params) can be used to get a
+    route to an action in another controller.
+  - Controller->rs($action, array $params) can be used to get a route to an
+    action is the current controller.
+  - Controller->rst($params) can be used to get a route to content in the
+    site/static directory.
 
 Globals
 =======
@@ -84,7 +117,7 @@ At the moment Textura depends on some external libraries:
 * phamlp (for rendering HAML templates) [src/phamlp directory]
   Home page: http://code.google.com/p/phamlp/
   Licence: BSD 3-Clause (http://opensource.org/licenses/BSD-3-Clause)
-  
+
 * spyc (for parsing YAML files) [src/spyc directory]
   Home page: https://code.google.com/p/spyc/
   Licence: MIT (http://opensource.org/licenses/mit-license.php)

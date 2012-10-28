@@ -64,15 +64,7 @@ class PathBuilder {
   // Returns Texturas "base url", ie the root of all requests passed through the framework
   public static function getTexturaBaseURL() {
     if (!isset(self::$textura_base_url)) {
-      self::$textura_base_url =
-        rtrim(
-          substr(
-            Current::request()->server_params['PHP_SELF'],
-            0,
-            strlen(Current::request()->server_params['PHP_SELF']) -
-              (strlen(Current::request()->server_params['PATH_INFO']) + strlen('router,php'))
-          ),
-          '/');
+      self::$textura_base_url = dirname(Current::request()->server_params['SCRIPT_NAME']);
     }
     return self::$textura_base_url;
   }

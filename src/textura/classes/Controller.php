@@ -23,7 +23,8 @@ namespace Textura;
 abstract class Controller {
 
   // Define some properties that the used may read but not change
-  private static $RESERVED_INSTANCE_VARS = array('application', 'request', 'response');
+  private static $RESERVED_INSTANCE_VARS =
+    array('action', 'application', 'controller', 'request', 'response');
 
   // List of user defined properties
   private $instance_vars;
@@ -45,7 +46,12 @@ abstract class Controller {
    * @return array
    */
   public function getInstanceVars() {
-    return $this->instance_vars;
+    $reserved_instance_vars = array();
+    foreach (self::$RESERVED_INSTANCE_VARS as $current_reserved_instance_var) {
+      $reserved_instance_vars[$current_reserved_instance_var] =
+        Current::$current_reserved_instance_var();
+    }
+    return array_merge($reserved_instance_vars, $this->instance_vars);
   }
 
   /**
@@ -132,14 +138,8 @@ abstract class Controller {
    * @return mixed
    */
   public function __get($key) {
-    switch ($key) {
-      case 'application': return Current::application();
-      case 'request' : return Current::request();
-      case 'response' : return Current::response();
-      default:
-        if (array_key_exists($key, $this->instance_vars)) return $this->instance_vars[$key];
-        return null;
-    }
+    if (in_array($key, self::$RESERVED_INSTANCE_VARS)) return Current::$key();
+    return array_key_exists($key, $this->instance_vars) ? $this->instance_vars[$key] : null;
   }
 
   /**

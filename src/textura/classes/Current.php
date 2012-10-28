@@ -26,16 +26,33 @@ namespace Textura;
 class Current {
 
   // Declare static variables
+  private static $action = null;
   private static $application = null;
+  private static $controller = null;
   private static $request = null;
   private static $response = null;
 
   public static function init(Textura $application, Request $request, Response $response) {
     // Never allow initialization more than once!
     if (!is_null(self::$application)) throw new \LogicException("Already initialized");
+    self::$action = null;
     self::$application = $application;
+    self::$controller = null;
     self::$request = $request;
     self::$response = $response;
+  }
+
+  /**
+   * Returns the current action
+   *
+   * @return string
+   * @throws \LogicException
+   */
+  public static function action() {
+    if (is_null(self::$action)) {
+      throw new \LogicException('Action not set');
+    }
+    return self::$action;
   }
 
   /**
@@ -45,6 +62,19 @@ class Current {
    */
   public static function application() {
     return self::$application;
+  }
+
+  /**
+   * Returns the current controller.
+   *
+   * @return Controller
+   * @throws \LogicException
+   */
+  public static function controller() {
+    if (is_null(self::$controller)) {
+      throw new \LogicException('Controller not set');
+    }
+    return self::$controller;
   }
 
   /**
@@ -63,6 +93,11 @@ class Current {
    */
   public static function response() {
     return self::$response;
+  }
+
+  public function setActiveControllerAndAction(Controller $controller, $action) {
+    self::$controller = $controller;
+    self::$action = $action;
   }
 
   /**

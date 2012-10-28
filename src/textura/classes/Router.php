@@ -78,6 +78,7 @@ class Router {
             }
           }
           // Action exists. Lets call it
+          Current::setActiveControllerAndAction($controller, $action);
           $reflection_method = new \ReflectionMethod($controller, $action);
           try {
             $reflection_method->invokeArgs($controller, $params); // We cannot stop the user

@@ -14,8 +14,8 @@
   RewriteEngine on
 
   # Add /s and /static as aliases for static content
-  RewriteRule s/(.*) site/static/$1 [NC,L]
-  RewriteRule static/(.*) site/static/$1 [NC,L]
+  RewriteRule ^s/(.*) site/static/$1 [NC,L]
+  RewriteRule ^static/(.*) site/static/$1 [NC,L]
 
   # Let router handle everything else
   RewriteCond %{REQUEST_FILENAME} !-d

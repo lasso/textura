@@ -39,11 +39,11 @@ class PathBuilder {
    * @return string
    */
   public static function buildRoute($controller_class, $action, array $params = array()) {
-    $route = $params;
-    array_unshift($route, $action);
-    $controller_path = Router::getControllerPath($controller_class);
-    if (strlen($controller_path) > 1) $controller_path = ltrim($controller_path, '/');
-    array_unshift($route, $controller_path);
+    $route = empty($params) ? $params : array_map('trim', $params, array('/'));
+    $action = trim($action, '/');
+    if (!empty($action)) array_unshift($route, $action);
+    $controller_path = trim(Router::getControllerPath($controller_class), '/');
+    if (!empty($controller_path)) array_unshift($route, $controller_path);
     array_unshift($route, self::getTexturaBaseURL());
     return implode('/', $route);
   }
@@ -55,7 +55,7 @@ class PathBuilder {
    * @return string
    */
   public static function buildStaticRoute($params = array()) {
-    $route = $params;
+    $route = empty($params) ? $params : array_map('trim', $params, array('/'));
     array_unshift($route, 's'); // paths under /s gets rewritten to static files directory
     array_unshift($route, self::getTexturaBaseURL());
     return implode('/', $route);

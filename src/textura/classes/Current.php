@@ -31,6 +31,7 @@ class Current {
   private static $controller = null;
   private static $request = null;
   private static $response = null;
+  private static $session = null;
 
   public static function init(Textura $application, Request $request, Response $response) {
     // Never allow initialization more than once!
@@ -95,15 +96,57 @@ class Current {
     return self::$response;
   }
 
-  public function setActiveControllerAndAction(Controller $controller, $action) {
+  public static function session() {
+    if (is_null(self::$session)) {
+      throw new \LogicException('Session not initialized.');
+    }
+    return self::$session;
+  }
+
+  /**
+   * Sets the active controller and action. This method will also check if the controller needs a
+   * session and initialize one if needed.
+   *
+   * @param \Textura\Controller $controller
+   * @param type $action
+   */
+  public static function setActiveControllerAndAction(Controller $controller, $action) {
     self::$controller = $controller;
     self::$action = $action;
+
+    // Check if the controller uses sessions. If it does, initialize a session
+    if ($controller->useSession()) self::initSession();
+
+    // Now that session has been initialized it is finally safe to clear all globals
+    self::clearGlobals();
   }
 
   /**
    * Constructor
    */
   private function __construct() {}
+
+  /**
+   * Clears all globals since they are *EVIL*.
+   */
+  private function clearGlobals() {
+    unset($_COOKIE);
+    unset($_FILES);
+    unset($_GET);
+    unset($_POST);
+    unset($_REQUEST);
+    unset($_SERVER);
+    unset($_SESSION);
+  }
+
+  /*
+   * Initializes a śession.
+   */
+  private function initSession() {
+    session_start();
+    self::$session = Session::init(); // Initialize session object
+  }
+
 }
 
 ?>

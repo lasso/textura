@@ -104,6 +104,7 @@ class Response {
    */
   public function send() {
     $this->setHeader('Content-Length', strlen($this->body)); // Add content length header
+    $this->setSessionCookie(); // Sets session cookie (only if needed)
     $this->sendHeaders();
     $this->sendBody();
   }
@@ -180,6 +181,18 @@ class Response {
     $this->setHeader('Location', $location);      // TODO: Force absolute URL?
     $this->appendToBody($message);
     $this->send();
+  }
+
+  /**
+   * Sets session cookue (if currently active controller uses session).
+   */
+  private function setSessionCookie() {
+    // Check if current controller uses session. If it does, add session cookie header.
+    if (Current::controller()->useSession()) {
+      $cookie_name = Current::session()->session_name;
+      $cookie_value = Current::session()->session_id;
+      $this->setHeader('Set-Cookie', "$cookie_name=$cookie_value");
+    }
   }
 
   /**

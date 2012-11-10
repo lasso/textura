@@ -31,7 +31,6 @@ class Request {
   private $get_params;
   private $post_params;
   private $server_params;
-  private $session;
   private $validation_errors;
 
   private function __construct() {
@@ -40,15 +39,7 @@ class Request {
     $this->get_params = $_GET;
     $this->post_params = $_POST;
     $this->server_params = $_SERVER;
-    $this->session = isset($_SESSION) ? $_SESSION : null;
     $this->validation_errors = array();
-    unset($_COOKIE);
-    unset($_FILES);
-    unset($_GET);
-    unset($_POST);
-    unset($_REQUEST);
-    unset($_SERVER);
-    unset($_SESSION);
 
     # FIXME: Should be done in .htaccess
     if (!isset($this->server_params['PATH_INFO'])) $this->server_params['PATH_INFO'] = '/index';
@@ -228,8 +219,6 @@ class Request {
         return $this->server_params['REQUEST_METHOD'];
       case 'server_params':
         return $this->server_params;
-      case 'session':
-        return $this->session;
       case 'user_agent':
         return $this->server_params['HTTP_USER_AGENT'];
       default:

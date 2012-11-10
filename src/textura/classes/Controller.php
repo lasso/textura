@@ -24,7 +24,10 @@ abstract class Controller {
 
   // Define some properties that the used may read but not change
   private static $RESERVED_INSTANCE_VARS =
-    array('action', 'application', 'controller', 'request', 'response');
+    array('action', 'application', 'controller', 'request', 'response', 'session');
+
+  protected static $use_session = false;
+  protected static $session_scope = null;
 
   // List of user defined properties
   private $instance_vars;
@@ -128,6 +131,15 @@ abstract class Controller {
     }
     $args = func_get_args();
     return PathBuilder::BuildStaticRoute($args);
+  }
+
+  /**
+   * Returns whether the current controller class uses a session or not.
+   *
+   * @return boolean
+   */
+  public function useSession() {
+    return static::$use_session;
   }
 
   /**

@@ -27,7 +27,7 @@ abstract class Controller {
     array('action', 'application', 'controller', 'request', 'response', 'session');
 
   protected static $use_session = false;
-  protected static $session_scope = null;
+  protected static $session_scope = 'application';
 
   // List of user defined properties
   private $instance_vars;
@@ -55,6 +55,25 @@ abstract class Controller {
         Current::$current_reserved_instance_var();
     }
     return array_merge($reserved_instance_vars, $this->instance_vars);
+  }
+
+  /**
+   * Returns the session "scope". The session scope can be one of three predefined values:
+   * 'global'       When using this value, the session cookie associated with the request will have
+   *                the path '/'.
+   * 'application'  When using this value, the session cookie associated with the request will have
+   *                the path returned by PathBuilder::getTexturaBaseURL().
+   * 'controller'  When using this value, the session cookie associated with the request will have
+   *                the path returned by PathBuilder::buildRoute($current_controller_class).
+   *
+   * @return string
+   * @throws \LogicException If sessions are not used for the current controller
+   */
+  public function getSessionScope() {
+    if (!static::useSession()) {
+      throw new \LogicException("Session not initialized");
+    }
+    return static::$session_scope;
   }
 
   /**

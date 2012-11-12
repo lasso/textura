@@ -79,6 +79,15 @@ class Current {
   }
 
   /**
+   * Returns whetehr we have a controller ready or not.
+   *
+   * @return boolean
+   */
+  public static function haveController() {
+    return !is_null(self::$controller);
+  }
+
+  /**
    * Returns the current request
    *
    * @return Request

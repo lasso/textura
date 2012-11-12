@@ -25,6 +25,7 @@ namespace Textura;
  */
 class Response {
 
+  private $cookies;
   private $headers;
   private $body;
 
@@ -63,6 +64,7 @@ class Response {
    */
   public function clear() {
     $this->clearHeaders();
+    $this->clearCookies();
     $this->clearBody();
   }
 
@@ -71,6 +73,13 @@ class Response {
    */
   public function clearBody() {
     $this->body = '';
+  }
+
+  /**
+   * Clears the cookies of the response
+   */
+  public function clearCookies() {
+    $this->cookies = array();
   }
 
   /**
@@ -106,6 +115,7 @@ class Response {
     $this->setHeader('Content-Length', strlen($this->body)); // Add content length header
     $this->setSessionCookie(); // Sets session cookie (only if needed)
     $this->sendHeaders();
+    $this->sendCookies();
     $this->sendBody();
   }
 
@@ -159,6 +169,20 @@ class Response {
     echo $this->body;
   }
 
+  private function sendCookies() {
+    foreach ($this->cookies as $cookie_name => $cookie_params) {
+      setcookie(
+        $cookie_name,
+        $cookie_params['value'],
+        $cookie_params['expire'],
+        $cookie_params['path'],
+        $cookie_params['domain'],
+        $cookie_params['secure'],
+        $cookie_params['httponly']
+      );
+    }
+  }
+
   /**
    * Sends the headers to the browser
    */
@@ -183,15 +207,59 @@ class Response {
     $this->send();
   }
 
+  public function setCookie(
+    $cookie_name,             // Cookie name
+    $cookie_value,            // Cookie value
+    $cookie_expire = null,    // Cookie expire date. By default, Textura does not set an
+                              // explicit expiration date.
+                              // When this parameter is set, Textura uses the Expires parameter
+                              // in the Set-Cookie HTTP header to set an expire date.
+    $cookie_path = null,      // Cookie path. By default, Textura will use the path
+                              // returned by PathBuilder::getTexturaBaseURL().
+    $cookie_domain = null,    // Cookie domain
+    $cookie_secure = false,   // Is cookie HTTPS only?
+    $cookie_httponly = false  // Is cookie invisible to XHR requests?
+  ) {
+    $path = strval($cookie_path);
+    // If a path has not been explicitly set, use Textura base URL
+    $path = !empty($path) ? $path : PathBuilder::getTexturaBaseURL();
+    $this->cookies[$cookie_name] =
+      array(
+        'value'     => strval($cookie_value),
+        'expire'    => intval($cookie_expire),
+        'path'      => $path,
+        'domain'    => strval($cookie_domain),
+        'secure'    => (bool) $cookie_secure,
+        'httponly'  => (bool) $cookie_secure
+      );
+  }
+
   /**
    * Sets session cookue (if currently active controller uses session).
    */
   private function setSessionCookie() {
     // Check if current controller uses session. If it does, add session cookie header.
-    if (Current::controller()->useSession()) {
-      $cookie_name = Current::session()->session_name;
-      $cookie_value = Current::session()->session_id;
-      $this->setHeader('Set-Cookie', "$cookie_name=$cookie_value");
+    if (Current::haveController() && Current::controller()->useSession()) {
+      switch (Current::controller()->getSessionScope()) {
+        case 'global':
+          $session_scope = '/';
+          break;
+        case 'application':
+          $session_scope = PathBuilder::getTexturaBaseURL();
+          break;
+        case 'controller':
+          $session_scope = PathBuilder::buildRoute(get_class(Current::controller()));
+          break;
+        deafault:
+          $controller_session_scope = Current::controller()->getSessionScope();
+          throw new \LogicException("Non valid session scope $controller_session_scope detected.");
+      }
+      $this->setCookie(
+        Current::session()->session_name,
+        Current::session()->session_id,
+        null,
+        $session_scope
+      );
     }
   }
 

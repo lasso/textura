@@ -38,10 +38,12 @@ class PathBuilder {
    * @param array $params
    * @return string
    */
-  public static function buildRoute($controller_class, $action, array $params = array()) {
+  public static function buildRoute($controller_class, $action = null, array $params = array()) {
     $route = empty($params) ? $params : array_map('trim', $params, array('/'));
-    $action = trim($action, '/');
-    if (!empty($action)) array_unshift($route, $action);
+    if (!empty($action)) {
+      $action = trim($action, '/');
+      if (!empty($action)) array_unshift($route, $action);
+    }
     $controller_path = trim(Router::getControllerPath($controller_class), '/');
     if (!empty($controller_path)) array_unshift($route, $controller_path);
     array_unshift($route, self::getTexturaBaseURL());

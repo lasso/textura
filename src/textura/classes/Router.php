@@ -101,12 +101,6 @@ class Router {
         } catch (Exception $e) {
           $response->appendToBody('<hr>' . $e->getMessage() . '<hr>');
         }
-
-        // If we have a session we need to restore $_SESSION in order to write it to disc
-        if ($controller->useSession()) {
-          $_SESSION = Current::session()->getInstanceVars();
-        }
-
         $response->send();
         return;
       }

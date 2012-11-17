@@ -152,7 +152,6 @@ class Current {
    * Initializes a śession.
    */
   private function initSession() {
-    session_start();
     self::$session = Session::init(); // Initialize session object
   }
 

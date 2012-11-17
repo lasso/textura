@@ -112,11 +112,17 @@ class Response {
    * Sends the response to the browser
    */
   public function send() {
+    // Make sure session data is saved to disc at this point.
+    // It cannot be touched by anything after this call.
+    if (Current::haveController() && Current::controller()->useSession()) {
+      Current::session()->commit();
+    }
     $this->setHeader('Content-Length', strlen($this->body)); // Add content length header
     $this->setSessionCookie(); // Sets session cookie (only if needed)
     $this->sendHeaders();
     $this->sendCookies();
     $this->sendBody();
+    exit; // No code should be run after data is sent!
   }
 
   /**
@@ -254,11 +260,12 @@ class Response {
           $controller_session_scope = Current::controller()->getSessionScope();
           throw new \LogicException("Non valid session scope $controller_session_scope detected.");
       }
+      // Set session cookie
       $this->setCookie(
         Current::session()->session_name,
         Current::session()->session_id,
         null,
-        $session_scope
+        PathBuilder::ensureTrailingSlash($session_scope)
       );
     }
   }

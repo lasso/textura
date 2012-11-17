@@ -41,12 +41,26 @@ class Request {
     $this->server_params = $_SERVER;
     $this->validation_errors = array();
 
-    # FIXME: Should be done in .htaccess
-    if (!isset($this->server_params['PATH_INFO'])) $this->server_params['PATH_INFO'] = '/index';
+    // If something has gone very wrong and Textura cannot find what path to use, try to recover by
+    // using '/' as the requested path
+    if (!$this->path_info) {
+      trigger_error("Path info not set!", E_USER_WARNING);
+      $this->server_params['PATH_INFO'] = '/';
+    }
   }
 
   public static function init() {
     return new self();
+  }
+
+  /**
+   * Returns the value of a specific cookie or null if the cookie is not set.
+   *
+   * @param string $cookie_name
+   * @return string
+   */
+  public function getCookie($cookie_name) {
+    return array_key_exists($cookie_name, $this->cookies) ? $this->cookies[$cookie_name] : null;
   }
 
   /**

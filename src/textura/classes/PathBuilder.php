@@ -63,6 +63,17 @@ class PathBuilder {
     return implode('/', $route);
   }
 
+  /**
+   * Takes a string and makes sure it ends in a specific char. This is useful when building paths.
+   *
+   * @param string $string
+   * @param string $slash_char
+   * @return string
+   */
+  public static function ensureTrailingSlash($string, $slash_char = '/') {
+    return substr($string, strlen($string) -1, 1) == $slash_char ? $string : $string . $slash_char;
+  }
+
   // Returns Texturas "base url", ie the root of all requests passed through the framework
   public static function getTexturaBaseURL() {
     if (!isset(self::$textura_base_url)) {

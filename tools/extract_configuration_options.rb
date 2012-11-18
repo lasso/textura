@@ -2,6 +2,10 @@
 
 =begin
 This script is used to extract what configuration options Textura looks for in different places.
+The script can be run in two different modes:
+1) To just display all used configuration options, run the script without any arguments.
+2) To display all used configuration options and what file they appear in, run the script with
+   the single argument --full.
 Hopefully this will make it easier to document what options are available. :D
 =end
 
@@ -19,14 +23,17 @@ TEXTURA_SRC_TOP_DIR =
 # Create a regexp that finds calls to configuration options
 regexp = /.getConfigurationOption\((.+?)\)/
 
+# Check if filenames should be displayed
+display_files = ARGV.count > 0 && ARGV[0] == '--full'
+
 # Switch working directory to Textura source directory
 Dir.chdir(TEXTURA_SRC_TOP_DIR)
 
 # Get a list of all available PHP files and sort them alphabetically
 files = Dir.glob('**/*.php').sort
 
-# Create an array to hold found configuration options
-found_options = []
+# Create a hold to hold found configuration options
+found_options = {}
 
 # Iterate over all found PHP files
 files.each do |file_path|
@@ -39,12 +46,20 @@ files.each do |file_path|
     # Strip enclosing string chars
     elems.map! { |e| e.to_s[3...-3] }
     # Add new elements (if any)
-    found_options.concat(elems) unless elems.empty?
+    elems.each do |elem|
+      found_options[elem] = [] unless found_options.has_key?(elem)
+      found_options[elem] << file_path
+    end
   end
 end
 
-# Sort found configuration options alphabetically
-found_options.sort!
-
 # Print list of configuration options
-puts found_options.join("\n")
+if display_files
+  keys = found_options.keys.sort
+  longest_key = keys.max { |a, b| a.length <=> b.length }.length
+  keys.each_with_index do |key, idx|
+    puts "#{key.ljust(longest_key)}\t[#{found_options[key].join(', ')}]"
+  end
+else
+  puts found_options.keys.sort.join($/)
+end

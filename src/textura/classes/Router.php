@@ -190,7 +190,7 @@ class Router {
         self::$controller_classes[$controller['class']] = $controller['path'];
         self::$controller_map[$controller['path']] = $controller['class'];
         self::$default_actions[$controller['class']] =
-          array_key_exists('default_path', $controller) ?
+          array_key_exists('default_action', $controller) ?
           $controller['default_action'] :
           'index';
       }

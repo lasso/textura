@@ -39,6 +39,13 @@ abstract class Controller {
     $this->instance_vars = array();
   }
 
+  /**
+   * Clears all instance variables.
+   */
+  public function clearInstanceVars() {
+    $this->instance_vars = array();
+  }
+
   public static function getDefaultAction() {
     return Router::getDefaultAction(self);
   }

@@ -50,6 +50,7 @@ class Router {
     do {
       // Extract current path
       $path = is_null($path) ? rtrim($request->path_info, '/') : dirname($path);
+      if (empty($path)) $path = '/';
       // Check if current path is mapped to any controller.
       if (array_key_exists($path, self::$controller_map)) {
         // Alright, we got a matching controller. Lets initialize it

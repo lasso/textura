@@ -40,13 +40,6 @@ class Request {
     $this->post_params = $_POST;
     $this->server_params = $_SERVER;
     $this->validation_errors = array();
-
-    // If something has gone very wrong and Textura cannot find what path to use, try to recover by
-    // using '/' as the requested path
-    if (!$this->path_info) {
-      trigger_error("Path info not set!", E_USER_WARNING);
-      $this->server_params['PATH_INFO'] = '/';
-    }
   }
 
   public static function init() {

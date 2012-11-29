@@ -1,0 +1,146 @@
+_________________________________________________________________________
+|                                                                        |
+| GENERAL                                                                |
+|________________________________________________________________________|
+
+PHP 5 Class for generating HTML Tags / Elements. The purpose of the library 
+is to provide developers all HTML objects as PHP classes. 
+
+The classes contain PHPDoc comments for extended information about the tag, 
+so resaerch via internet there should be obsolete.  
+
+HTMLBuidler Framework provides easy access to HTML elements and attributes, 
+by providing setters for all attributes. Constants are provided for enum 
+types which has a fixed range of possible values.   
+
+The Render classes generate XHTML 1.0 Strict conform HTML.
+
+Bugtracker: https://bugs.launchpad.net/htmlbuilder
+_________________________________________________________________________
+|                                                                        |
+| PHAR                                                                   |
+|________________________________________________________________________|
+
+If you get blank pages when trying to access a phar web-page, then you 
+probably have Suhosin on your PHP (like in Debian and Ubuntu), and you 
+need to ad this to your php.ini to allow execution of PHAR archives:
+  suhosin.executor.include.whitelist="phar"
+ 
+see http://www.php.net/manual/en/book.phar.php#106590
+__________________________________________________________________________
+|                                                                        |
+| Copyrights                                                             |
+|________________________________________________________________________|
+
+Most of the tag & attribute description are copy and pasted from:
+http://www.w3schools.com which is great reference. Thank you for that!
+
+The HTML Builder library is licenced under GNU LGPL v3 for two reasons:
+1. Beeing a pulic open source tool.
+2. Can be included in to commercial projects.
+
+For more information see http://www.gnu.org/licenses/lgpl.html
+_________________________________________________________________________
+|                                                                        |
+| Requirements                                                           |
+|________________________________________________________________________|
+
+- PHP 5.3
+_________________________________________________________________________
+|                  |                                                     |
+| DIRECTORY / FILE |  PURPOSE                                            |
+|__________________|_____________________________________________________|
+|                  |                                                     |
+| lib/             | Containing the HTMLBuilder library & core files     |
+|__________________|_____________________________________________________|  
+|                  |                                                     |
+| ext/             | Containing extented classes for own custom          |
+|                  | functions, to have an separation from the core      |
+|                  | classes. Example, see:                              |
+|                  | ext/TemplatingEngines/SmartyFunctions.php           |
+|__________________|_____________________________________________________|
+|                  |                                                     |
+| examples/        | Containing some samples how to use the library      |
+|                  | start with index.php                                |
+|__________________|_____________________________________________________|
+|                  |                                                     |
+| test/            | Containing some testing configuration files and     |
+|                  | storage for coming unit tests                       |
+|__________________|_____________________________________________________|     
+|                  |                                                     |
+| build.xml        | Containing some helpers, targets:                   |
+|                  |   phpdoc        -> Generate phpdoc                  |
+|                  |   build         -> Build package                    |
+|                  |   phpmd         -> Checking code via mess detector  |
+|                  |   phpcs         -> Checking code conventions        |
+|__________________|_____________________________________________________|      
+_________________________________________________________________________
+|                                                                        |
+| Not supported (deprecated) HTML tags                                   |
+|________________________________________________________________________|
+
+The IFRAME tag is no longer supported by strict XHTML 1.0, use instead: 
+<object data="mypage.php" type="text/html"></object>
+
+Other deprected tags: 
+           <u>, <s>, <i>, <b>, <tt>, <em>, <strong>, <dfn>, <code>, <samp>, 
+           <kbd>, <var>, <cite>, <big>, <small>, <center>, <dir>, <font>, 
+           <isindex>, <menu>, <basefont>, <strike>, <frames>, <noframes>, 
+           <applet>     
+_________________________________________________________________________
+|                                                                        |
+| Conventions                                                            |
+|________________________________________________________________________|
+
+- No global variables
+- Initalize every variable
+- Method names should tell what it does
+
+___________
+|          |
+|  PHPMD   |
+|__________|
+
+Run codeCheck on CMD: make codeCheck 
+    
+Zend Studio Settings: 
+    1. Goto Window->Preferences->Dynamic Languages->Validators
+    2. Add "External Checker" and choose a name
+    3. Put Localhost Enviroment: /usr/bin/phpmd
+    4. Checker Arguments: %f text /path/to/HTMLBuilder/test/phpmd/phpmd.xml
+    4. Filename extensions: php
+    5. Pattern Rules: 
+        Rule: %f:%n\t%m
+        Type: Error 
+        
+more Info: http://wiki.eclipse.org/DLTK_Validators_User_Guide
+___________
+|          |
+|  PHPCS   |
+|__________| 
+
+1. Install locally:
+    cd /usr/share/php/PHP/CodeSniffer/Standards
+    sudo ln -s /path/to/HTMLBuilder/test/phpcs HTMLBuilder
+
+(or run manually: phpcs --standard=/path/to/HTMLBuilder/ruleset.xml lib/)
+
+2. Run summary report
+    make validateSummary
+
+3. Run detailed report
+    make validate
+    
+Zend Studio Settings: 
+    1. Goto Window->Preferences->Dynamic Languages->Validators
+    2. Add "External Checker" and choose a name
+    3. Put Localhost Enviroment: /usr/bin/phpcs
+    4. Checker Arguments: --standard=HTMLBuilder --report=emacs %f
+    4. Filename extensions: php
+    5. Pattern Rules: 
+        a.  Rule: %f:%n:(.*):.error.-.%m
+            Type: Error 
+        b.  Rule: %f:%n:(.*):.warning.-.%m
+            Type: Warning 
+        
+more Info: http://wiki.eclipse.org/DLTK_Validators_User_Guide

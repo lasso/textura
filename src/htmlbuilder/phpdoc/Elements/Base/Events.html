@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Events</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> Events</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Common element events</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jens Peters &lt;<a href="mailto:jens@history-archiv.net">jens@history-archiv.net</a>&gt;</li>
+				<li><span class="field">link:</span> <a href="http://launchpad.net/htmlbuilder">http://launchpad.net/htmlbuilder</a></li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/lgpl.html">GNU LGPL v3</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_e_jpeters_Projekte_HTMLBuilder_examples_simple.php_63cc16451f98bbc8228ab72f6cbb381a.html">see HOW TO USE</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_me_jpeters_Projekte_HTMLBuilder_examples_debug.php_be3bb7385fad6a56d669875ea8eafc29.html">see HOW TO DEBUG</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Elements---Events.php.html">/Elements/Events.php</a> (line <span class="field"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a33">33</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Base/Attributes.html">Attributes</a>
+					</td>
+					<td>
+											HTML tag attributes base class contains common methods.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onclick" title="details" class="var-name">$onclick</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$ondblclick" title="details" class="var-name">$ondblclick</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onkeydown" title="details" class="var-name">$onkeydown</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onkeypress" title="details" class="var-name">$onkeypress</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onkeyup" title="details" class="var-name">$onkeyup</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onmousedown" title="details" class="var-name">$onmousedown</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onmousemove" title="details" class="var-name">$onmousemove</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onmouseout" title="details" class="var-name">$onmouseout</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onmouseover" title="details" class="var-name">$onmouseover</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onmouseup" title="details" class="var-name">$onmouseup</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOnclick" title="details" class="method-name">getOnclick</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOndblclick" title="details" class="method-name">getOndblclick</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOnkeydown" title="details" class="method-name">getOnkeydown</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOnkeypress" title="details" class="method-name">getOnkeypress</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOnkeyup" title="details" class="method-name">getOnkeyup</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOnmousedown" title="details" class="method-name">getOnmousedown</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOnmousemove" title="details" class="method-name">getOnmousemove</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOnmouseout" title="details" class="method-name">getOnmouseout</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOnmouseover" title="details" class="method-name">getOnmouseover</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getOnmouseup" title="details" class="method-name">getOnmouseup</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOnclick" title="details" class="method-name">setOnclick</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$onclick</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOndblclick" title="details" class="method-name">setOndblclick</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$ondblclick</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOnkeydown" title="details" class="method-name">setOnkeydown</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$onkeydown</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOnkeypress" title="details" class="method-name">setOnkeypress</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$onkeypress</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOnkeyup" title="details" class="method-name">setOnkeyup</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$onkeyup</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOnmousedown" title="details" class="method-name">setOnmousedown</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmousedown</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOnmousemove" title="details" class="method-name">setOnmousemove</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmousemove</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOnmouseout" title="details" class="method-name">setOnmouseout</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmouseout</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOnmouseover" title="details" class="method-name">setOnmouseover</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmouseover</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">$this</span>
+										<a href="#setOnmouseup" title="details" class="method-name">setOnmouseup</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmouseup</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$onclick" id="$onclick"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onclick</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a79">79</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run on a mouse click</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$ondblclick" id="$ondblclick"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$ondblclick</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a85">85</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run on a mouse double-click</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$onkeydown" id="$onkeydown"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onkeydown</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a127">127</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when a key is pressed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$onkeypress" id="$onkeypress"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onkeypress</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a121">121</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when a key is pressed and released</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$onkeyup" id="$onkeyup"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onkeyup</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a133">133</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when a key is released</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$onmousedown" id="$onmousedown"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onmousedown</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a91">91</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse button is pressed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$onmousemove" id="$onmousemove"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onmousemove</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a109">109</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse pointer moves</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$onmouseout" id="$onmouseout"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onmouseout</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a115">115</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse pointer moves out of an element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$onmouseover" id="$onmouseover"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onmouseover</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a103">103</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse pointer moves over an element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$onmouseup" id="$onmouseup"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onmouseup</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a97">97</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse button is released</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetOnclick" id="getOnclick"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOnclick</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a320">320</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run on a mouse click</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOnclick
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOndblclick" id="getOndblclick"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOndblclick</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a330">330</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run on a mouse double-click</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOndblclick
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOnkeydown" id="getOnkeydown"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOnkeydown</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a400">400</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when a key is pressed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOnkeydown
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOnkeypress" id="getOnkeypress"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOnkeypress</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a390">390</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when a key is pressed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOnkeypress
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOnkeyup" id="getOnkeyup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOnkeyup</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a410">410</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when a key is released</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOnkeyup
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOnmousedown" id="getOnmousedown"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOnmousedown</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a340">340</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse button is pressed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOnmousedown
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOnmousemove" id="getOnmousemove"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOnmousemove</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a370">370</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse pointer moves</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOnmousemove
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOnmouseout" id="getOnmouseout"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOnmouseout</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a380">380</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse pointer moves out of an element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOnmouseout
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOnmouseover" id="getOnmouseover"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOnmouseover</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a360">360</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse pointer moves over an element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOnmouseover
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOnmouseup" id="getOnmouseup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOnmouseup</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a350">350</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse button is released</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getOnmouseup
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetOnclick" id="setOnclick"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOnclick</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a143">143</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run on a mouse click</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOnclick
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$onclick</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onclick</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOndblclick" id="setOndblclick"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOndblclick</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a161">161</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run on a mouse double-click</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOndblclick
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$ondblclick</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$ondblclick</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOnkeydown" id="setOnkeydown"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOnkeydown</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a287">287</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when a key is pressed</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOnkeydown
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$onkeydown</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onkeydown</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOnkeypress" id="setOnkeypress"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOnkeypress</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a269">269</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when a key is pressed</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOnkeypress
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$onkeypress</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onkeypress</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOnkeyup" id="setOnkeyup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOnkeyup</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a305">305</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when a key is released</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOnkeyup
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$onkeyup</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onkeyup</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOnmousedown" id="setOnmousedown"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOnmousedown</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a179">179</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse button is pressed</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOnmousedown
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmousedown</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onmousedown</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOnmousemove" id="setOnmousemove"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOnmousemove</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a233">233</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse pointer moves</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOnmousemove
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmousemove</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onmousemove</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOnmouseout" id="setOnmouseout"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOnmouseout</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a251">251</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse pointer moves out of an element</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOnmouseout
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmouseout</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onmouseout</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOnmouseover" id="setOnmouseover"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOnmouseover</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a215">215</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse pointer moves over an element</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOnmouseover
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmouseover</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onmouseover</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOnmouseup" id="setOnmouseup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOnmouseup</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsEvents.php.html#a197">197</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when mouse button is released</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> fluent interface</li>
+				<li><span class="field">throws:</span> Exception if not suppoerted by the element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">$this</span>
+		<span class="method-name">
+			setOnmouseup
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$onmouseup</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onmouseup</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 14 Feb 2012 23:14:49 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+	</p>
+	</div></body>
+</html>

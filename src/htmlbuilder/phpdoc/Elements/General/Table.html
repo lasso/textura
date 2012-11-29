@@ -1,0 +1,1523 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Table</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Table</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The &lt;table&gt; tag defines an HTML table.</p>
+<p class="description"><p>A simple HTML table consists of the table element and one or  more tr, th, and td elements. The tr element defines a table  row, the th element defines a table header, and the td element  defines a table cell. A more complex HTML table may also include  caption, col, colgroup, thead, tfoot, and tbody elements.  <a href="http://www.w3schools.com/tags/tag_table.asp">http://www.w3schools.com/tags/tag_table.asp</a></p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jens Peters &lt;<a href="mailto:jens@history-archiv.net">jens@history-archiv.net</a>&gt;</li>
+				<li><span class="field">link:</span> <a href="http://launchpad.net/htmlbuilder">http://launchpad.net/htmlbuilder</a></li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/lgpl.html">GNU LGPL v3</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_e_jpeters_Projekte_HTMLBuilder_examples_simple.php_63cc16451f98bbc8228ab72f6cbb381a.html">see HOW TO USE</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_me_jpeters_Projekte_HTMLBuilder_examples_debug.php_be3bb7385fad6a56d669875ea8eafc29.html">see HOW TO DEBUG</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Elements---Table---Table.php.html">/Elements/Table/Table.php</a> (line <span class="field"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a47">47</a></span>)
+		</p>
+		
+				
+		<pre><a href="../../Elements/Base/Events.html">Events</a>
+   |
+   --<a href="../../Elements/Base/Attributes.html">Attributes</a>
+      |
+      --<a href="../../Elements/Base/Root.html">Root</a>
+         |
+         --Table</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FRAME_ABOVE" title="details" class="const-name">FRAME_ABOVE</a> = 					<span class="var-type"> &quot;above&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FRAME_BELOW" title="details" class="const-name">FRAME_BELOW</a> = 					<span class="var-type"> &quot;below&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FRAME_BORDER" title="details" class="const-name">FRAME_BORDER</a> = 					<span class="var-type"> &quot;border&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FRAME_BOX" title="details" class="const-name">FRAME_BOX</a> = 					<span class="var-type"> &quot;box&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FRAME_HSIDES" title="details" class="const-name">FRAME_HSIDES</a> = 					<span class="var-type"> &quot;hsides&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FRAME_LHS" title="details" class="const-name">FRAME_LHS</a> = 					<span class="var-type"> &quot;lhs&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FRAME_RHS" title="details" class="const-name">FRAME_RHS</a> = 					<span class="var-type"> &quot;rhs&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FRAME_VIOD" title="details" class="const-name">FRAME_VIOD</a> = 					<span class="var-type"> &quot;void&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FRAME_VSIDES" title="details" class="const-name">FRAME_VSIDES</a> = 					<span class="var-type"> &quot;vsides&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#RULES_ALL" title="details" class="const-name">RULES_ALL</a> = 					<span class="var-type"> &quot;all&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#RULES_COLS" title="details" class="const-name">RULES_COLS</a> = 					<span class="var-type"> &quot;cols&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#RULES_GROUPS" title="details" class="const-name">RULES_GROUPS</a> = 					<span class="var-type"> &quot;groups&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#RULES_NONE" title="details" class="const-name">RULES_NONE</a> = 					<span class="var-type"> &quot;none&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#RULES_ROWS" title="details" class="const-name">RULES_ROWS</a> = 					<span class="var-type"> &quot;rows&quot;</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$border" title="details" class="var-name">$border</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$cellpadding" title="details" class="var-name">$cellpadding</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$cellspacing" title="details" class="var-name">$cellspacing</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$frame" title="details" class="var-name">$frame</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$rules" title="details" class="var-name">$rules</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$summary" title="details" class="var-name">$summary</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$width" title="details" class="var-name">$width</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getBorder" title="details" class="method-name">getBorder</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getCellpadding" title="details" class="method-name">getCellpadding</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getCellspacing" title="details" class="method-name">getCellspacing</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getFrame" title="details" class="method-name">getFrame</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getRules" title="details" class="method-name">getRules</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getSummary" title="details" class="method-name">getSummary</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getWidth" title="details" class="method-name">getWidth</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#initElement" title="details" class="method-name">initElement</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setBorder" title="details" class="method-name">setBorder</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$border</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setCellpadding" title="details" class="method-name">setCellpadding</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$cellpadding</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setCellspacing" title="details" class="method-name">setCellspacing</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$cellspacing</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setFrame" title="details" class="method-name">setFrame</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$frame</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setRules" title="details" class="method-name">setRules</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$rules</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setSummary" title="details" class="method-name">setSummary</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$summary</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setWidth" title="details" class="method-name">setWidth</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$width</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$border" id="$border"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$border</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a81">81</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the width of the borders around a table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$cellpadding" id="$cellpadding"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$cellpadding</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a87">87</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the space between the cell wall and the cell content</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$cellspacing" id="$cellspacing"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$cellspacing</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a94">94</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the space between cells</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$frame" id="$frame"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$frame</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a100">100</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies which parts of the outside borders that should be visible</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$rules" id="$rules"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$rules</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a106">106</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies which parts of the inside borders that should be visible</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$summary" id="$summary"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$summary</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a112">112</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies a summary of the content of a table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$width" id="$width"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$width</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a118">118</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the width of a table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Root.html">Root</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_allowedChildren">Root::$_allowedChildren</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_children">Root::$_children</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_identCounter">Root::$_identCounter</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_isBlock">Root::$_isBlock</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_mandatoryChildren">Root::$_mandatoryChildren</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_tag">Root::$_tag</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$accesskey">Attributes::$accesskey</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$class">Attributes::$class</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$dir">Attributes::$dir</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$id">Attributes::$id</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$lang">Attributes::$lang</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$style">Attributes::$style</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$tabindex">Attributes::$tabindex</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$title">Attributes::$title</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$_innerHTML">Attributes::$_innerHTML</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$_isSelfclosing">Attributes::$_isSelfclosing</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Events.html">Events</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onclick">Events::$onclick</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$ondblclick">Events::$ondblclick</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeydown">Events::$onkeydown</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeypress">Events::$onkeypress</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeyup">Events::$onkeyup</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmousedown">Events::$onmousedown</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmousemove">Events::$onmousemove</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseout">Events::$onmouseout</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseover">Events::$onmouseover</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseup">Events::$onmouseup</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetBorder" id="getBorder"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getBorder</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a232">232</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the width of the borders around a table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getBorder
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetCellpadding" id="getCellpadding"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getCellpadding</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a242">242</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the space between the cell wall and the cell content</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getCellpadding
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetCellspacing" id="getCellspacing"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getCellspacing</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a252">252</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the space between cells</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getCellspacing
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFrame" id="getFrame"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFrame</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a262">262</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies which parts of the outside borders that should be visible</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getFrame
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRules" id="getRules"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getRules</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a272">272</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies which parts of the inside borders that should be visible</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getRules
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSummary" id="getSummary"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSummary</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a282">282</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies a summary of the content of a table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getSummary
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetWidth" id="getWidth"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getWidth</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a292">292</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the width of a table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getWidth
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodinitElement" id="initElement"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">initElement</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a120">120</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			initElement
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Elements/Base/Root.html#methodinitElement">Root::initElement()</a></dt>
+						<dd>Has to be implemented to set allowed chilredn an mandatory ones</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetBorder" id="setBorder"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setBorder</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a137">137</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the width of the borders around a table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBorder
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$border</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$border</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCellpadding" id="setCellpadding"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setCellpadding</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a148">148</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the space between the cell wall and the cell content</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setCellpadding
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$cellpadding</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$cellpadding</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCellspacing" id="setCellspacing"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setCellspacing</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a159">159</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the space between cells</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setCellspacing
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$cellspacing</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$cellspacing</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetFrame" id="setFrame"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setFrame</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a170">170</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies which parts of the outside borders that should be visible</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setFrame
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$frame</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$frame</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRules" id="setRules"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setRules</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a190">190</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies which parts of the inside borders that should be visible</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRules
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$rules</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$rules</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSummary" id="setSummary"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setSummary</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a210">210</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies a summary of the content of a table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setSummary
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$summary</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$summary</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetWidth" id="setWidth"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setWidth</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a221">221</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the width of a table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setWidth
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$width</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$width</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Root.html">Root</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#method__construct">Root::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodbuild">Root::build()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodcountChildren">Root::countChildren()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methoddebug">Root::debug()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetAttributeNames">Root::getAttributeNames()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetAttributes">Root::getAttributes()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetChildren">Root::getChildren()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetTag">Root::getTag()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodhasChildren">Root::hasChildren()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodinitElement">Root::initElement()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodinsertChild">Root::insertChild()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodinsertChildren">Root::insertChildren()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodisBlock">Root::isBlock()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#method__toArray">Root::__toArray()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#method__toString">Root::__toString()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#method__construct">Attributes::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgenerateAttributeString">Attributes::generateAttributeString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetAccesskey">Attributes::getAccesskey()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetClass">Attributes::getClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetDir">Attributes::getDir()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetId">Attributes::getId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetInnerHTML">Attributes::getInnerHTML()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetLang">Attributes::getLang()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetStyle">Attributes::getStyle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetTabindex">Attributes::getTabindex()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetTitle">Attributes::getTitle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetAccesskey">Attributes::setAccesskey()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetClass">Attributes::setClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetDir">Attributes::setDir()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetId">Attributes::setId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetInnerHTML">Attributes::setInnerHTML()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetLang">Attributes::setLang()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetStyle">Attributes::setStyle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetTabindex">Attributes::setTabindex()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetTitle">Attributes::setTitle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodvalidateSetter">Attributes::validateSetter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#method_getClassConstants">Attributes::_getClassConstants()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Events.html">Events</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnclick">Events::getOnclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOndblclick">Events::getOndblclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeydown">Events::getOnkeydown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeypress">Events::getOnkeypress()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeyup">Events::getOnkeyup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmousedown">Events::getOnmousedown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmousemove">Events::getOnmousemove()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseout">Events::getOnmouseout()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseover">Events::getOnmouseover()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseup">Events::getOnmouseup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnclick">Events::setOnclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOndblclick">Events::setOndblclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeydown">Events::setOnkeydown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeypress">Events::setOnkeypress()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeyup">Events::setOnkeyup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmousedown">Events::setOnmousedown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmousemove">Events::setOnmousemove()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseout">Events::setOnmouseout()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseover">Events::setOnmouseover()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseup">Events::setOnmouseup()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constFRAME_ABOVE" id="FRAME_ABOVE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FRAME_ABOVE</span>
+			 = <span class="const-default"> &quot;above&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a51">51</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFRAME_BELOW" id="FRAME_BELOW"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FRAME_BELOW</span>
+			 = <span class="const-default"> &quot;below&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a53">53</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFRAME_BORDER" id="FRAME_BORDER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FRAME_BORDER</span>
+			 = <span class="const-default"> &quot;border&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a65">65</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFRAME_BOX" id="FRAME_BOX"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FRAME_BOX</span>
+			 = <span class="const-default"> &quot;box&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a63">63</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFRAME_HSIDES" id="FRAME_HSIDES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FRAME_HSIDES</span>
+			 = <span class="const-default"> &quot;hsides&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a55">55</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFRAME_LHS" id="FRAME_LHS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FRAME_LHS</span>
+			 = <span class="const-default"> &quot;lhs&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a57">57</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFRAME_RHS" id="FRAME_RHS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FRAME_RHS</span>
+			 = <span class="const-default"> &quot;rhs&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a59">59</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFRAME_VIOD" id="FRAME_VIOD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FRAME_VIOD</span>
+			 = <span class="const-default"> &quot;void&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a49">49</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFRAME_VSIDES" id="FRAME_VSIDES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FRAME_VSIDES</span>
+			 = <span class="const-default"> &quot;vsides&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a61">61</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constRULES_ALL" id="RULES_ALL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">RULES_ALL</span>
+			 = <span class="const-default"> &quot;all&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a75">75</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constRULES_COLS" id="RULES_COLS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">RULES_COLS</span>
+			 = <span class="const-default"> &quot;cols&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a73">73</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constRULES_GROUPS" id="RULES_GROUPS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">RULES_GROUPS</span>
+			 = <span class="const-default"> &quot;groups&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a69">69</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constRULES_NONE" id="RULES_NONE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">RULES_NONE</span>
+			 = <span class="const-default"> &quot;none&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a67">67</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constRULES_ROWS" id="RULES_ROWS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">RULES_ROWS</span>
+			 = <span class="const-default"> &quot;rows&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsTableTable.php.html#a71">71</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+							<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Root.html">Root</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Root.html#constBLOCK">Root::BLOCK</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Root.html#constINLINE">Root::INLINE</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Attributes.html#constDIR_LTR">Attributes::DIR_LTR</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Attributes.html#constDIR_RTL">Attributes::DIR_RTL</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 14 Feb 2012 23:16:03 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,1754 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Link</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Link</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The &lt;link&gt; tag defines the relationship between a document and an external resource.</p>
+<p class="description"><p>The &lt;link&gt; tag is most used to link to style sheets. <a href="http://www.w3schools.com/tags/tag_link.asp">http://www.w3schools.com/tags/tag_link.asp</a></p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jens Peters &lt;<a href="mailto:jens@history-archiv.net">jens@history-archiv.net</a>&gt;</li>
+				<li><span class="field">link:</span> <a href="http://launchpad.net/htmlbuilder">http://launchpad.net/htmlbuilder</a></li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/lgpl.html">GNU LGPL v3</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_e_jpeters_Projekte_HTMLBuilder_examples_simple.php_63cc16451f98bbc8228ab72f6cbb381a.html">see HOW TO USE</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_me_jpeters_Projekte_HTMLBuilder_examples_debug.php_be3bb7385fad6a56d669875ea8eafc29.html">see HOW TO DEBUG</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Elements---Page---Link.php.html">/Elements/Page/Link.php</a> (line <span class="field"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a38">38</a></span>)
+		</p>
+		
+				
+		<pre><a href="../../Elements/Base/Events.html">Events</a>
+   |
+   --<a href="../../Elements/Base/Attributes.html">Attributes</a>
+      |
+      --<a href="../../Elements/Base/Root.html">Root</a>
+         |
+         --Link</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEDIA_ALL" title="details" class="const-name">MEDIA_ALL</a> = 					<span class="var-type"> &quot;all&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEDIA_AURAL" title="details" class="const-name">MEDIA_AURAL</a> = 					<span class="var-type"> &quot;aural&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEDIA_BRAILLE" title="details" class="const-name">MEDIA_BRAILLE</a> = 					<span class="var-type"> &quot;braille&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEDIA_HANDHELD" title="details" class="const-name">MEDIA_HANDHELD</a> = 					<span class="var-type"> &quot;handheld&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEDIA_PRINT" title="details" class="const-name">MEDIA_PRINT</a> = 					<span class="var-type"> &quot;print&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEDIA_PROJECTION" title="details" class="const-name">MEDIA_PROJECTION</a> = 					<span class="var-type"> &quot;projection&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEDIA_SCREEN" title="details" class="const-name">MEDIA_SCREEN</a> = 					<span class="var-type"> &quot;screen&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEDIA_TTY" title="details" class="const-name">MEDIA_TTY</a> = 					<span class="var-type"> &quot;tty&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEDIA_TV" title="details" class="const-name">MEDIA_TV</a> = 					<span class="var-type"> &quot;tv&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_ALTERNATE" title="details" class="const-name">REL_ALTERNATE</a> = 					<span class="var-type"> &quot;alternate&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_APPENDIX" title="details" class="const-name">REL_APPENDIX</a> = 					<span class="var-type"> &quot;appendix&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_BOOKMARK" title="details" class="const-name">REL_BOOKMARK</a> = 					<span class="var-type"> &quot;bookmark&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_CHAPTER" title="details" class="const-name">REL_CHAPTER</a> = 					<span class="var-type"> &quot;chapter&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_CONTENTS" title="details" class="const-name">REL_CONTENTS</a> = 					<span class="var-type"> &quot;contents&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_COPYRIGHT" title="details" class="const-name">REL_COPYRIGHT</a> = 					<span class="var-type"> &quot;copyright&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_GLOSSARY" title="details" class="const-name">REL_GLOSSARY</a> = 					<span class="var-type"> &quot;glossary&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_HELP" title="details" class="const-name">REL_HELP</a> = 					<span class="var-type"> &quot;help&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_HOME" title="details" class="const-name">REL_HOME</a> = 					<span class="var-type"> &quot;home&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_INDEX" title="details" class="const-name">REL_INDEX</a> = 					<span class="var-type"> &quot;index&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_NEXT" title="details" class="const-name">REL_NEXT</a> = 					<span class="var-type"> &quot;next&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_PREV" title="details" class="const-name">REL_PREV</a> = 					<span class="var-type"> &quot;prev&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_SECTION" title="details" class="const-name">REL_SECTION</a> = 					<span class="var-type"> &quot;section&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_START" title="details" class="const-name">REL_START</a> = 					<span class="var-type"> &quot;start&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_STYLESHEET" title="details" class="const-name">REL_STYLESHEET</a> = 					<span class="var-type"> &quot;stylesheet&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REL_SUBSECTIONS" title="details" class="const-name">REL_SUBSECTIONS</a> = 					<span class="var-type"> &quot;subsection&quot;</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$charset" title="details" class="var-name">$charset</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$href" title="details" class="var-name">$href</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$hreflang" title="details" class="var-name">$hreflang</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$media" title="details" class="var-name">$media</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$rel" title="details" class="var-name">$rel</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$rev" title="details" class="var-name">$rev</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$type" title="details" class="var-name">$type</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getCharset" title="details" class="method-name">getCharset</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getHref" title="details" class="method-name">getHref</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getHreflang" title="details" class="method-name">getHreflang</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getMedia" title="details" class="method-name">getMedia</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getRel" title="details" class="method-name">getRel</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getRev" title="details" class="method-name">getRev</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getType" title="details" class="method-name">getType</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#initElement" title="details" class="method-name">initElement</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setCharset" title="details" class="method-name">setCharset</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$charset</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setHref" title="details" class="method-name">setHref</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setHreflang" title="details" class="method-name">setHreflang</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$hreflang</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setMedia" title="details" class="method-name">setMedia</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$media</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setRel" title="details" class="method-name">setRel</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$rel</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setRev" title="details" class="method-name">setRev</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$rev</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setType" title="details" class="method-name">setType</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$charset" id="$charset"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$charset</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a94">94</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the character encoding of the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$href" id="$href"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$href</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a100">100</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the location of the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$hreflang" id="$hreflang"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$hreflang</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a106">106</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the language of the text in the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$media" id="$media"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$media</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a112">112</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies on what device the linked document will be displayed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$rel" id="$rel"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$rel</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a118">118</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the relationship between the current document and the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$rev" id="$rev"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$rev</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a124">124</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the relationship between the linked document and the current document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$type" id="$type"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$type</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a130">130</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the MIME type of the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Root.html">Root</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_allowedChildren">Root::$_allowedChildren</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_children">Root::$_children</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_identCounter">Root::$_identCounter</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_isBlock">Root::$_isBlock</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_mandatoryChildren">Root::$_mandatoryChildren</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_tag">Root::$_tag</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$accesskey">Attributes::$accesskey</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$class">Attributes::$class</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$dir">Attributes::$dir</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$id">Attributes::$id</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$lang">Attributes::$lang</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$style">Attributes::$style</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$tabindex">Attributes::$tabindex</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$title">Attributes::$title</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$_innerHTML">Attributes::$_innerHTML</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$_isSelfclosing">Attributes::$_isSelfclosing</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Events.html">Events</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onclick">Events::$onclick</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$ondblclick">Events::$ondblclick</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeydown">Events::$onkeydown</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeypress">Events::$onkeypress</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeyup">Events::$onkeyup</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmousedown">Events::$onmousedown</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmousemove">Events::$onmousemove</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseout">Events::$onmouseout</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseover">Events::$onmouseover</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseup">Events::$onmouseup</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetCharset" id="getCharset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getCharset</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a248">248</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the character encoding of the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getCharset
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetHref" id="getHref"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getHref</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a258">258</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the location of the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getHref
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetHreflang" id="getHreflang"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getHreflang</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a268">268</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the language of the text in the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getHreflang
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMedia" id="getMedia"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getMedia</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a278">278</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies on what device the linked document will be displayed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getMedia
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRel" id="getRel"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getRel</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a288">288</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the relationship between the current document and the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getRel
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRev" id="getRev"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getRev</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a298">298</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the relationship between the linked document and the current document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getRev
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetType" id="getType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getType</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a308">308</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the MIME type of the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getType
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodinitElement" id="initElement"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">initElement</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a132">132</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			initElement
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Elements/Base/Root.html#methodinitElement">Root::initElement()</a></dt>
+						<dd>Has to be implemented to set allowed chilredn an mandatory ones</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetCharset" id="setCharset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setCharset</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a142">142</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the character encoding of the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setCharset
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$charset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$charset</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetHref" id="setHref"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setHref</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a153">153</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the location of the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setHref
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$href</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetHreflang" id="setHreflang"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setHreflang</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a167">167</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the language of the text in the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setHreflang
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$hreflang</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$hreflang</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMedia" id="setMedia"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setMedia</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a178">178</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies on what device the linked document will be displayed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMedia
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$media</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$media</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRel" id="setRel"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setRel</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a198">198</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the relationship between the current document and the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRel
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$rel</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$rel</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRev" id="setRev"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setRev</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a218">218</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the relationship between the linked document and the current document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRev
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$rev</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$rev</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetType" id="setType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setType</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a237">237</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the MIME type of the linked document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setType
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Root.html">Root</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#method__construct">Root::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodbuild">Root::build()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodcountChildren">Root::countChildren()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methoddebug">Root::debug()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetAttributeNames">Root::getAttributeNames()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetAttributes">Root::getAttributes()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetChildren">Root::getChildren()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetTag">Root::getTag()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodhasChildren">Root::hasChildren()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodinitElement">Root::initElement()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodinsertChild">Root::insertChild()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodinsertChildren">Root::insertChildren()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodisBlock">Root::isBlock()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#method__toArray">Root::__toArray()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#method__toString">Root::__toString()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#method__construct">Attributes::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgenerateAttributeString">Attributes::generateAttributeString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetAccesskey">Attributes::getAccesskey()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetClass">Attributes::getClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetDir">Attributes::getDir()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetId">Attributes::getId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetInnerHTML">Attributes::getInnerHTML()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetLang">Attributes::getLang()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetStyle">Attributes::getStyle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetTabindex">Attributes::getTabindex()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetTitle">Attributes::getTitle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetAccesskey">Attributes::setAccesskey()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetClass">Attributes::setClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetDir">Attributes::setDir()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetId">Attributes::setId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetInnerHTML">Attributes::setInnerHTML()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetLang">Attributes::setLang()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetStyle">Attributes::setStyle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetTabindex">Attributes::setTabindex()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetTitle">Attributes::setTitle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodvalidateSetter">Attributes::validateSetter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#method_getClassConstants">Attributes::_getClassConstants()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Events.html">Events</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnclick">Events::getOnclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOndblclick">Events::getOndblclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeydown">Events::getOnkeydown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeypress">Events::getOnkeypress()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeyup">Events::getOnkeyup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmousedown">Events::getOnmousedown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmousemove">Events::getOnmousemove()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseout">Events::getOnmouseout()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseover">Events::getOnmouseover()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseup">Events::getOnmouseup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnclick">Events::setOnclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOndblclick">Events::setOndblclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeydown">Events::setOnkeydown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeypress">Events::setOnkeypress()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeyup">Events::setOnkeyup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmousedown">Events::setOnmousedown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmousemove">Events::setOnmousemove()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseout">Events::setOnmouseout()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseover">Events::setOnmouseover()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseup">Events::setOnmouseup()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constMEDIA_ALL" id="MEDIA_ALL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEDIA_ALL</span>
+			 = <span class="const-default"> &quot;all&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a56">56</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEDIA_AURAL" id="MEDIA_AURAL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEDIA_AURAL</span>
+			 = <span class="const-default"> &quot;aural&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a54">54</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEDIA_BRAILLE" id="MEDIA_BRAILLE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEDIA_BRAILLE</span>
+			 = <span class="const-default"> &quot;braille&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a52">52</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEDIA_HANDHELD" id="MEDIA_HANDHELD"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEDIA_HANDHELD</span>
+			 = <span class="const-default"> &quot;handheld&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a48">48</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEDIA_PRINT" id="MEDIA_PRINT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEDIA_PRINT</span>
+			 = <span class="const-default"> &quot;print&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a50">50</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEDIA_PROJECTION" id="MEDIA_PROJECTION"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEDIA_PROJECTION</span>
+			 = <span class="const-default"> &quot;projection&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a46">46</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEDIA_SCREEN" id="MEDIA_SCREEN"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEDIA_SCREEN</span>
+			 = <span class="const-default"> &quot;screen&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a40">40</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEDIA_TTY" id="MEDIA_TTY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEDIA_TTY</span>
+			 = <span class="const-default"> &quot;tty&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a42">42</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEDIA_TV" id="MEDIA_TV"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEDIA_TV</span>
+			 = <span class="const-default"> &quot;tv&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a44">44</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_ALTERNATE" id="REL_ALTERNATE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_ALTERNATE</span>
+			 = <span class="const-default"> &quot;alternate&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a58">58</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_APPENDIX" id="REL_APPENDIX"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_APPENDIX</span>
+			 = <span class="const-default"> &quot;appendix&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a60">60</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_BOOKMARK" id="REL_BOOKMARK"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_BOOKMARK</span>
+			 = <span class="const-default"> &quot;bookmark&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a62">62</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_CHAPTER" id="REL_CHAPTER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_CHAPTER</span>
+			 = <span class="const-default"> &quot;chapter&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a64">64</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_CONTENTS" id="REL_CONTENTS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_CONTENTS</span>
+			 = <span class="const-default"> &quot;contents&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a66">66</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_COPYRIGHT" id="REL_COPYRIGHT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_COPYRIGHT</span>
+			 = <span class="const-default"> &quot;copyright&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a68">68</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_GLOSSARY" id="REL_GLOSSARY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_GLOSSARY</span>
+			 = <span class="const-default"> &quot;glossary&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a70">70</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_HELP" id="REL_HELP"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_HELP</span>
+			 = <span class="const-default"> &quot;help&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a72">72</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_HOME" id="REL_HOME"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_HOME</span>
+			 = <span class="const-default"> &quot;home&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a74">74</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_INDEX" id="REL_INDEX"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_INDEX</span>
+			 = <span class="const-default"> &quot;index&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a76">76</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_NEXT" id="REL_NEXT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_NEXT</span>
+			 = <span class="const-default"> &quot;next&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a78">78</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_PREV" id="REL_PREV"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_PREV</span>
+			 = <span class="const-default"> &quot;prev&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a80">80</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_SECTION" id="REL_SECTION"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_SECTION</span>
+			 = <span class="const-default"> &quot;section&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a82">82</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_START" id="REL_START"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_START</span>
+			 = <span class="const-default"> &quot;start&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a84">84</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_STYLESHEET" id="REL_STYLESHEET"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_STYLESHEET</span>
+			 = <span class="const-default"> &quot;stylesheet&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a86">86</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constREL_SUBSECTIONS" id="REL_SUBSECTIONS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REL_SUBSECTIONS</span>
+			 = <span class="const-default"> &quot;subsection&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsPageLink.php.html#a88">88</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+							<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Root.html">Root</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Root.html#constBLOCK">Root::BLOCK</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Root.html#constINLINE">Root::INLINE</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Attributes.html#constDIR_LTR">Attributes::DIR_LTR</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Attributes.html#constDIR_RTL">Attributes::DIR_RTL</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 14 Feb 2012 23:15:23 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+	</p>
+	</div></body>
+</html>

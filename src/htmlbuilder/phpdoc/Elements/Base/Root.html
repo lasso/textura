@@ -1,0 +1,1944 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Root</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> Root</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HTML Base base class provide common functions</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jens Peters &lt;<a href="mailto:jens@history-archiv.net">jens@history-archiv.net</a>&gt;</li>
+				<li><span class="field">link:</span> <a href="http://launchpad.net/htmlbuilder">http://launchpad.net/htmlbuilder</a></li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/lgpl.html">GNU LGPL v3</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_e_jpeters_Projekte_HTMLBuilder_examples_simple.php_63cc16451f98bbc8228ab72f6cbb381a.html">see HOW TO USE</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_me_jpeters_Projekte_HTMLBuilder_examples_debug.php_be3bb7385fad6a56d669875ea8eafc29.html">see HOW TO DEBUG</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Elements---Root.php.html">/Elements/Root.php</a> (line <span class="field"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a34">34</a></span>)
+		</p>
+		
+				
+		<pre><a href="../../Elements/Base/Events.html">Events</a>
+   |
+   --<a href="../../Elements/Base/Attributes.html">Attributes</a>
+      |
+      --Root</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Headline/H1.html">H1</a>
+					</td>
+					<td>
+											The &lt;h1&gt; to &lt;h6&gt; tags are used to define HTML headings.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Script.html">Script</a>
+					</td>
+					<td>
+											The &lt;script&gt; tag is used to define a client-side script, such as a JavaScript.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Body.html">Body</a>
+					</td>
+					<td>
+											The body element defines the document's body.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Link.html">Link</a>
+					</td>
+					<td>
+											The &lt;link&gt; tag defines the relationship between a document and an external resource.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Head.html">Head</a>
+					</td>
+					<td>
+											The head element is a container for all the head elements.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Html.html">Html</a>
+					</td>
+					<td>
+											The &lt;html&gt; tag tells the browser that this is an HTML document.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Base.html">Base</a>
+					</td>
+					<td>
+											The &lt;base&gt; tag specifies a default address or a default target for all links on a page.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Meta.html">Meta</a>
+					</td>
+					<td>
+											Metadata is information about data.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Title.html">Title</a>
+					</td>
+					<td>
+											The &lt;title&gt; tag defines the title of the document.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Style.html">Style</a>
+					</td>
+					<td>
+											The &lt;style&gt; tag is used to define style information for an HTML document.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Address.html">Address</a>
+					</td>
+					<td>
+											The &lt;address&gt; tag defines the contact information for the author or owner of a document.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Del.html">Del</a>
+					</td>
+					<td>
+											The &lt;del&gt; tag defines text that has been deleted from a document.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Sup.html">Sup</a>
+					</td>
+					<td>
+											The &lt;sup&gt; tag defines superscript text.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Acronym.html">Acronym</a>
+					</td>
+					<td>
+											The &lt;acronym&gt; tag defines an acronym.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/P.html">P</a>
+					</td>
+					<td>
+											The &lt;p&gt; tag defines a paragraph.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Abbr.html">Abbr</a>
+					</td>
+					<td>
+											The &lt;abbr&gt; tag describes an abbreviated phrase.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Bdo.html">Bdo</a>
+					</td>
+					<td>
+											bdo stand for bidirectional override.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Sub.html">Sub</a>
+					</td>
+					<td>
+											The &lt;sub&gt; tag defines subscript text. Subscript text appears half a character below the baseline.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Q.html">Q</a>
+					</td>
+					<td>
+											The &lt;q&gt; tag defines a short quotation.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Blockquote.html">Blockquote</a>
+					</td>
+					<td>
+											The &lt;blockquote&gt; tag defines a long quotation.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Lists/Ol.html">Ol</a>
+					</td>
+					<td>
+											The &amp;lt;ol&amp;gt; tag is used to create an ordered list.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Lists/Li.html">Li</a>
+					</td>
+					<td>
+											The &amp;lt;li&amp;gt; tag defines a list item.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Lists/Ul.html">Ul</a>
+					</td>
+					<td>
+											The &amp;lt;ul&amp;gt; tag defines an unordered list (a bulleted list).
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Lists/Dd.html">Dd</a>
+					</td>
+					<td>
+											The &lt;dd&gt; tag is used to describe an item in a definition list.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Lists/Dl.html">Dl</a>
+					</td>
+					<td>
+											The &lt;dl&gt; tag defines a definition list.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Lists/Dt.html">Dt</a>
+					</td>
+					<td>
+											The &lt;dt&gt; tag defines an item in a definition list.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Col.html">Col</a>
+					</td>
+					<td>
+											The &lt;col&gt; tag defines attribute values for one or more columns in a table.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Caption.html">Caption</a>
+					</td>
+					<td>
+											The &lt;caption&gt; tag defines a table caption.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Table.html">Table</a>
+					</td>
+					<td>
+											The &lt;table&gt; tag defines an HTML table.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/RootRow.html">RootRow</a>
+					</td>
+					<td>
+											Common row attributes
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Form/Label.html">Label</a>
+					</td>
+					<td>
+											The &lt;label&gt; tag defines a label for an input element.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Form/RootForm.html">RootForm</a>
+					</td>
+					<td>
+											Common Form Attributes
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Optgroup.html">Optgroup</a>
+					</td>
+					<td>
+											The &lt;optgroup&gt; tag is used to group together related options in a select list.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Form/Option.html">Option</a>
+					</td>
+					<td>
+											The &lt;option&gt; tag defines an option in a select list.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Object.html">Object</a>
+					</td>
+					<td>
+											The &lt;object&gt; tag is used to include objects such as images, audio, videos, Java applets, ActiveX, PDF, and Flash.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Param.html">Param</a>
+					</td>
+					<td>
+											The &lt;param&gt; tag is used to define parameters or variables for an object or applet element.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Div.html">Div</a>
+					</td>
+					<td>
+											The &lt;div&gt; tag defines a division or a section in an HTML document.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Hr.html">Hr</a>
+					</td>
+					<td>
+											The &lt;hr&gt; tag creates a horizontal line in an HTML page.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Pre.html">Pre</a>
+					</td>
+					<td>
+											The &amp;lt;pre&amp;gt; tag defines preformatted text.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Img.html">Img</a>
+					</td>
+					<td>
+											The &lt;img&gt; tag embeds an image in an HTML page.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Fieldset/Fieldset.html">Fieldset</a>
+					</td>
+					<td>
+											The &lt;fieldset&gt; tag is used to logically group together elements in a form.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Map.html">Map</a>
+					</td>
+					<td>
+											The &lt;map&gt; tag is used to define a client-side image-map.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Noscript.html">Noscript</a>
+					</td>
+					<td>
+											The &lt;noscript&gt; tag is used to provide an alternate content for users  that have disabled scripts in their browser or have a browser that  doesn’t support client-side scripting.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/A.html">A</a>
+					</td>
+					<td>
+											The &lt;a&gt; tag defines an anchor.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Span.html">Span</a>
+					</td>
+					<td>
+											The &lt;span&gt; tag is used to group inline-elements in a document.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Area.html">Area</a>
+					</td>
+					<td>
+											The &lt;area&gt; tag defines an area inside an image-map (an image-map is an image with clickable areas).
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/General/Br.html">Br</a>
+					</td>
+					<td>
+											The <br /> tag inserts a single line break.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Elements/Fieldset/Legend.html">Legend</a>
+					</td>
+					<td>
+											The &lt;legend&gt; tag defines a caption for the fieldset element.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BLOCK" title="details" class="const-name">BLOCK</a> = 					<span class="var-type"> &quot;block&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INLINE" title="details" class="const-name">INLINE</a> = 					<span class="var-type"> &quot;inline&quot;</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																												<div class="var-title">
+					<img src="../../media/images/StaticVariable.png" alt=" " />
+					static <span class="var-type">int</span>
+					<a href="#$_identCounter" title="details" class="var-name">$_identCounter</a>
+				</div>
+																																												<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">false|array</span>
+					<a href="#$_allowedChildren" title="details" class="var-name">$_allowedChildren</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">SplFixedArray</span>
+					<a href="#$_children" title="details" class="var-name">$_children</a>
+				</div>
+																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_isBlock" title="details" class="var-name">$_isBlock</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_mandatoryChildren" title="details" class="var-name">$_mandatoryChildren</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_tag" title="details" class="var-name">$_tag</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Root</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$innerHTML</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$tagId</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#build" title="details" class="method-name">build</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#countChildren" title="details" class="method-name">countChildren</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#debug" title="details" class="method-name">debug</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#getAttributeNames" title="details" class="method-name">getAttributeNames</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#getAttributes" title="details" class="method-name">getAttributes</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getChildren" title="details" class="method-name">getChildren</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getTag" title="details" class="method-name">getTag</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#hasChildren" title="details" class="method-name">hasChildren</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#initElement" title="details" class="method-name">initElement</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#insertChild" title="details" class="method-name">insertChild</a>
+											(<span class="var-type"><a href="../../Elements/Base/Root.html">Root</a></span>&nbsp;<span class="var-name">$node</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#insertChildren" title="details" class="method-name">insertChildren</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#isBlock" title="details" class="method-name">isBlock</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#__toArray" title="details" class="method-name">__toArray</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#__toString" title="details" class="method-name">__toString</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_identCounter" id="$_identCounter"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/StaticVariable.png" />
+		<span class="var-title">
+			static <span class="var-type">int</span>
+			<span class="var-name">$_identCounter</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a83">83</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Counter for html string ident</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+
+<a name="var$_allowedChildren" id="$_allowedChildren"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">false|array</span>
+			<span class="var-name">$_allowedChildren</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a71">71</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allowed children types to insert</p>
+<p class="description"><p>if no restriction the value is false</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_children" id="$_children"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">SplFixedArray</span>
+			<span class="var-name">$_children</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a64">64</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">List of children</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_isBlock" id="$_isBlock"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_isBlock</span>
+			 = <span class="var-default"> true</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a58">58</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Block or inline element?</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_mandatoryChildren" id="$_mandatoryChildren"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_mandatoryChildren</span>
+			 = <span class="var-default">array ()</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a77">77</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Which tag has to be inserted as child</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_tag" id="$_tag"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_tag</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a52">52</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The tag name based an the classname</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$accesskey">Attributes::$accesskey</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$class">Attributes::$class</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$dir">Attributes::$dir</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$id">Attributes::$id</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$lang">Attributes::$lang</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$style">Attributes::$style</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$tabindex">Attributes::$tabindex</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$title">Attributes::$title</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$_innerHTML">Attributes::$_innerHTML</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$_isSelfclosing">Attributes::$_isSelfclosing</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Events.html">Events</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onclick">Events::$onclick</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$ondblclick">Events::$ondblclick</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeydown">Events::$onkeydown</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeypress">Events::$onkeypress</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeyup">Events::$onkeyup</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmousedown">Events::$onmousedown</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmousemove">Events::$onmousemove</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseout">Events::$onmouseout</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseover">Events::$onmouseover</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseup">Events::$onmouseup</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a97">97</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Root</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$innerHTML</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$tagId</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$innerHTML</span><span class="var-description">: (optional) the elements innerHTML</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tagId</span><span class="var-description">: (optional) the tag attribute id</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Elements/Base/Attributes.html#method__construct">Attributes::__construct()</a></dt>
+						<dd>Init some validation</dd>
+					</dl>
+			
+	</div>
+<a name="methodbuild" id="build"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">build</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a112">112</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Build html string</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Exception if mandatory childrens are missing</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			build
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcountChildren" id="countChildren"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">countChildren</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a293">293</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returning the number of children</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> no of children</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			countChildren
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddebug" id="debug"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">debug</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a386">386</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Function can be used for debugging</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> node properties</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_me_jpeters_Projekte_HTMLBuilder_examples_debug.php_be3bb7385fad6a56d669875ea8eafc29.html">see HOW TO USE</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			debug
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetAttributeNames" id="getAttributeNames"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAttributeNames</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a337">337</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAttributeNames
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetAttributes" id="getAttributes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAttributes</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a325">325</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAttributes
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetChildren" id="getChildren"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getChildren</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a273">273</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Getter for children</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getChildren
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTag" id="getTag"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getTag</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a313">313</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returning html tag</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getTag
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhasChildren" id="hasChildren"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">hasChildren</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a283">283</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check if the node has children</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			hasChildren
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodinitElement" id="initElement"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">initElement</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a88">88</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Has to be implemented to set allowed chilredn an mandatory ones</p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			initElement
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Elements/Headline/H1.html#methodinitElement">H1::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Script.html#methodinitElement">Script::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Body.html#methodinitElement">Body::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Link.html#methodinitElement">Link::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Head.html#methodinitElement">Head::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Html.html#methodinitElement">Html::initElement()</a>
+								: Constructor
+							</li>
+					<li>
+				<a href="../../Elements/General/Base.html#methodinitElement">Base::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Meta.html#methodinitElement">Meta::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Title.html#methodinitElement">Title::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Style.html#methodinitElement">Style::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Address.html#methodinitElement">Address::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Del.html#methodinitElement">Del::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Ins.html#methodinitElement">Ins::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Sup.html#methodinitElement">Sup::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Acronym.html#methodinitElement">Acronym::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/P.html#methodinitElement">P::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Abbr.html#methodinitElement">Abbr::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Bdo.html#methodinitElement">Bdo::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Sub.html#methodinitElement">Sub::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Q.html#methodinitElement">Q::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Blockquote.html#methodinitElement">Blockquote::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Lists/Ol.html#methodinitElement">Ol::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Lists/Li.html#methodinitElement">Li::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Lists/Ul.html#methodinitElement">Ul::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Lists/Dd.html#methodinitElement">Dd::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Lists/Dl.html#methodinitElement">Dl::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Lists/Dt.html#methodinitElement">Dt::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Caption.html#methodinitElement">Caption::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Table.html#methodinitElement">Table::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Colgroup.html#methodinitElement">Colgroup::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/THead.html#methodinitElement">THead::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Tr.html#methodinitElement">Tr::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Tfoot.html#methodinitElement">Tfoot::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Th.html#methodinitElement">Th::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Td.html#methodinitElement">Td::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Tbody.html#methodinitElement">Tbody::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Form/Label.html#methodinitElement">Label::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Form/Select.html#methodinitElement">Select::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Form/Form.html#methodinitElement">Form::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Form/Input.html#methodinitElement">Input::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Form/Textarea.html#methodinitElement">Textarea::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Button.html#methodinitElement">Button::initElement()</a>
+								: (non-PHPdoc)
+							</li>
+					<li>
+				<a href="../../Elements/General/Optgroup.html#methodinitElement">Optgroup::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Form/Option.html#methodinitElement">Option::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Object.html#methodinitElement">Object::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Param.html#methodinitElement">Param::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Div.html#methodinitElement">Div::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Hr.html#methodinitElement">Hr::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Pre.html#methodinitElement">Pre::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Img.html#methodinitElement">Img::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Fieldset/Fieldset.html#methodinitElement">Fieldset::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Map.html#methodinitElement">Map::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Noscript.html#methodinitElement">Noscript::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/A.html#methodinitElement">A::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Span.html#methodinitElement">Span::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Area.html#methodinitElement">Area::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/General/Br.html#methodinitElement">Br::initElement()</a>
+							</li>
+					<li>
+				<a href="../../Elements/Fieldset/Legend.html#methodinitElement">Legend::initElement()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodinsertChild" id="insertChild"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">insertChild</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a212">212</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Inserting a single child</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			insertChild
+		</span>
+					(<span class="var-type"><a href="../../Elements/Base/Root.html">Root</a></span>&nbsp;<span class="var-name">$node</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Elements/General/Base.html">Base</a></span>
+				<span class="var-name">$node</span><span class="var-description">: The node to insert</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinsertChildren" id="insertChildren"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">insertChildren</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a254">254</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Inserting generic list of children via func_get_args</p>
+<p class="description"><p>Commit a comma separated list $node1,$node2... The node that should be inserted</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Exception if the arguments dows not match the HB_Node type</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			insertChildren
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodisBlock" id="isBlock"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">isBlock</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a303">303</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returning html type</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			isBlock
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__toArray" id="__toArray"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">__toArray</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a360">360</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert to node to array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> node properties</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			__toArray
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__toString" id="__toString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">__toString</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a350">350</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Magic to string function can be used for debugging</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> node properties</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_me_jpeters_Projekte_HTMLBuilder_examples_debug.php_be3bb7385fad6a56d669875ea8eafc29.html">see HOW TO USE</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			__toString
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#method__construct">Attributes::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgenerateAttributeString">Attributes::generateAttributeString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetAccesskey">Attributes::getAccesskey()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetClass">Attributes::getClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetDir">Attributes::getDir()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetId">Attributes::getId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetInnerHTML">Attributes::getInnerHTML()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetLang">Attributes::getLang()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetStyle">Attributes::getStyle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetTabindex">Attributes::getTabindex()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetTitle">Attributes::getTitle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetAccesskey">Attributes::setAccesskey()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetClass">Attributes::setClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetDir">Attributes::setDir()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetId">Attributes::setId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetInnerHTML">Attributes::setInnerHTML()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetLang">Attributes::setLang()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetStyle">Attributes::setStyle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetTabindex">Attributes::setTabindex()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetTitle">Attributes::setTitle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodvalidateSetter">Attributes::validateSetter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#method_getClassConstants">Attributes::_getClassConstants()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Events.html">Events</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnclick">Events::getOnclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOndblclick">Events::getOndblclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeydown">Events::getOnkeydown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeypress">Events::getOnkeypress()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeyup">Events::getOnkeyup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmousedown">Events::getOnmousedown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmousemove">Events::getOnmousemove()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseout">Events::getOnmouseout()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseover">Events::getOnmouseover()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseup">Events::getOnmouseup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnclick">Events::setOnclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOndblclick">Events::setOndblclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeydown">Events::setOnkeydown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeypress">Events::setOnkeypress()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeyup">Events::setOnkeyup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmousedown">Events::setOnmousedown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmousemove">Events::setOnmousemove()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseout">Events::setOnmouseout()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseover">Events::setOnmouseover()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseup">Events::setOnmouseup()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constBLOCK" id="BLOCK"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BLOCK</span>
+			 = <span class="const-default"> &quot;block&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a40">40</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HTML block elements</p>
+	
+	
+</div>
+<a name="constINLINE" id="INLINE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INLINE</span>
+			 = <span class="const-default"> &quot;inline&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsRoot.php.html#a46">46</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HTML inline elements</p>
+	
+	
+</div>
+							<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Attributes.html#constDIR_LTR">Attributes::DIR_LTR</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Attributes.html#constDIR_RTL">Attributes::DIR_RTL</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 14 Feb 2012 23:15:45 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+	</p>
+	</div></body>
+</html>

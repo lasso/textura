@@ -1,0 +1,1751 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Input</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Input</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An input field can vary in many ways, depending on the type attribute.</p>
+<p class="description"><p>An input field can be a text field, a checkbox, a password field, a  radio button, a button, and more. <a href="http://www.w3schools.com/tags/tag_input.asp">http://www.w3schools.com/tags/tag_input.asp</a></p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jens Peters &lt;<a href="mailto:jens@history-archiv.net">jens@history-archiv.net</a>&gt;</li>
+				<li><span class="field">link:</span> <a href="http://launchpad.net/htmlbuilder">http://launchpad.net/htmlbuilder</a></li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/lgpl.html">GNU LGPL v3</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_e_jpeters_Projekte_HTMLBuilder_examples_simple.php_63cc16451f98bbc8228ab72f6cbb381a.html">see HOW TO USE</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_me_jpeters_Projekte_HTMLBuilder_examples_debug.php_be3bb7385fad6a56d669875ea8eafc29.html">see HOW TO DEBUG</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Elements---Form---Input.php.html">/Elements/Form/Input.php</a> (line <span class="field"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a38">38</a></span>)
+		</p>
+		
+				
+		<pre><a href="../../Elements/Base/Events.html">Events</a>
+   |
+   --<a href="../../Elements/Base/Attributes.html">Attributes</a>
+      |
+      --<a href="../../Elements/Base/Root.html">Root</a>
+         |
+         --<a href="../../Elements/Form/RootForm.html">RootForm</a>
+            |
+            --Input</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_BUTTON" title="details" class="const-name">TYPE_BUTTON</a> = 					<span class="var-type"> &quot;button&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_CHECKBOX" title="details" class="const-name">TYPE_CHECKBOX</a> = 					<span class="var-type"> &quot;checkbox&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_FILE" title="details" class="const-name">TYPE_FILE</a> = 					<span class="var-type"> &quot;file&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_HIDDEN" title="details" class="const-name">TYPE_HIDDEN</a> = 					<span class="var-type"> &quot;hidden&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_IMAGE" title="details" class="const-name">TYPE_IMAGE</a> = 					<span class="var-type"> &quot;image&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_PASSWORD" title="details" class="const-name">TYPE_PASSWORD</a> = 					<span class="var-type"> &quot;password&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_RADIO" title="details" class="const-name">TYPE_RADIO</a> = 					<span class="var-type"> &quot;radio&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_RESET" title="details" class="const-name">TYPE_RESET</a> = 					<span class="var-type"> &quot;reset&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_SUBMIT" title="details" class="const-name">TYPE_SUBMIT</a> = 					<span class="var-type"> &quot;submit&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_TEXT" title="details" class="const-name">TYPE_TEXT</a> = 					<span class="var-type"> &quot;text&quot;</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$accept" title="details" class="var-name">$accept</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$alt" title="details" class="var-name">$alt</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$checked" title="details" class="var-name">$checked</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">int</span>
+					<a href="#$maxlength" title="details" class="var-name">$maxlength</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$onselect" title="details" class="var-name">$onselect</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$readonly" title="details" class="var-name">$readonly</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">int</span>
+					<a href="#$size" title="details" class="var-name">$size</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$src" title="details" class="var-name">$src</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$type" title="details" class="var-name">$type</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$value" title="details" class="var-name">$value</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getAccept" title="details" class="method-name">getAccept</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getAlt" title="details" class="method-name">getAlt</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getChecked" title="details" class="method-name">getChecked</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getMaxlength" title="details" class="method-name">getMaxlength</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getReadonly" title="details" class="method-name">getReadonly</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getSize" title="details" class="method-name">getSize</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getSrc" title="details" class="method-name">getSrc</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getType" title="details" class="method-name">getType</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">the</span>
+										<a href="#getValue" title="details" class="method-name">getValue</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#initElement" title="details" class="method-name">initElement</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setAccept" title="details" class="method-name">setAccept</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$accept</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setAlt" title="details" class="method-name">setAlt</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$alt</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setChecked" title="details" class="method-name">setChecked</a>
+											(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$checked</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setMaxlength" title="details" class="method-name">setMaxlength</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$maxlength</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setReadonly" title="details" class="method-name">setReadonly</a>
+											(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$readonly</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setSize" title="details" class="method-name">setSize</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$size</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setSrc" title="details" class="method-name">setSrc</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$src</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setType" title="details" class="method-name">setType</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setValue" title="details" class="method-name">setValue</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$accept" id="$accept"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$accept</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a105">105</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the MIME_type of files that can be submitted</p>
+<p class="description"><p>through a file upload (only for type=&quot;file&quot;)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$alt" id="$alt"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$alt</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a111">111</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies an alternate text for an image input (only for type=&quot;image&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$checked" id="$checked"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$checked</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a117">117</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies that an input element should be preselected when the page loads (for type=&quot;checkbox&quot; or type=&quot;radio&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$maxlength" id="$maxlength"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$maxlength</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a123">123</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the maximum length (in characters) of an input field (for type=&quot;text&quot; or type=&quot;password&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$onselect" id="$onselect"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$onselect</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a174">174</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Script to be run when an element is selected</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Elements/Form/RootForm.html#var$onselect">RootForm::$onselect</a></dt>
+						<dd>Script to be run when a element is selected</dd>
+					</dl>
+		
+		
+
+</div>
+<a name="var$readonly" id="$readonly"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$readonly</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a130">130</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies that an input field should be read-only (for type=&quot;text&quot; or type=&quot;password&quot;)</p>
+<p class="description"><p>use readonly=&quot;readonly&quot; to be XHTML conform</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$size" id="$size"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$size</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a136">136</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the width of an input field</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$src" id="$src"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$src</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a142">142</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the URL to an image to display as a submit button (only for type=&quot;image&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$type" id="$type"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$type</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a161">161</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the type of an input element</p>
+<p class="description"><p>possible values:  <ul><li>button <a href="../../Elements/Form/Input.html#constTYPE_BUTTON">Input::TYPE_BUTTON</a></li><li>checkbox <a href="../../Elements/Form/Input.html#constTYPE_CHECKBOX">Input::TYPE_CHECKBOX</a></li><li>file <a href="../../Elements/Form/Input.html#constTYPE_FILE">Input::TYPE_FILE</a></li><li>hidden <a href="../../Elements/Form/Input.html#constTYPE_HIDDEN">Input::TYPE_HIDDEN</a></li><li>image <a href="../../Elements/Form/Input.html#constTYPE_IMAGE">Input::TYPE_IMAGE</a></li><li>password <a href="../../Elements/Form/Input.html#constTYPE_PASSWORD">Input::TYPE_PASSWORD</a></li><li>radio <a href="../../Elements/Form/Input.html#constTYPE_RADIO">Input::TYPE_RADIO</a></li><li>reset <a href="../../Elements/Form/Input.html#constTYPE_RESET">Input::TYPE_RESET</a></li><li>submit <a href="../../Elements/Form/Input.html#constTYPE_SUBMIT">Input::TYPE_SUBMIT</a></li><li>text <a href="../../Elements/Form/Input.html#constTYPE_TEXT">Input::TYPE_TEXT</a></li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$value" id="$value"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$value</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a168">168</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the value of an input element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Elements/Form/RootForm.html">RootForm</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Form/RootForm.html#var$disabled">RootForm::$disabled</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Form/RootForm.html#var$name">RootForm::$name</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Form/RootForm.html#var$onblur">RootForm::$onblur</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Form/RootForm.html#var$onchange">RootForm::$onchange</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Form/RootForm.html#var$onfocus">RootForm::$onfocus</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Form/RootForm.html#var$onreset">RootForm::$onreset</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Form/RootForm.html#var$onsubmit">RootForm::$onsubmit</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Root.html">Root</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_allowedChildren">Root::$_allowedChildren</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_children">Root::$_children</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_identCounter">Root::$_identCounter</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_isBlock">Root::$_isBlock</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_mandatoryChildren">Root::$_mandatoryChildren</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Root.html#var$_tag">Root::$_tag</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$accesskey">Attributes::$accesskey</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$class">Attributes::$class</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$dir">Attributes::$dir</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$id">Attributes::$id</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$lang">Attributes::$lang</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$style">Attributes::$style</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$tabindex">Attributes::$tabindex</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$title">Attributes::$title</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$_innerHTML">Attributes::$_innerHTML</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Attributes.html#var$_isSelfclosing">Attributes::$_isSelfclosing</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Events.html">Events</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onclick">Events::$onclick</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$ondblclick">Events::$ondblclick</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeydown">Events::$onkeydown</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeypress">Events::$onkeypress</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onkeyup">Events::$onkeyup</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmousedown">Events::$onmousedown</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmousemove">Events::$onmousemove</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseout">Events::$onmouseout</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseover">Events::$onmouseover</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Elements/Base/Events.html#var$onmouseup">Events::$onmouseup</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetAccept" id="getAccept"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAccept</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a335">335</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the types of files that can be submitted through a file upload (only for type=&quot;file&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getAccept
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetAlt" id="getAlt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAlt</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a345">345</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies an alternate text for an image input (only for type=&quot;image&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getAlt
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetChecked" id="getChecked"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getChecked</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a355">355</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies that an input element should be preselected when the page loads (for type=&quot;checkbox&quot; or type=&quot;radio&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getChecked
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMaxlength" id="getMaxlength"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getMaxlength</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a365">365</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the maximum length (in characters) of an input field (for type=&quot;text&quot; or type=&quot;password&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getMaxlength
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetReadonly" id="getReadonly"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getReadonly</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a376">376</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies that an input field should be read-only (for type=&quot;text&quot; or type=&quot;password&quot;)  use readonly=&quot;readonly&quot; to be XHTML conform</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getReadonly
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSize" id="getSize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSize</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a386">386</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the width of an input field</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getSize
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSrc" id="getSrc"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSrc</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a396">396</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the URL to an image to display as a submit button (only for type=&quot;image&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getSrc
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetType" id="getType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getType</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a419">419</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the type of an input element</p>
+<p class="description"><p>possible values:  <ul><li>button <a href="../../Elements/Form/Input.html#constTYPE_BUTTON">Input::TYPE_BUTTON</a></li><li>checkbox <a href="../../Elements/Form/Input.html#constTYPE_CHECKBOX">Input::TYPE_CHECKBOX</a></li><li>file <a href="../../Elements/Form/Input.html#constTYPE_FILE">Input::TYPE_FILE</a></li><li>hidden <a href="../../Elements/Form/Input.html#constTYPE_HIDDEN">Input::TYPE_HIDDEN</a></li><li>image <a href="../../Elements/Form/Input.html#constTYPE_IMAGE">Input::TYPE_IMAGE</a></li><li>password <a href="../../Elements/Form/Input.html#constTYPE_PASSWORD">Input::TYPE_PASSWORD</a></li><li>radio <a href="../../Elements/Form/Input.html#constTYPE_RADIO">Input::TYPE_RADIO</a></li><li>reset <a href="../../Elements/Form/Input.html#constTYPE_RESET">Input::TYPE_RESET</a></li><li>submit <a href="../../Elements/Form/Input.html#constTYPE_SUBMIT">Input::TYPE_SUBMIT</a></li><li>text <a href="../../Elements/Form/Input.html#constTYPE_TEXT">Input::TYPE_TEXT</a></li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getType
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetValue" id="getValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getValue</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a429">429</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the value of an input element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			getValue
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodinitElement" id="initElement"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">initElement</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a176">176</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			initElement
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Elements/Base/Root.html#methodinitElement">Root::initElement()</a></dt>
+						<dd>Has to be implemented to set allowed chilredn an mandatory ones</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetAccept" id="setAccept"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setAccept</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a187">187</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the types of files that can be submitted through a file upload (only for type=&quot;file&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setAccept
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$accept</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$accept</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetAlt" id="setAlt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setAlt</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a199">199</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies an alternate text for an image input (only for type=&quot;image&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setAlt
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$alt</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$alt</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetChecked" id="setChecked"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setChecked</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a210">210</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies that an input element should be preselected when the page loads (for type=&quot;checkbox&quot; or type=&quot;radio&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setChecked
+		</span>
+					(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$checked</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$checked</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMaxlength" id="setMaxlength"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setMaxlength</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a228">228</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the maximum length (in characters) of an input field (for type=&quot;text&quot; or type=&quot;password&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMaxlength
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$maxlength</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$maxlength</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetReadonly" id="setReadonly"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setReadonly</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a245">245</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies that an input field should be read-only (for type=&quot;text&quot; or type=&quot;password&quot;)  use readonly=&quot;readonly&quot; to be XHTML conform</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setReadonly
+		</span>
+					(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$readonly</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$readonly</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSize" id="setSize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setSize</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a262">262</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the width of an input field</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setSize
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$size</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$size</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSrc" id="setSrc"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setSrc</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a272">272</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the URL to an image to display as a submit button (only for type=&quot;image&quot;)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setSrc
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$src</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$src</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetType" id="setType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setType</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a299">299</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the type of an input element</p>
+<p class="description"><p>possible values:  <ul><li>button <a href="../../Elements/Form/Input.html#constTYPE_BUTTON">Input::TYPE_BUTTON</a></li><li>checkbox <a href="../../Elements/Form/Input.html#constTYPE_CHECKBOX">Input::TYPE_CHECKBOX</a></li><li>file <a href="../../Elements/Form/Input.html#constTYPE_FILE">Input::TYPE_FILE</a></li><li>hidden <a href="../../Elements/Form/Input.html#constTYPE_HIDDEN">Input::TYPE_HIDDEN</a></li><li>image <a href="../../Elements/Form/Input.html#constTYPE_IMAGE">Input::TYPE_IMAGE</a></li><li>password <a href="../../Elements/Form/Input.html#constTYPE_PASSWORD">Input::TYPE_PASSWORD</a></li><li>radio <a href="../../Elements/Form/Input.html#constTYPE_RADIO">Input::TYPE_RADIO</a></li><li>reset <a href="../../Elements/Form/Input.html#constTYPE_RESET">Input::TYPE_RESET</a></li><li>submit <a href="../../Elements/Form/Input.html#constTYPE_SUBMIT">Input::TYPE_SUBMIT</a></li><li>text <a href="../../Elements/Form/Input.html#constTYPE_TEXT">Input::TYPE_TEXT</a></li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setType
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetValue" id="setValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setValue</span> (line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a319">319</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies the value of an input element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setValue
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Form/RootForm.html">RootForm</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodgetDisabled">RootForm::getDisabled()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodgetName">RootForm::getName()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodgetOnblur">RootForm::getOnblur()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodgetOnchange">RootForm::getOnchange()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodgetOnfocus">RootForm::getOnfocus()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodgetOnreset">RootForm::getOnreset()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodgetOnselect">RootForm::getOnselect()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodgetOnsubmit">RootForm::getOnsubmit()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodsetDisabled">RootForm::setDisabled()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodsetName">RootForm::setName()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodsetOnblur">RootForm::setOnblur()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodsetOnchange">RootForm::setOnchange()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodsetOnfocus">RootForm::setOnfocus()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodsetOnreset">RootForm::setOnreset()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodsetOnselect">RootForm::setOnselect()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Form/RootForm.html#methodsetOnsubmit">RootForm::setOnsubmit()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Root.html">Root</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#method__construct">Root::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodbuild">Root::build()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodcountChildren">Root::countChildren()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methoddebug">Root::debug()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetAttributeNames">Root::getAttributeNames()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetAttributes">Root::getAttributes()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetChildren">Root::getChildren()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodgetTag">Root::getTag()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodhasChildren">Root::hasChildren()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodinitElement">Root::initElement()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodinsertChild">Root::insertChild()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodinsertChildren">Root::insertChildren()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#methodisBlock">Root::isBlock()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#method__toArray">Root::__toArray()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Root.html#method__toString">Root::__toString()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#method__construct">Attributes::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgenerateAttributeString">Attributes::generateAttributeString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetAccesskey">Attributes::getAccesskey()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetClass">Attributes::getClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetDir">Attributes::getDir()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetId">Attributes::getId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetInnerHTML">Attributes::getInnerHTML()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetLang">Attributes::getLang()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetStyle">Attributes::getStyle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetTabindex">Attributes::getTabindex()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodgetTitle">Attributes::getTitle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetAccesskey">Attributes::setAccesskey()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetClass">Attributes::setClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetDir">Attributes::setDir()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetId">Attributes::setId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetInnerHTML">Attributes::setInnerHTML()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetLang">Attributes::setLang()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetStyle">Attributes::setStyle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetTabindex">Attributes::setTabindex()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodsetTitle">Attributes::setTitle()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#methodvalidateSetter">Attributes::validateSetter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Attributes.html#method_getClassConstants">Attributes::_getClassConstants()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Elements/Base/Events.html">Events</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnclick">Events::getOnclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOndblclick">Events::getOndblclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeydown">Events::getOnkeydown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeypress">Events::getOnkeypress()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnkeyup">Events::getOnkeyup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmousedown">Events::getOnmousedown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmousemove">Events::getOnmousemove()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseout">Events::getOnmouseout()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseover">Events::getOnmouseover()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodgetOnmouseup">Events::getOnmouseup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnclick">Events::setOnclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOndblclick">Events::setOndblclick()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeydown">Events::setOnkeydown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeypress">Events::setOnkeypress()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnkeyup">Events::setOnkeyup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmousedown">Events::setOnmousedown()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmousemove">Events::setOnmousemove()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseout">Events::setOnmouseout()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseover">Events::setOnmouseover()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Elements/Base/Events.html#methodsetOnmouseup">Events::setOnmouseup()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constTYPE_BUTTON" id="TYPE_BUTTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_BUTTON</span>
+			 = <span class="const-default"> &quot;button&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a44">44</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: button</p>
+	
+	
+</div>
+<a name="constTYPE_CHECKBOX" id="TYPE_CHECKBOX"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_CHECKBOX</span>
+			 = <span class="const-default"> &quot;checkbox&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a50">50</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: checkbox</p>
+	
+	
+</div>
+<a name="constTYPE_FILE" id="TYPE_FILE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_FILE</span>
+			 = <span class="const-default"> &quot;file&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a56">56</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: file</p>
+	
+	
+</div>
+<a name="constTYPE_HIDDEN" id="TYPE_HIDDEN"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_HIDDEN</span>
+			 = <span class="const-default"> &quot;hidden&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a62">62</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: hidden</p>
+	
+	
+</div>
+<a name="constTYPE_IMAGE" id="TYPE_IMAGE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_IMAGE</span>
+			 = <span class="const-default"> &quot;image&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a68">68</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: image</p>
+	
+	
+</div>
+<a name="constTYPE_PASSWORD" id="TYPE_PASSWORD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_PASSWORD</span>
+			 = <span class="const-default"> &quot;password&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a74">74</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: password</p>
+	
+	
+</div>
+<a name="constTYPE_RADIO" id="TYPE_RADIO"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_RADIO</span>
+			 = <span class="const-default"> &quot;radio&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a80">80</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: radio</p>
+	
+	
+</div>
+<a name="constTYPE_RESET" id="TYPE_RESET"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_RESET</span>
+			 = <span class="const-default"> &quot;reset&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a86">86</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: reset</p>
+	
+	
+</div>
+<a name="constTYPE_SUBMIT" id="TYPE_SUBMIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_SUBMIT</span>
+			 = <span class="const-default"> &quot;submit&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a92">92</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: submit</p>
+	
+	
+</div>
+<a name="constTYPE_TEXT" id="TYPE_TEXT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_TEXT</span>
+			 = <span class="const-default"> &quot;text&quot;</span>
+			(line <span class="line-number"><a href="../../__filesource/fsource_Elements__ElementsFormInput.php.html#a98">98</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input type: text</p>
+	
+	
+</div>
+							<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Root.html">Root</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Root.html#constBLOCK">Root::BLOCK</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Root.html#constINLINE">Root::INLINE</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Elements/Base/Attributes.html">Attributes</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Attributes.html#constDIR_LTR">Attributes::DIR_LTR</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Elements/Base/Attributes.html#constDIR_RTL">Attributes::DIR_RTL</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 14 Feb 2012 23:15:14 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+	</p>
+	</div></body>
+</html>

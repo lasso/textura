@@ -48,7 +48,7 @@ function autoload($class_name) {
       return;
     }
   }
-  trigger_error("Failed to load class $class_name", E_USER_WARNING);
+  // trigger_error("Failed to load class $class_name", E_USER_WARNING);
 }
 
 spl_autoload_register('autoload');

@@ -12,7 +12,7 @@ will be usable as a starting point for building your own framework.
 
 Licence
 =======
-Textura is licenced under the GPL (Version 3 or later). Please see the file
+Textura is licenced under the GNU GPL (Version 3 or later). Please see the file
 COPYING for details about the licence. The licence only applies to the following
 files:
 router.php in the current directory
@@ -113,6 +113,10 @@ from the Textura\Request object instead.
 External dependencies
 =====================
 At the moment Textura depends on some external libraries:
+
+* PHP Html Builder (for building HTML forms) [src/htmlbuilder directory]
+  Home page: http://htmlbuilder.history-archiv.net/
+  Licence: GNU GPL version 3 (http://opensource.org/licenses/GPL-3.0)
 
 * phamlp (for rendering HAML templates) [src/phamlp directory]
   Home page: http://code.google.com/p/phamlp/

@@ -49,18 +49,7 @@ class ValidationRuleMatchesRegexp extends ValidationRule {
   }
 
   public function validate($value) {
-    if (!is_null($this->min_value) && !is_null($this->max_value)) {
-      return $value >= $this->min_value && $value <= $this->max_value;
-    }
-    elseif (!is_null($this->min_value)) {
-      return $value >= $this->min_value;
-    }
-    elseif (!is_null($this->max_value)) {
-      return $value <= $this->max_value;
-    }
-    else {
-      return true;
-    }
+    return preg_match($this->regexp, strval($value)) === 1;
   }
 
 }

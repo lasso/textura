@@ -48,6 +48,7 @@ class FormBuilder {
       'checkbox'  =>  0,
       'file'      =>  0,
       'hidden'    =>  0,
+      'password'  =>  0,
       'radio'     =>  0,
       'select'    =>  0,
       'submit'    =>  0,
@@ -81,6 +82,14 @@ class FormBuilder {
     if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
     if (!array_key_exists('value', $params)) $params['value'] = '';
     $this->addElem('hidden', $params);
+  }
+
+  public function addPassword(array $params = array()) {
+    if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('text');
+    if (!array_key_exists('label', $params)) $params['label'] = null;
+    if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
+    if (!array_key_exists('value', $params)) $params['value'] = '';
+    $this->addElem('password', $params);
   }
 
   public function addRadio(array $params = array()) {
@@ -153,11 +162,42 @@ class FormBuilder {
    */
   public function render() {
     if (!$this->action) throw new \LogicException('Form must have a valid action.');
-    $form = new \HTMLBuilder\RenderHelper\Form\Form($this->action, $this->method);
-    $form->getForm()->setId($this->form_id);
+    $fieldset = new \HTMLBuilder\Elements\General\Fieldset();
+    $fieldset->setId($this->form_id . '_fieldset');
     foreach ($this->elems as $current_elem) {
       $type = $current_elem[0];
       $params = $current_elem[1];
+      $div = new \HTMLBuilder\Elements\General\Div();
+      $div->setClass('form_elem');
+      $label = new \HTMLBuilder\Elements\Form\Label();
+      $label->setFor($params['id']);
+      $label->setInnerHTML($params['label']);
+      $label->setClass('form_elem_label');
+      $div->insertChild($label);
+      switch ($type) {
+        case 'button':
+        case 'reset':
+        case 'submit':
+          $field = new \HTMLBuilder\Elements\Form\Button();
+          $field->setId($params['id']);
+          $field->setInnerHTML($params['value']);
+          $field->setName($params['name']);
+          $field->setType($type);
+          break;
+        case 'password':
+        case 'text':
+          $field = new \HTMLBuilder\Elements\Form\Input();
+          $field->setId($params['id']);
+          $field->setName($params['name']);
+          $field->setType($type);
+          $field->setValue($params['value']);
+          break;
+      }
+      $field->setClass("form_elem_field form_elem_field_$type");
+      $div->insertChild($field);
+      $fieldset->InsertChild($div);
+
+      /*
       switch ($type) {
         case 'button':
           $form->addInputButton(
@@ -174,6 +214,11 @@ class FormBuilder {
             $params['label'], $params['name'], $params['id'], $params['value']
           );
           break;
+        case 'password':
+          $form->addInputPassword(
+            $params['label'], $params['name'], $params['id'], $params['value']
+          );
+          break;
         case 'submit':
           $form->addInputSubmit(
             $params['label'], $params['name'], $params['id'], $params['value']
@@ -187,8 +232,16 @@ class FormBuilder {
         default:
           throw new \LogicException("Unknown element type $type");
       }
+       */
     }
-    $output = $form->render();
+
+    $form = new \HTMLBuilder\Elements\Form\Form();
+    $form->setId($this->form_id);
+    $form->setAction($this->action);
+    $form->setMethod($this->method);
+    $form->insertChild($fieldset);
+
+    $output = $form->build();
     if ($this->getUseClientSideValidation() && $this->validator->hasValidations()) {
       $output .= "\n" . $this->validator->render($this->form_id);
     }

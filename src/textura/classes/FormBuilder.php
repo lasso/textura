@@ -248,6 +248,28 @@ class FormBuilder {
     return $output;
   }
 
+  /**
+   * Updates an attribute for an element in the current element list. This is useful when something
+   * needs to be changed after the original structure has been created.
+   *
+   * @param string $elem_id The id of the element to change
+   * @param string $attribute The name of the attribute to change
+   * @param string $value The new value of the attribute
+   * @return boolean True if the update succeeded, false otherwise
+   */
+  public function updateAttribute($elem_id, $attribute, $value) {
+    for ($i = 0; $i < count($this->elems); $i++) {
+      $params = $this->elems[i][1];
+      if ($params['id'] == $elem_id) {
+        // Found the element. Lets update the attribute
+        $this->elems[$i][1][strval($attribute)] = $value;
+        return true;
+      }
+    }
+    // Did not find the element
+    return false;
+  }
+
   public function validate(array $values) {
     return $this->validator->validate($values);
   }
@@ -264,6 +286,15 @@ class FormBuilder {
 
     // Add element to element array
     $this->elems[] = array($type, $params);
+  }
+
+  public function getValueFromPost($field) {
+    if (Current::request()->isPost() && array_key_exists($field, Current::request()->post_params)) {
+      return Current::request()->post_params[$field];
+    }
+    else {
+      return null;
+    }
   }
 
   private function getUniqueId($type) {

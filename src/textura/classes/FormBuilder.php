@@ -97,6 +97,12 @@ class FormBuilder {
   }
 
   public function addSelect(array $params = array()) {
+    if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('select');
+    if (!array_key_exists('label', $params)) $params['label'] = null;
+    if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
+    if (!array_key_exists('options', $params)) $params['options'] = array();
+    if (!array_key_exists('multiple', $params)) $params['multiple'] = false;
+    if (!array_key_exists('size', $params)) $params['size'] = null;
     $this->addElem('select', $params);
   }
 
@@ -172,7 +178,7 @@ class FormBuilder {
       $label = new \HTMLBuilder\Elements\Form\Label();
       $label->setFor($params['id']);
       $label->setInnerHTML($params['label']);
-      $label->setClass('form_elem_label');
+      $label->setClass("form_elem_label form_elem_label_$type");
       $div->insertChild($label);
       switch ($type) {
         case 'button':
@@ -193,6 +199,20 @@ class FormBuilder {
           $field->setType($type);
           $field->setValue($params['value']);
           break;
+        case 'select': {
+          $field = new \HTMLBuilder\Elements\Form\Select();
+          $field->setId($params['id']);
+          $field->setName($params['name']);
+          $field->setMultiple($params['multiple']);
+          if ($params['size']) $field->setSize($params['size']);
+          foreach ($params['options'] as $current_option) {
+            $option_elem = new \HTMLBuilder\Elements\Form\Option();
+            $option_elem->setSelected($current_option['selected']);
+            $option_elem->setValue($current_option['value']);
+            $option_elem->setInnerHTML($current_option['text']);
+            $field->insertChild($option_elem);
+          }
+        }
       }
       $field->setClass("form_elem_field form_elem_field_$type");
       $div->insertChild($field);
@@ -206,9 +226,35 @@ class FormBuilder {
     $form->insertChild($fieldset);
 
     $output = $form->build();
+    $script_jquery = new \HTMLBuilder\Elements\Page\Script();
+    $script_jquery->setSrc('https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+    $script_jquery->setType('text/javascript');
+    $output .= "\n" . $script_jquery->build();
+    $script_elem = new \HTMLBuilder\Elements\Page\Script();
+    $script_elem->setType('text/javascript');
+    $script_elem_contents = array();
+    $script_elem_contents[] = "$('#" . $this->form_id . "').bind('submit', function() {";
     if ($this->getUseClientSideValidation() && $this->validator->hasValidations()) {
-      $output .= "\n" . $this->validator->render($this->form_id);
+      $script_elem_contents[] = $this->validator->render($this->form_id);
     }
+    // Since HTMLBuilder has insane settings that keeps us from creating a select box having a
+    // name containing [] we must use jQuery to transform the post into what we want.
+    $script_elem_contents[] = "$('#{$this->form_id} select[multiple=\"multiple\"]')." .
+                              "each(function(idx, elem) {";
+    $script_elem_contents[] = '  $elem = $(elem);';
+    $script_elem_contents[] = '  $options = $(elem).find(\'option:selected\');';
+    $script_elem_contents[] = '  if ($options.length > 0) {';
+    $script_elem_contents[] = '    new_elem_name = $elem.attr("id") + "[];"';
+    $script_elem_contents[] = '    $options.each(function(idx2, elem2) {';
+    $script_elem_contents[] = "      $('#{$this->form_id}').append('<input name=\"' + " .
+                              "new_elem_name + '\" value=\"' + elem2.value + '\">');";
+    $script_elem_contents[] = "    })";
+    $script_elem_contents[] = '    $elem.attr(\'disabled\', \'disabled\');';
+    $script_elem_contents[] = '  }';
+    $script_elem_contents[] = "})";
+    $script_elem_contents[] = "})";
+    $script_elem->setInnerHTML(implode("\n", $script_elem_contents));
+    $output .= "\n" . $script_elem->build() . "\n";
     return $output;
   }
 

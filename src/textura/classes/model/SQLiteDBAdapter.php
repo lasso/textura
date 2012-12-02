@@ -97,7 +97,7 @@ class SQLiteDBAdapter extends DBAdapter {
     if (!$this->tableExists($table)) {
       throw new \LogicException("Table $table does not exist!");
     }
-    $query = sprintf("PRAGMA table_info(%s)", \SQLite3::escapeString($table));
+    $query = sprintf("PRAGMA table_info('%s')", \SQLite3::escapeString($table));
     $result = $this->query($query);
     $fields = array();
     foreach ($result as $current_row) {
@@ -133,7 +133,7 @@ class SQLiteDBAdapter extends DBAdapter {
   }
 
   public function insertRow($table, array $values) {
-    $query = 'INSERT INTO ' . \SQLite3::escapeString($table) . '(';
+    $query = 'INSERT INTO \'' . \SQLite3::escapeString($table) . '\' (';
     $num_values = count($values);
     $index = 1;
     foreach (array_keys($values) as $key) {
@@ -170,7 +170,7 @@ class SQLiteDBAdapter extends DBAdapter {
       }
       $fields_as_string = implode(', ', $fields);
     }
-    $query = "SELECT $fields_as_string FROM " . \SQLite3::escapeString($table);
+    $query = "SELECT $fields_as_string FROM '" . \SQLite3::escapeString($table) . "'";
     $num_conditions = count($conditions);
     if ($num_conditions > 0) {
       $query .=  ' WHERE ';
@@ -213,7 +213,7 @@ class SQLiteDBAdapter extends DBAdapter {
   }
 
   public function updateRow($table, array $primary_keys, array $values) {
-    $query = 'UPDATE ' . \SQLite3::escapeString($table) . ' SET ';
+    $query = 'UPDATE \'' . \SQLite3::escapeString($table) . '\' SET ';
     $num_values = count($values);
     $index = 1;
     foreach ($values as $key => $value) {
@@ -239,7 +239,7 @@ class SQLiteDBAdapter extends DBAdapter {
   public function tableExists($table) {
     $query =
       sprintf(
-        "SELECT COUNT(*) FROM sqlite_master WHERE type = 'table' AND name = '%s'",
+        "SELECT COUNT(*) FROM 'sqlite_master' WHERE type = 'table' AND name = '%s'",
         \SQLite3::escapeString($table)
       );
     if (!$this->isConnected()) $this->connect();

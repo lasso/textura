@@ -89,15 +89,8 @@ class Validator {
    */
   public function render($form_id) {
     if (!$this->hasValidations()) return '';
-    $script_jquery = new \HTMLBuilder\Elements\Page\Script();
-    $script_jquery->setSrc('https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
-    $script_jquery->setType('text/javascript');
-    $script_validations = new \HTMLBuilder\Elements\Page\Script();
-    $script_validations->setType('text/javascript');
-    $script_contents = array();
-    $script_contents[] = "var form_errors_" . $form_id . " = [];";
-    $script_contents[] = "$('#" . $form_id . "').bind('submit', function() {";
     $validator_name = "validator_$form_id";
+    $script_contents = array();
     $script_contents[] = "form_errors_$form_id = [];";
     $script_contents[] = "var $validator_name = new Object();";
     foreach ($this->validations as $key => $validation_array) {
@@ -120,10 +113,7 @@ class Validator {
     $script_contents[] = "  alert(form_errors_$form_id.join(\"\\n\"));";
     $script_contents[] = "  return false;";
     $script_contents[] = "}";
-    $script_contents[] = "return true;";
-    $script_contents[] = "})";
-    $script_validations->setInnerHTML(implode("\n", $script_contents));
-    return $script_jquery->build() . "\n" . $script_validations->build();
+    return implode("\n", $script_contents);
   }
 
   public function validate(array $values) {

@@ -184,6 +184,7 @@ class FormBuilder {
           $field->setName($params['name']);
           $field->setType($type);
           break;
+        case 'hidden':
         case 'password':
         case 'text':
           $field = new \HTMLBuilder\Elements\Form\Input();
@@ -196,43 +197,6 @@ class FormBuilder {
       $field->setClass("form_elem_field form_elem_field_$type");
       $div->insertChild($field);
       $fieldset->InsertChild($div);
-
-      /*
-      switch ($type) {
-        case 'button':
-          $form->addInputButton(
-            $params['label'], $params['name'], $params['id'], $params['value']
-          );
-          break;
-        case 'checkbox':
-          $form->addInputCheckbox(
-            $params['label'], $params['name'], $params['value'], $params['checked'], $params['id']
-          );
-          break;
-        case 'hidden':
-          $form->addInputHidden(
-            $params['label'], $params['name'], $params['id'], $params['value']
-          );
-          break;
-        case 'password':
-          $form->addInputPassword(
-            $params['label'], $params['name'], $params['id'], $params['value']
-          );
-          break;
-        case 'submit':
-          $form->addInputSubmit(
-            $params['label'], $params['name'], $params['id'], $params['value']
-          );
-          break;
-        case 'text':
-          $form->addInputText(
-            $params['label'], $params['name'], $params['id'], $params['value']
-          );
-          break;
-        default:
-          throw new \LogicException("Unknown element type $type");
-      }
-       */
     }
 
     $form = new \HTMLBuilder\Elements\Form\Form();
@@ -259,7 +223,7 @@ class FormBuilder {
    */
   public function updateAttribute($elem_id, $attribute, $value) {
     for ($i = 0; $i < count($this->elems); $i++) {
-      $params = $this->elems[i][1];
+      $params = $this->elems[$i][1];
       if ($params['id'] == $elem_id) {
         // Found the element. Lets update the attribute
         $this->elems[$i][1][strval($attribute)] = $value;

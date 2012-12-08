@@ -58,8 +58,17 @@ abstract class Controller {
   public function getInstanceVars() {
     $reserved_instance_vars = array();
     foreach (self::$RESERVED_INSTANCE_VARS as $current_reserved_instance_var) {
-      $reserved_instance_vars[$current_reserved_instance_var] =
-        Current::$current_reserved_instance_var();
+      // Only expose session if controller uses sessions
+      if ($current_reserved_instance_var == 'session') {
+        if ($this->useSession()) {
+          $reserved_instance_vars[$current_reserved_instance_var] =
+            Current::$current_reserved_instance_var();
+        }
+      }
+      else {
+        $reserved_instance_vars[$current_reserved_instance_var] =
+          Current::$current_reserved_instance_var();
+      }
     }
     return array_merge($reserved_instance_vars, $this->instance_vars);
   }

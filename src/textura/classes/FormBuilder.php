@@ -123,7 +123,6 @@ class FormBuilder {
   }
 
   public function addTextarea(array $params = array()) {
-    $this->elems[] = array('textarea', $params);
     $this->addElem('textarea', $params);
   }
 
@@ -207,12 +206,25 @@ class FormBuilder {
           if ($params['size']) $field->setSize($params['size']);
           foreach ($params['options'] as $current_option) {
             $option_elem = new \HTMLBuilder\Elements\Form\Option();
-            $option_elem->setSelected($current_option['selected']);
-            $option_elem->setValue($current_option['value']);
-            $option_elem->setInnerHTML($current_option['text']);
+            if (isset($current_option['selected'])) {
+              $option_elem->setSelected($current_option['selected']);
+            }
+            if (isset($current_option['value'])) {
+              $option_elem->setValue($current_option['value']);
+            }
+            if (isset($current_option['text'])) {
+              $option_elem->setInnerHTML($current_option['text']);
+            }
             $field->insertChild($option_elem);
           }
+          break;
         }
+        case 'textarea':
+          $field = new \HTMLBuilder\Elements\Form\Textarea();
+          $field->setId($params['id']);
+          $field->setName($params['name']);
+          $field->setInnerHTML($params['value']);
+          break;
       }
       $field->setClass("form_elem_field form_elem_field_$type");
       $div->insertChild($field);

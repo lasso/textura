@@ -44,16 +44,17 @@ class FormBuilder {
     $this->setEncType($enctype);
     $this->elems = array();
     $this->elem_counts = array(
-      'button'    =>  0,
-      'checkbox'  =>  0,
-      'file'      =>  0,
-      'hidden'    =>  0,
-      'password'  =>  0,
-      'radio'     =>  0,
-      'select'    =>  0,
-      'submit'    =>  0,
-      'text'      =>  0,
-      'textarea'  =>  0,
+      'button'          =>  0,
+      'checkbox'        =>  0,
+      'custom_content'  =>  0,
+      'file'            =>  0,
+      'hidden'          =>  0,
+      'password'        =>  0,
+      'radio'           =>  0,
+      'select'          =>  0,
+      'submit'          =>  0,
+      'text'            =>  0,
+      'textarea'        =>  0,
     );
     $this->validator = new Validator();
     $this->use_client_side_validation = false;
@@ -70,6 +71,11 @@ class FormBuilder {
     if (!array_key_exists('checked', $params)) $params['checked'] = false;
     if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
     $this->addElem('checkbox', $params);
+  }
+
+  public function addCustomContent(array $params = array()) {
+    if (!array_key_exists('id', $params)) $params['id'] = $this->getUniqueId('custom_content');
+    $this->addElem('custom_content', $params);
   }
 
   public function addFile(array $params = array()) {
@@ -172,14 +178,26 @@ class FormBuilder {
     foreach ($this->elems as $current_elem) {
       $type = $current_elem[0];
       $params = $current_elem[1];
-      $div = new \HTMLBuilder\Elements\General\Div();
-      $div->setClass('form_elem');
-      $label = new \HTMLBuilder\Elements\Form\Label();
-      $label->setFor($params['id']);
-      $label->setInnerHTML($params['label']);
-      $label->setClass("form_elem_label form_elem_label_$type");
-      $div->insertChild($label);
+      if ($type != 'custom_content') {
+        $div = new \HTMLBuilder\Elements\General\Div();
+        $div->setClass('form_elem');
+        $label = new \HTMLBuilder\Elements\Form\Label();
+        $label->setFor($params['id']);
+        $label->setInnerHTML($params['label']);
+        $label->setClass("form_elem_label form_elem_label_$type");
+        $div->insertChild($label);
+      }
       switch ($type) {
+        case 'custom_content':
+          $div = new \HTMLBuilder\Elements\General\Div();
+          $div->setId($params['id']);
+          if (array_key_exists('content', $params)) {
+            $div->setInnerHTML($params['content']);
+          }
+          if (array_key_exists('class', $params)) {
+            $div->setClass($params['class']);
+          }
+          break;
         case 'button':
         case 'reset':
         case 'submit':
@@ -226,8 +244,10 @@ class FormBuilder {
           $field->setInnerHTML($params['value']);
           break;
       }
-      $field->setClass("form_elem_field form_elem_field_$type");
-      $div->insertChild($field);
+      if ($type != 'custom_content') {
+        $field->setClass("form_elem_field form_elem_field_$type");
+        $div->insertChild($field);
+      }
       $fieldset->InsertChild($div);
     }
 

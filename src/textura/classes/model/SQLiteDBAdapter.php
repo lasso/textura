@@ -147,12 +147,15 @@ class SQLiteDBAdapter extends DBAdapter {
       if ($index++ < $num_values) $query .= ', ';
     }
     $query .= ')';
-    $this->connection->exec($query);
+    $this->exec($query);
     return $this->connection->lastInsertRowID();
   }
 
   public function normalizeValue($value) {
-    if (is_string($value)) {
+    if (is_null($value)) {
+      return 'NULL';
+    }
+    elseif (is_string($value)) {
       return "'" . \SQLite3::escapeString($value) . "'";
     }
     else {
@@ -227,7 +230,7 @@ class SQLiteDBAdapter extends DBAdapter {
       $query .= \SQLite3::escapeString($key) . ' = ' . $this->normalizeValue($value);
       if ($index++ < $num_keys) $query .= ' AND ';
     }
-    $this->connection->exec($query);
+    $this->exec($query);
   }
 
   /**

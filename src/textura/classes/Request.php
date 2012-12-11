@@ -217,7 +217,7 @@ class Request {
       case 'params':
         return array_merge($this->get_params, $this->post_params);
       case 'path_info':
-        return $this->server_params['PATH_INFO'];
+        return isset($this->server_params['PATH_INFO']) ? $this->server_params['PATH_INFO'] : null;
       case 'port':
         return $this->server_params['SERVER_PORT'];
       case 'post_params':

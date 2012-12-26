@@ -1,31 +1,27 @@
 <?php
-/**
- * Simple examples
- * 
- * PHP version 5
- * 
- * @filesource
- * @category  Examples
- * @package   Examples
- * @author    Jens Peters <jens@history-archive.net>
- * @copyright 2011 Jens Peters
- * @license   http://www.gnu.org/licenses/lgpl.html GNU LGPL v3
- * @version   ##VERSION##
- * @link      http://launchpad.net/htmlbuilder
- */
-use HTMLBuilder\Elements\General\Div;
-use HTMLBuilder\Elements\General\Span;
-use HTMLBuilder\Elements\Text\P;
-use HTMLBuilder\Elements\Lists\Ul;
-use HTMLBuilder\Elements\Lists\Li;
 
-// Register Library
-require_once '../lib/Autoloader.php';
+// PHP HTML Builder is located in htmlbuilder subdirectory
+require_once('../lib/Autoloader.php');
 HTMLBuilder\Autoloader::register("../lib/");
 
-// 1. simple div
-$node1 = new Div();
-$node1->setInnerHTML("I am an block element");
-$node1->setId("iamanid");
+// Create a form
+$form = new HTMLBuilder\Elements\Form\Form();
 
-echo $node1["id"];
+// Create a select box
+$select = new HTMLBuilder\Elements\Form\Select();
+$select->setName('select1[]');
+$select->setMultiple(true);
+
+// Create some options for the select box
+for ($i = 1; $i < 4; $i++) {
+  $new_option = new HTMLBuilder\Elements\Form\Option();
+  $new_option->setValue($i);
+  $new_option->setInnerHTML("Option $i");
+  // Insert the option into the select box
+  $select->insertChild($new_option);
+}
+
+// Insert the select box into the form
+$form->insertChild($select);
+
+echo $form;

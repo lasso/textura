@@ -10,7 +10,7 @@
  * @author    Jens Peters <jens@history-archive.net>
  * @copyright 2011 Jens Peters
  * @license   http://www.gnu.org/licenses/lgpl.html GNU LGPL v3
- * @version   1.0
+ * @version   1.1
  * @link      http://launchpad.net/htmlbuilder
  */
 namespace HTMLBuilder\RenderHelper\Page;
@@ -35,13 +35,24 @@ use HTMLBuilder\Elements\Root;
  * @license    http://www.gnu.org/licenses/lgpl.html GNU LGPL v3
  * @link       http://launchpad.net/htmlbuilder
  */
-class Page extends RenderBase {
+class Page extends RenderBase
+{
+    
+    const DOCTYPE_XHTML10 = "xhtml10";
+    const DOCTYPE_XHTML11 = "xhtml11";
+    const DOCTYPE_HTML5   = "html5";
+
+    protected $_doctypes = array (
+                                "xhtml10" => "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">", 
+                                "xhtml11" => "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">", 
+                                "html5" => "<!DOCTYPE html>"
+    );
 
     /**
      * Page doctype
      * @var string
      */
-    protected $doctype = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">';
+    protected $doctype;
 
     /**
      * Html html
@@ -76,8 +87,11 @@ class Page extends RenderBase {
     /**
      * Constructor
      */
-    public function __construct() {
+    public function __construct()
+    {
 
+        $this->doctype = $this->_doctypes[self::DOCTYPE_XHTML11];
+        
         $this->html = new Html();
         $this->head = new Head();
         $this->body = new Body();
@@ -93,21 +107,22 @@ class Page extends RenderBase {
      * 
      * @return void
      */
-    public function init($title, $description, $keywords = "", $url = "") {
+    public function init($title, $description, $keywords = "", $url = "")
+    {
 
         $title = new Title($title);
-
+        
         $description1 = new Meta();
         $description1->setName("description")->setContent($description);
-
+        
         if ($url == "") {
             $url = "http://" . $_SERVER["HTTP_HOST"];
         }
         $base = new Base();
         $base->setHref($url);
-
+        
         $this->head->insertChildren($title, $description1, $base);
-
+        
         if ($keywords != "") {
             $keywords1 = new Meta();
             $keywords1->setName("keywords")->setContent($keywords);
@@ -120,26 +135,27 @@ class Page extends RenderBase {
      * 
      * @return void
      */
-    public function render() {
+    public function render()
+    {
 
         foreach ($this->css as $css) {
-
+            
             $link = new Link();
             $link->setType("text/css")->setRel(Link::REL_STYLESHEET)->setHref($css);
-
+            
             $this->head->insertChildren($link);
         }
-
+        
         foreach ($this->javascript as $js) {
-
+            
             $script = new Script();
             $script->setSrc($js)->setType("text/javascript");
-
+            
             $this->head->insertChildren($link);
         }
-
+        
         $this->html->insertChildren($this->head, $this->body);
-
+        
         echo $this->doctype . "\n";
         echo $this->html . "\n";
     }
@@ -151,10 +167,11 @@ class Page extends RenderBase {
      * 
      * @return $this
      */
-    public function setHead(Head $head) {
+    public function setHead(Head $head)
+    {
 
         $this->head = $head;
-
+        
         return $this;
     }
 
@@ -165,10 +182,11 @@ class Page extends RenderBase {
      * 
      * @return $this
      */
-    public function setBody(Body $body) {
+    public function setBody(Body $body)
+    {
 
         $this->body = $body;
-
+        
         return $this;
     }
 
@@ -179,7 +197,8 @@ class Page extends RenderBase {
      * 
      * @return $this
      */
-    public function addHead(Root $element) {
+    public function addHead(Root $element)
+    {
 
         $this->head->insertChild($element);
         return $this;
@@ -192,7 +211,8 @@ class Page extends RenderBase {
      * 
      * @return $this
      */
-    public function addBody(Root $element) {
+    public function addBody(Root $element)
+    {
 
         $this->body->insertChild($element);
         return $this;
@@ -205,7 +225,8 @@ class Page extends RenderBase {
      * 
      * @return Page This object
      */
-    public final function setCss(array $css) {
+    public final function setCss(array $css)
+    {
 
         $this->css = $css;
         return $this;
@@ -218,7 +239,8 @@ class Page extends RenderBase {
      * 
      * @return Page This object
      */
-    public final function setJavascript(array $javascript) {
+    public final function setJavascript(array $javascript)
+    {
 
         $this->javascript = $javascript;
         return $this;
@@ -231,7 +253,8 @@ class Page extends RenderBase {
      * 
      * @return Page This object
      */
-    public final function addCss($css) {
+    public final function addCss($css)
+    {
 
         $this->css[] = $css;
         return $this;
@@ -244,7 +267,8 @@ class Page extends RenderBase {
      * 
      * @return Page This object
      */
-    public final function addJavascript($javascript) {
+    public final function addJavascript($javascript)
+    {
 
         $this->javascript[] = $javascript;
         return $this;

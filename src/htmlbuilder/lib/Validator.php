@@ -10,7 +10,7 @@
  * @author    Jens Peters <jens@history-archive.net>
  * @copyright 2011 Jens Peters
  * @license   http://www.gnu.org/licenses/lgpl.html GNU LGPL v3
- * @version   1.0
+ * @version   1.1
  * @link      http://launchpad.net/htmlbuilder
  */
 namespace HTMLBuilder;
@@ -37,6 +37,12 @@ class Validator {
      * @var string
      */
     const CLEANSTRING = "CLEANSTRING";
+    
+    /**
+     * Form element name string
+     * @var string
+     */
+    const FORMNAME = "FORMNAME";
 
     /**
      * Boolean
@@ -82,6 +88,10 @@ class Validator {
             case self::CLEANSTRING:
                 return self::_cleanString($value);
                 break;
+                
+            case self::FORMNAME:
+              	return self::_cleanString($value, true);
+            break;
 
             case self::BOOLEAN:
                 return self::_boolean($value);
@@ -153,12 +163,17 @@ class Validator {
      * 
      * @return boolean
      */
-    private static function _cleanString($value) {
+    private static function _cleanString($value, $isFormName = false) {
+    	
+    	$regex = "/^[a-zA-Z0-9-_]*$/is";
+    	if($isFormName) {
+    		$regex = "/^[a-zA-Z0-9-_\[\]]*$/is";
+    	}
 
         if ($value === true 
             || $value === false
             || $value === null
-            || ! (bool) preg_match("/^[a-zA-Z0-9-_]*$/is", (string) $value)) {
+            || ! (bool) preg_match($regex, (string) $value)) {
             return false;
         } else {
             return true;

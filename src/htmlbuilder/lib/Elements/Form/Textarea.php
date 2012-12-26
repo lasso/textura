@@ -16,7 +16,7 @@
  * @author    Jens Peters <jens@history-archive.net>
  * @copyright 2011 Jens Peters
  * @license   http://www.gnu.org/licenses/lgpl.html GNU LGPL v3
- * @version   1.0
+ * @version   1.1
  * @link      http://launchpad.net/htmlbuilder
  */
 namespace HTMLBuilder\Elements\Form;
@@ -104,16 +104,6 @@ class Textarea extends RootForm {
     public final function getCols() {
 
         return $this->cols;
-    }
-
-    /**
-     * Script to be run when an element is selected
-     * 
-     * @return the $onselect
-     */
-    public final function getOnselect() {
-
-        return $this->onselect;
     }
 
     /**

@@ -11,7 +11,7 @@
  * @author    Jens Peters <jens@history-archive.net>
  * @copyright 2011 Jens Peters
  * @license   http://www.gnu.org/licenses/lgpl.html GNU LGPL v3
- * @version   1.0
+ * @version   1.1
  * @link      http://launchpad.net/htmlbuilder
  */
 namespace HTMLBuilder\Elements\Form;
@@ -87,7 +87,7 @@ abstract class RootForm extends Root {
      */
     public final function setName($name) {
 
-        if ($this->validateSetter(Validator::CLEANSTRING, $name)) {
+        if ($this->validateSetter(Validator::FORMNAME, $name)) {
             $this->name = $name;
         }
         return $this;

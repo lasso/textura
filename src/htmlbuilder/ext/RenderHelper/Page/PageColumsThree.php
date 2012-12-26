@@ -10,10 +10,11 @@
  * @author    Jens Peters <jens@history-archive.net>
  * @copyright 2011 Jens Peters
  * @license   http://www.gnu.org/licenses/lgpl.html GNU LGPL v3
- * @version   1.0
+ * @version   ##VERSION##
  * @link      http://launchpad.net/htmlbuilder
  */
-namespace HTMLBuilder\RenderHelper\Page;
+namespace HTMLBuilder\ext\RenderHelper\Page;
+use HTMLBuilder\RenderHelper\Page\Page;
 use HTMLBuilder\Elements\General\Div;
 use HTMLBuilder\Elements\Page\Base;
 use HTMLBuilder\Elements\Root;

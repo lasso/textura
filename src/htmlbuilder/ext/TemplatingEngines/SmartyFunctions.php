@@ -5,7 +5,7 @@
  * PHP Version 5
  * 
  * @filesource
- * @category  Templates
+ * @category  TemplatingEngines
  * @package   TemplatingEngines
  * @author    Jens Peters <jens@history-archive.net>
  * @copyright 2011 Jens Peters
@@ -21,7 +21,7 @@ use HTMLBuilder\TemplatingEngines;
 /**
  * Smarty general functions container
  * 
- * @category Templates
+ * @category TemplatingEngines
  * @package  TemplatingEngines
  * @author   Jens Peters <jens@history-archiv.net>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU LGPL v3

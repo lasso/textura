@@ -29,6 +29,17 @@ need to ad this to your php.ini to allow execution of PHAR archives:
 see http://www.php.net/manual/en/book.phar.php#106590
 __________________________________________________________________________
 |                                                                        |
+| Autoloader caching posibilities                                        |
+|________________________________________________________________________|
+
+To prevent parsing class directories each page request, set 
+  Autoloader::$cache = true;
+  
+Currently only an file based solution is implemented (using systems 
+temporary folder). Connectors for APC, memcache and maybe others are 
+planned.
+__________________________________________________________________________
+|                                                                        |
 | Copyrights                                                             |
 |________________________________________________________________________|
 

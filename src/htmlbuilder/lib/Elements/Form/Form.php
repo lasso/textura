@@ -16,7 +16,7 @@
  * @author    Jens Peters <jens@history-archive.net>
  * @copyright 2011 Jens Peters
  * @license   http://www.gnu.org/licenses/lgpl.html GNU LGPL v3
- * @version   1.0
+ * @version   1.1
  * @link      http://launchpad.net/htmlbuilder
  */
 namespace HTMLBuilder\Elements\Form;
@@ -89,8 +89,9 @@ class Form extends RootForm
     protected $method = "";
 
     /**
-     * Specifies the MIME_type of files that can be submitted through a file upload
+     * Specifies the MIME type of files that can be submitted through a file upload
      * @var string 
+     * @deprecated because of not supported by most browsers (@link http://www.w3schools.com/tags/att_form_accept.asp)
      */
     protected $accept = "";
 
@@ -142,16 +143,15 @@ class Form extends RootForm
      * Specifies the MIME_type of files that can be submitted through a file upload
      * 
      * @param string $accept
+     * @deprecated because of not supported by most browsers (@link http://www.w3schools.com/tags/att_form_accept.asp)
      */
     public final function setAccept($accept)
     {
-
-        $this->accept = $accept;
-        return $this;
+        throw new Exception("Deprecated because of not supported by most browsers", Exception::DEPRECATED_TAG);
     }
 
     /**
-     * Specifies the MIME_type of files that can be submitted through a file upload
+     * The accept-charset attribute specifies the character encodings that are to be used for the form submission.
      * 
      * @param string $accept_charset
      */

@@ -28,7 +28,7 @@
 <li><div class="src-line"><a name="a16"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;Jens&nbsp;Peters&nbsp;&lt;jens@history-archive.net&gt;</span></div></li>
 <li><div class="src-line"><a name="a17"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@copyright</span><span class="src-doc">&nbsp;2011&nbsp;Jens&nbsp;Peters</span></div></li>
 <li><div class="src-line"><a name="a18"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;&nbsp;&nbsp;http://www.gnu.org/licenses/lgpl.html&nbsp;GNU&nbsp;LGPL&nbsp;v3</span></div></li>
-<li><div class="src-line"><a name="a19"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@version</span><span class="src-doc">&nbsp;&nbsp;&nbsp;1.0</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@version</span><span class="src-doc">&nbsp;&nbsp;&nbsp;1.1</span></div></li>
 <li><div class="src-line"><a name="a20"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@link</span><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://launchpad.net/htmlbuilder</span></div></li>
 <li><div class="src-line"><a name="a21"></a><span class="src-doc">&nbsp;*/</span></div></li>
 <li><div class="src-line"><a name="a22"></a>namespace&nbsp;<span class="src-id">HTMLBuilder</span>\<span class="src-id">Elements</span>\<span class="src-id"><a href="../Elements/Form/Form.html">Form</a></span><span class="src-sym">;</span></div></li>
@@ -119,30 +119,20 @@
 <li><div class="src-line"><a name="a107"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
 <li><div class="src-line"><a name="a108"></a>&nbsp;</div></li>
 <li><div class="src-line"><a name="a109"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
-<li><div class="src-line"><a name="a110"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Script&nbsp;to&nbsp;be&nbsp;run&nbsp;when&nbsp;an&nbsp;element&nbsp;is&nbsp;selected</span></div></li>
+<li><div class="src-line"><a name="a110"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Specifies&nbsp;the&nbsp;visible&nbsp;number&nbsp;of&nbsp;rows&nbsp;in&nbsp;a&nbsp;text-area</span></div></li>
 <li><div class="src-line"><a name="a111"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span></div></li>
-<li><div class="src-line"><a name="a112"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">the&nbsp;</span><span class="src-doc">$onselect</span></div></li>
+<li><div class="src-line"><a name="a112"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">the&nbsp;</span><span class="src-doc">$rows</span></div></li>
 <li><div class="src-line"><a name="a113"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
-<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">final&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../Elements/Form/Textarea.html#methodgetOnselect">getOnselect</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">final&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../Elements/Form/Textarea.html#methodgetRows">getRows</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
 <li><div class="src-line"><a name="a115"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Elements/Form/Textarea.html#var$onselect">onselect</a><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Elements/Form/Textarea.html#var$rows">rows</a><span class="src-sym">;</span></div></li>
 <li><div class="src-line"><a name="a117"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
 <li><div class="src-line"><a name="a118"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a119"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
-<li><div class="src-line"><a name="a120"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Specifies&nbsp;the&nbsp;visible&nbsp;number&nbsp;of&nbsp;rows&nbsp;in&nbsp;a&nbsp;text-area</span></div></li>
-<li><div class="src-line"><a name="a121"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span></div></li>
-<li><div class="src-line"><a name="a122"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">the&nbsp;</span><span class="src-doc">$rows</span></div></li>
-<li><div class="src-line"><a name="a123"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
-<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">final&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../Elements/Form/Textarea.html#methodgetRows">getRows</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
-<li><div class="src-line"><a name="a125"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a126"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Elements/Form/Textarea.html#var$rows">rows</a><span class="src-sym">;</span></div></li>
-<li><div class="src-line"><a name="a127"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
-<li><div class="src-line"><a name="a128"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a129"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a119"></a><span class="src-sym">}</span></div></li>
 </ol></div>
 </div>
 	<p class="notes" id="credit">
-		Documentation generated on Tue, 14 Feb 2012 23:16:09 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+		Documentation generated on Sat, 22 Dec 2012 00:28:41 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
 	</p>
 	</body>
 </html>

@@ -45,6 +45,12 @@ class Textura implements Singleton {
     $this->initPlugins();
   }
 
+  /**
+   * Loads classes from Textura core and Textura plugins automatically.
+   *
+   * @param string $class_name class to load
+   * @return void
+   */
   public static function autoload($class_name) {
     $class_name_parts = explode('\\', $class_name);
     if ($class_name_parts[0] == 'Textura')
@@ -94,6 +100,11 @@ class Textura implements Singleton {
     }
   }
 
+  /**
+   * Returns the (single) instance of the Textura class.
+   *
+   * @return Textura
+   */
   public static function getInstance() {
     if (self::$instance == null) {
       self::$instance = new self();
@@ -101,14 +112,31 @@ class Textura implements Singleton {
     return self::$instance;
   }
 
+  /**
+   * Returns a specified configuration option. If the option does not exist, null is returned.
+   *
+   * @param string $key
+   * @return mixed
+   */
   public function getConfigurationOption($key) {
     return $this->configuration->get($key);
   }
 
+  /**
+   * Sets a specified configuration option. If the option does not exist it will be created.
+   *
+   * @param string $key
+   * @param mixed $value
+   */
   public function setConfigurationOption($key, $value) {
-    return $this->configuration->set($key, $value);
+    $this->configuration->set($key, $value);
   }
 
+  /**
+   * Return all paths registered by plugins.
+   *
+   * @return array
+   */
   public function getPluginPaths() {
     $paths = array();
     foreach ($this->plugins as $plugin) {
@@ -145,6 +173,8 @@ class Textura implements Singleton {
    *   plugin_dir/$name.php.
    * @param string $custom_class custom class name that should be loaded. If null, uses
    *   "{$name}Plugin".
+   * @param string $custom_namespace custom namespace that should be used to initialize the plugin
+   *   class. If null, the "Textura" namespace is assumed.
    * @throws \LogicException if the plugin cannot be loaded for some reason.
    */
   private function registerPlugin(

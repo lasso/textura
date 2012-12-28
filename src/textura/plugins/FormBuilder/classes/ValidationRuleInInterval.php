@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -18,24 +18,61 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/**
+ * Textura
+ *
+ * @package Textura
+ */
+
 namespace Textura;
 
+/**
+ * Validation rule for matching intervals.
+ */
 class ValidationRuleInInterval extends ValidationRule {
 
+  /**
+   * @var mixed minimum value to match. Could be either a float or an integer.
+   */
   private $min_value;
+
+  /**
+   * @var mixed maximum value to match. Could be either a float or an integer.
+   */
   private $max_value;
+
+  /**
+   * @var string message to use when validation fails
+   */
   private $message;
 
+  /**
+   * Constructor
+   *
+   * @param mixed $min_value
+   * @param mixed $max_value
+   * @param string $message
+   */
   public function __construct($min_value = null, $max_value = null, $message = null) {
     $this->min_value = $min_value;
     $this->max_value = $max_value;
     $this->message = $message;
   }
 
+  /**
+   * Returns the message associated with the current validation rule.
+   *
+   * @return string
+   */
   public function getMessage() {
     return strval($this->message);
   }
 
+  /**
+   * Renders the current validation rule (for client side validation only)
+   *
+   * @return string
+   */
   public function render() {
     if (!is_null($this->min_value) && !is_null($this->max_value)) {
       $validate = "function(v) { return v >= {$this->min_value} && v <= {$this->max_value}; }";
@@ -56,6 +93,12 @@ class ValidationRuleInInterval extends ValidationRule {
            "}";
   }
 
+  /**
+   * Validates a value against the current validation rule.
+   *
+   * @param mixed $value
+   * @return boolen true if validation succeeds, false otherwise
+   */
   public function validate($value) {
     if (!is_null($this->min_value) && !is_null($this->max_value)) {
       return $value >= $this->min_value && $value <= $this->max_value;

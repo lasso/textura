@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -18,22 +18,54 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/**
+ * Textura
+ *
+ * @package Textura
+ */
+
 namespace Textura;
 
+/**
+ * Validation rule for matching regexps.
+ */
 class ValidationRuleMatchesRegexp extends ValidationRule {
 
+  /**
+   * @var string regexp to match
+   */
   private $regexp;
+
+  /**
+   * @var string message to use when validation fails
+   */
   private $message;
 
+  /**
+   * Constructor
+   *
+   * @param string $regexp
+   * @param string $message
+   */
   public function __construct($regexp = null, $message = null) {
     $this->regexp = $regexp;
     $this->message = $message;
   }
 
+  /**
+   * Returns the message associated with the current validation rule.
+   *
+   * @return string
+   */
   public function getMessage() {
     return strval($this->message);
   }
 
+  /**
+   * Renders the current validation rule (for client side validation only)
+   *
+   * @return string
+   */
   public function render() {
     if (!is_null($this->regexp)){
       $validate = "function(v) { regexp = {$this->regexp}; return regexp.test(v); }";
@@ -48,6 +80,12 @@ class ValidationRuleMatchesRegexp extends ValidationRule {
            "}";
   }
 
+  /**
+   * Validates a value against the current validation rule.
+   *
+   * @param mixed $value
+   * @return boolen true if validation succeeds, false otherwise
+   */
   public function validate($value) {
     return preg_match($this->regexp, strval($value)) === 1;
   }

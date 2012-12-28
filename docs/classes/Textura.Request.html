@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Textura » \Textura\Request</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Textura</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Textura.html"><i class="icon-th"></i> Textura</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Textura.html"><i class="icon-folder-open"></i> Textura</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___get" title="__get :: Magic getter."><span class="description">Magic getter.</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method_getCookie" title="getCookie :: Returns the value of a specific cookie or null if the cookie is not set."><span class="description">Returns the value of a specific cookie or null if the cookie is not set.</span><pre>getCookie()</pre></a></li>
+<li class="method public "><a href="#method_getValidationErrors" title="getValidationErrors :: Returns the list of validation errors (if any) for the current request"><span class="description">Returns the list of validation errors (if any) for the current request</span><pre>getValidationErrors()</pre></a></li>
+<li class="method public "><a href="#method_init" title="init :: Initializes a new instance of the current class"><span class="description">Initializes a new instance of the current class</span><pre>init()</pre></a></li>
+<li class="method public "><a href="#method_isDelete" title="isDelete :: Returns whether the current request is a DELETE request"><span class="description">Returns whether the current request is a DELETE request</span><pre>isDelete()</pre></a></li>
+<li class="method public "><a href="#method_isGet" title="isGet :: Returns whether the current request is a GET request"><span class="description">Returns whether the current request is a GET request</span><pre>isGet()</pre></a></li>
+<li class="method public "><a href="#method_isHead" title="isHead :: Returns whether the current request is a HEAD request"><span class="description">Returns whether the current request is a HEAD request</span><pre>isHead()</pre></a></li>
+<li class="method public "><a href="#method_isPost" title="isPost :: Returns whether the current request is a POST request"><span class="description">Returns whether the current request is a POST request</span><pre>isPost()</pre></a></li>
+<li class="method public "><a href="#method_isPut" title="isPut :: Returns whether the current request is a PUT request"><span class="description">Returns whether the current request is a PUT request</span><pre>isPut()</pre></a></li>
+<li class="method public "><a href="#method_isTrace" title="isTrace :: Returns whether the current request is a PUT request"><span class="description">Returns whether the current request is a PUT request</span><pre>isTrace()</pre></a></li>
+<li class="method public "><a href="#method_isValidGet" title='isValidGet :: Returns whether the current request is considered a "valid" GET request or not.'><span class="description">Returns whether the current request is considered a "valid" GET request or not.</span><pre>isValidGet()</pre></a></li>
+<li class="method public "><a href="#method_isValidPost" title='isValidPost :: Returns whether the current request is considered a "valid" POST request or not.'><span class="description">Returns whether the current request is considered a "valid" POST request or not.</span><pre>isValidPost()</pre></a></li>
+<li class="method public "><a href="#method_isValidXhr" title='isValidXhr :: Returns whether the current request is considered a "valid" XHR request or not.'><span class="description">Returns whether the current request is considered a "valid" XHR request or not.</span><pre>isValidXhr()</pre></a></li>
+<li class="method public "><a href="#method_isXhr" title="isXhr :: Returns whether the current request is an AJAX request"><span class="description">Returns whether the current request is an AJAX request</span><pre>isXhr()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: constructor"><span class="description">constructor</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_isValid" title='isValid :: Returns whether the current request is considered "valid" or not.'><span class="description">Returns whether the current request is considered "valid" or not.</span><pre>isValid()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_cookies" title="$cookies :: "><span class="description">cookies sent with request</span><pre>$cookies</pre></a></li>
+<li class="property private "><a href="#property_files" title="$files :: "><span class="description">files uploaded with current request</span><pre>$files</pre></a></li>
+<li class="property private "><a href="#property_get_params" title="$get_params :: "><span class="description">GET parameters sent with current request</span><pre>$get_params</pre></a></li>
+<li class="property private "><a href="#property_post_params" title="$post_params :: "><span class="description">POST parameters sent with current request</span><pre>$post_params</pre></a></li>
+<li class="property private "><a href="#property_server_params" title="$server_params :: "><span class="description">parameters automatically created by PHP</span><pre>$server_params</pre></a></li>
+<li class="property private "><a href="#property_validation_errors" title="$validation_errors :: "><span class="description">validation errors (if any). There can only be validation errors in any of the isValidXXX are used.</span><pre>$validation_errors</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Textura\Request"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Textura.html">Textura</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Textura.Request.html">Request</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Request object.</p>
+<div class="details">
+<div class="long_description"><p>Losely based on Rack::Request (from Ruby)</p></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\Textura\http://rack.rubyforge.org/doc/classes/Rack/Request.html</a></td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
+<h2>Magic getter.</h2>
+<pre>__get(string $key) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Allows for some shortcuts in the code.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_getCookie"></a><div class="element clickable method public method_getCookie" data-toggle="collapse" data-target=".method_getCookie .collapse">
+<h2>Returns the value of a specific cookie or null if the cookie is not set.</h2>
+<pre>getCookie(string $cookie_name) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cookie_name</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getValidationErrors"></a><div class="element clickable method public method_getValidationErrors" data-toggle="collapse" data-target=".method_getValidationErrors .collapse">
+<h2>Returns the list of validation errors (if any) for the current request</h2>
+<pre>getValidationErrors() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_init"></a><div class="element clickable method public method_init" data-toggle="collapse" data-target=".method_init .collapse">
+<h2>Initializes a new instance of the current class</h2>
+<pre>init() : \Textura\Textura\Request</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Textura\Textura\Request</code></div>
+</div></div>
+</div>
+<a id="method_isDelete"></a><div class="element clickable method public method_isDelete" data-toggle="collapse" data-target=".method_isDelete .collapse">
+<h2>Returns whether the current request is a DELETE request</h2>
+<pre>isDelete() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isGet"></a><div class="element clickable method public method_isGet" data-toggle="collapse" data-target=".method_isGet .collapse">
+<h2>Returns whether the current request is a GET request</h2>
+<pre>isGet() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isHead"></a><div class="element clickable method public method_isHead" data-toggle="collapse" data-target=".method_isHead .collapse">
+<h2>Returns whether the current request is a HEAD request</h2>
+<pre>isHead() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isPost"></a><div class="element clickable method public method_isPost" data-toggle="collapse" data-target=".method_isPost .collapse">
+<h2>Returns whether the current request is a POST request</h2>
+<pre>isPost() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isPut"></a><div class="element clickable method public method_isPut" data-toggle="collapse" data-target=".method_isPut .collapse">
+<h2>Returns whether the current request is a PUT request</h2>
+<pre>isPut() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isTrace"></a><div class="element clickable method public method_isTrace" data-toggle="collapse" data-target=".method_isTrace .collapse">
+<h2>Returns whether the current request is a PUT request</h2>
+<pre>isTrace() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isValidGet"></a><div class="element clickable method public method_isValidGet" data-toggle="collapse" data-target=".method_isValidGet .collapse">
+<h2>Returns whether the current request is considered a "valid" GET request or not.</h2>
+<pre>isValidGet(array $required_params) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$required_params</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isValidPost"></a><div class="element clickable method public method_isValidPost" data-toggle="collapse" data-target=".method_isValidPost .collapse">
+<h2>Returns whether the current request is considered a "valid" POST request or not.</h2>
+<pre>isValidPost(array $required_params) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$required_params</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isValidXhr"></a><div class="element clickable method public method_isValidXhr" data-toggle="collapse" data-target=".method_isValidXhr .collapse">
+<h2>Returns whether the current request is considered a "valid" XHR request or not.</h2>
+<pre>isValidXhr(array $required_params, string $request_method) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$required_params</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$request_method</h4>
+<code>string</code><p>If this parameter is set, only the specified request method will
+                              be considered valid. If it is not set, any request method will be
+                              considered valid.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isXhr"></a><div class="element clickable method public method_isXhr" data-toggle="collapse" data-target=".method_isXhr .collapse">
+<h2>Returns whether the current request is an AJAX request</h2>
+<pre>isXhr() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>constructor</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_isValid"></a><div class="element clickable method private method_isValid" data-toggle="collapse" data-target=".method_isValid .collapse">
+<h2>Returns whether the current request is considered "valid" or not.</h2>
+<pre>isValid(string $request_method, array $required_params) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A request is considered valid
+if it uses the correct request type and and all required parameters are present.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$request_method</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$required_params</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_cookies"> </a><div class="element clickable property private property_cookies" data-toggle="collapse" data-target=".property_cookies .collapse">
+<h2>cookies sent with request</h2>
+<pre>$cookies : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_files"> </a><div class="element clickable property private property_files" data-toggle="collapse" data-target=".property_files .collapse">
+<h2>files uploaded with current request</h2>
+<pre>$files : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_get_params"> </a><div class="element clickable property private property_get_params" data-toggle="collapse" data-target=".property_get_params .collapse">
+<h2>GET parameters sent with current request</h2>
+<pre>$get_params : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_post_params"> </a><div class="element clickable property private property_post_params" data-toggle="collapse" data-target=".property_post_params .collapse">
+<h2>POST parameters sent with current request</h2>
+<pre>$post_params : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_server_params"> </a><div class="element clickable property private property_server_params" data-toggle="collapse" data-target=".property_server_params .collapse">
+<h2>parameters automatically created by PHP</h2>
+<pre>$server_params : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_validation_errors"> </a><div class="element clickable property private property_validation_errors" data-toggle="collapse" data-target=".property_validation_errors .collapse">
+<h2>validation errors (if any). There can only be validation errors in any of the isValidXXX are used.</h2>
+<pre>$validation_errors : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-28T21:11:02+01:00.<br></footer></div>
+</div>
+</body>
+</html>

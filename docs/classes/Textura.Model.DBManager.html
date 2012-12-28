@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Textura » \Textura\Model\DBManager</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Textura</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Textura.html"><i class="icon-th"></i> Textura</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Textura.html"><i class="icon-folder-open"></i> Textura</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_deleteRows" title="deleteRows :: Deletes zero or more rows from the underlying database."><span class="description">Deletes zero or more rows from the underlying database.</span><pre>deleteRows()</pre></a></li>
+<li class="method public "><a href="#method_deleteSingleRow" title="deleteSingleRow :: Deletes a single row from the specified table in the underlying database."><span class="description">Deletes a single row from the specified table in the underlying database.</span><pre>deleteSingleRow()</pre></a></li>
+<li class="method public "><a href="#method_getFields" title="getFields :: Returns an array containing the field of the specified table from the underlying database."><span class="description">Returns an array containing the field of the specified table from the underlying database.</span><pre>getFields()</pre></a></li>
+<li class="method public "><a href="#method_getInstance" title="getInstance :: Returns the one and only instance of this class."><span class="description">Returns the one and only instance of this class.</span><pre>getInstance()</pre></a></li>
+<li class="method public "><a href="#method_insertRow" title="insertRow :: Inserts a row into the specified table in the underlying database."><span class="description">Inserts a row into the specified table in the underlying database.</span><pre>insertRow()</pre></a></li>
+<li class="method public "><a href="#method_selectRows" title="selectRows :: Select zero or more rows from the specified table from the underlying database."><span class="description">Select zero or more rows from the specified table from the underlying database.</span><pre>selectRows()</pre></a></li>
+<li class="method public "><a href="#method_updateRow" title="updateRow :: Updates one or more rows in the specified table in the underlying database."><span class="description">Updates one or more rows in the specified table in the underlying database.</span><pre>updateRow()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_getAdapterInstance" title="getAdapterInstance :: Returns a new adapter instance"><span class="description">Returns a new adapter instance</span><pre>getAdapterInstance()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_adapter" title="$adapter :: "><span class="description">database adapter</span><pre>$adapter</pre></a></li>
+<li class="property private "><a href="#property_instance" title="$instance :: "><span class="description">the one and only instance of this class</span><pre>$instance</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Textura\Model\DBManager"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Textura.html">Textura</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Textura.Model.html">Model</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Textura.Model.DBManager.html">DBManager</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Class acting as an intermediary between the model manager and the database adapter.</p>
+<div class="details">
+<div class="long_description"><p>This class
+is responsible for setting up the requested database adapter and forwarding request from clients
+to the database adapter.</p></div>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_deleteRows"></a><div class="element clickable method public method_deleteRows" data-toggle="collapse" data-target=".method_deleteRows .collapse">
+<h2>Deletes zero or more rows from the underlying database.</h2>
+<pre>deleteRows(string $table, array $conditions) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>array</code><p>conditions for WHERE clause</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td>always, since this method is not implemented yet</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_deleteSingleRow"></a><div class="element clickable method public method_deleteSingleRow" data-toggle="collapse" data-target=".method_deleteSingleRow .collapse">
+<h2>Deletes a single row from the specified table in the underlying database.</h2>
+<pre>deleteSingleRow(string $table, array $primary_key) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<div class="subelement argument">
+<h4>$primary_key</h4>
+<code>array</code><p>row id identifying the row to delete</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td>always, since this method is not implemented yet</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getFields"></a><div class="element clickable method public method_getFields" data-toggle="collapse" data-target=".method_getFields .collapse">
+<h2>Returns an array containing the field of the specified table from the underlying database.</h2>
+<pre>getFields(string $table) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getInstance"></a><div class="element clickable method public method_getInstance" data-toggle="collapse" data-target=".method_getInstance .collapse">
+<h2>Returns the one and only instance of this class.</h2>
+<pre>getInstance() : \Textura\Model\Textura\Model\DBManager</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Textura\Model\Textura\Model\DBManager</code></div>
+</div></div>
+</div>
+<a id="method_insertRow"></a><div class="element clickable method public method_insertRow" data-toggle="collapse" data-target=".method_insertRow .collapse">
+<h2>Inserts a row into the specified table in the underlying database.</h2>
+<pre>insertRow(string $table, array $values) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>values to insert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>id of inserted row</div>
+</div></div>
+</div>
+<a id="method_selectRows"></a><div class="element clickable method public method_selectRows" data-toggle="collapse" data-target=".method_selectRows .collapse">
+<h2>Select zero or more rows from the specified table from the underlying database.</h2>
+<pre>selectRows(string $table, array $conditions, array $fields) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>array</code><p>conditions for WHERE clause</p></div>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>array</code><p>fields to select. If left unspecified, all fields are selected.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_updateRow"></a><div class="element clickable method public method_updateRow" data-toggle="collapse" data-target=".method_updateRow .collapse">
+<h2>Updates one or more rows in the specified table in the underlying database.</h2>
+<pre>updateRow(string $table, array $primary_keys, array $values) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<div class="subelement argument">
+<h4>$primary_keys</h4>
+<code>array</code><p>array of row id(s) to update</p>
+</div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>values to set in the database</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getAdapterInstance"></a><div class="element clickable method private method_getAdapterInstance" data-toggle="collapse" data-target=".method_getAdapterInstance .collapse">
+<h2>Returns a new adapter instance</h2>
+<pre>getAdapterInstance(string $adapter, array $params) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$adapter</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td>If the adapter cannot be found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_adapter"> </a><div class="element clickable property private property_adapter" data-toggle="collapse" data-target=".property_adapter .collapse">
+<h2>database adapter</h2>
+<pre>$adapter : \Textura\Model\Textura\Model\DBAdapter</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_instance"> </a><div class="element clickable property private property_instance" data-toggle="collapse" data-target=".property_instance .collapse">
+<h2>the one and only instance of this class</h2>
+<pre>$instance : \Textura\Model\Textura\Model\DBManager</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-28T21:11:02+01:00.<br></footer></div>
+</div>
+</body>
+</html>

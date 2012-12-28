@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Textura » \Textura\Response</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Textura</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Textura.html"><i class="icon-th"></i> Textura</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Textura.html"><i class="icon-folder-open"></i> Textura</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_appendToBody" title="appendToBody :: Appends data to the body of the response"><span class="description">Appends data to the body of the response</span><pre>appendToBody()</pre></a></li>
+<li class="method public "><a href="#method_clear" title="clear :: Clears the reponse of all data (both headers and body)"><span class="description">Clears the reponse of all data (both headers and body)</span><pre>clear()</pre></a></li>
+<li class="method public "><a href="#method_clearBody" title="clearBody :: Clears the body of the response"><span class="description">Clears the body of the response</span><pre>clearBody()</pre></a></li>
+<li class="method public "><a href="#method_clearCookies" title="clearCookies :: Clears the cookies of the response"><span class="description">Clears the cookies of the response</span><pre>clearCookies()</pre></a></li>
+<li class="method public "><a href="#method_clearHeaders" title="clearHeaders :: Clears the headers of the response"><span class="description">Clears the headers of the response</span><pre>clearHeaders()</pre></a></li>
+<li class="method public "><a href="#method_getAllHeaders" title="getAllHeaders :: Returns all headers of the response"><span class="description">Returns all headers of the response</span><pre>getAllHeaders()</pre></a></li>
+<li class="method public "><a href="#method_getHeader" title="getHeader :: Returns a specific header of the response."><span class="description">Returns a specific header of the response.</span><pre>getHeader()</pre></a></li>
+<li class="method public "><a href="#method_init" title="init :: Initializes a new Response object"><span class="description">Initializes a new Response object</span><pre>init()</pre></a></li>
+<li class="method public "><a href="#method_send" title="send :: Sends the response to the browser"><span class="description">Sends the response to the browser</span><pre>send()</pre></a></li>
+<li class="method public "><a href="#method_send404" title="send404 :: Send a 404 status code with the specified message to the browser"><span class="description">Send a 404 status code with the specified message to the browser</span><pre>send404()</pre></a></li>
+<li class="method public "><a href="#method_send500" title="send500 :: Send a 500 status code with the specified message to the browser"><span class="description">Send a 500 status code with the specified message to the browser</span><pre>send500()</pre></a></li>
+<li class="method public "><a href="#method_sendRedirect" title="sendRedirect :: redirects the client to another location."><span class="description">redirects the client to another location.</span><pre>sendRedirect()</pre></a></li>
+<li class="method public "><a href="#method_setBody" title="setBody :: replaces the body of the response with $data"><span class="description">replaces the body of the response with $data</span><pre>setBody()</pre></a></li>
+<li class="method public "><a href="#method_setCookie" title="setCookie :: Adds a cookie to the response to the client"><span class="description">Adds a cookie to the response to the client</span><pre>setCookie()</pre></a></li>
+<li class="method public "><a href="#method_setHeader" title="setHeader :: Sets a header in the response"><span class="description">Sets a header in the response</span><pre>setHeader()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Contructior."><span class="description">Contructior.</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_sendBody" title="sendBody :: Sends the body to the browser"><span class="description">Sends the body to the browser</span><pre>sendBody()</pre></a></li>
+<li class="method private "><a href="#method_sendCookies" title="sendCookies :: Sends all cookies associated with the current Response object."><span class="description">Sends all cookies associated with the current Response object.</span><pre>sendCookies()</pre></a></li>
+<li class="method private "><a href="#method_sendHeaders" title="sendHeaders :: Sends the headers to the browser"><span class="description">Sends the headers to the browser</span><pre>sendHeaders()</pre></a></li>
+<li class="method private "><a href="#method_setSessionCookie" title="setSessionCookie :: Sets session cookue (if currently active controller uses session)."><span class="description">Sets session cookue (if currently active controller uses session).</span><pre>setSessionCookie()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_body" title="$body :: "><span class="description">response body</span><pre>$body</pre></a></li>
+<li class="property private "><a href="#property_cookies" title="$cookies :: "><span class="description">response cookies</span><pre>$cookies</pre></a></li>
+<li class="property private "><a href="#property_headers" title="$headers :: "><span class="description">response headers</span><pre>$headers</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Textura\Response"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Textura.html">Textura</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Textura.Response.html">Response</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">This class represents the response sent to the browser</p>
+<div class="details">
+<div class="long_description"></div>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_appendToBody"></a><div class="element clickable method public method_appendToBody" data-toggle="collapse" data-target=".method_appendToBody .collapse">
+<h2>Appends data to the body of the response</h2>
+<pre>appendToBody(mixed $data) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>Should be a string, but will be converted to a string if
+of any other type.</p></div>
+</div></div>
+</div>
+<a id="method_clear"></a><div class="element clickable method public method_clear" data-toggle="collapse" data-target=".method_clear .collapse">
+<h2>Clears the reponse of all data (both headers and body)</h2>
+<pre>clear() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_clearBody"></a><div class="element clickable method public method_clearBody" data-toggle="collapse" data-target=".method_clearBody .collapse">
+<h2>Clears the body of the response</h2>
+<pre>clearBody() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_clearCookies"></a><div class="element clickable method public method_clearCookies" data-toggle="collapse" data-target=".method_clearCookies .collapse">
+<h2>Clears the cookies of the response</h2>
+<pre>clearCookies() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_clearHeaders"></a><div class="element clickable method public method_clearHeaders" data-toggle="collapse" data-target=".method_clearHeaders .collapse">
+<h2>Clears the headers of the response</h2>
+<pre>clearHeaders() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getAllHeaders"></a><div class="element clickable method public method_getAllHeaders" data-toggle="collapse" data-target=".method_getAllHeaders .collapse">
+<h2>Returns all headers of the response</h2>
+<pre>getAllHeaders() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getHeader"></a><div class="element clickable method public method_getHeader" data-toggle="collapse" data-target=".method_getHeader .collapse">
+<h2>Returns a specific header of the response.</h2>
+<pre>getHeader(string $key) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the header is not set, null is returned.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_init"></a><div class="element clickable method public method_init" data-toggle="collapse" data-target=".method_init .collapse">
+<h2>Initializes a new Response object</h2>
+<pre>init() : \Textura\Textura\Response</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Textura\Textura\Response</code></div>
+</div></div>
+</div>
+<a id="method_send"></a><div class="element clickable method public method_send" data-toggle="collapse" data-target=".method_send .collapse">
+<h2>Sends the response to the browser</h2>
+<pre>send() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_send404"></a><div class="element clickable method public method_send404" data-toggle="collapse" data-target=".method_send404 .collapse">
+<h2>Send a 404 status code with the specified message to the browser</h2>
+<pre>send404(string $message) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to send to the browser</p></div>
+</div></div>
+</div>
+<a id="method_send500"></a><div class="element clickable method public method_send500" data-toggle="collapse" data-target=".method_send500 .collapse">
+<h2>Send a 500 status code with the specified message to the browser</h2>
+<pre>send500(\Exception $error, string $message) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$error</h4>
+<code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code><p>The execption that was thrown. This parameter is used for
+                             printing errors/printing beacktraces is enabled.</p>
+</div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to send to the browser</p></div>
+</div></div>
+</div>
+<a id="method_sendRedirect"></a><div class="element clickable method public method_sendRedirect" data-toggle="collapse" data-target=".method_sendRedirect .collapse">
+<h2>redirects the client to another location.</h2>
+<pre>sendRedirect(string $location, integer $status, string $message) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$location</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$status</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setBody"></a><div class="element clickable method public method_setBody" data-toggle="collapse" data-target=".method_setBody .collapse">
+<h2>replaces the body of the response with $data</h2>
+<pre>setBody(mixed $data) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>Should be a strong, but will be converted to a string otherwise</p></div>
+</div></div>
+</div>
+<a id="method_setCookie"></a><div class="element clickable method public method_setCookie" data-toggle="collapse" data-target=".method_setCookie .collapse">
+<h2>Adds a cookie to the response to the client</h2>
+<pre>setCookie(string $cookie_name, mixed $cookie_value, string $cookie_expire, string $cookie_path, string $cookie_domain, boolean $cookie_secure, boolean $cookie_httponly) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cookie_name</h4>
+<code>string</code><p>cookie name</p></div>
+<div class="subelement argument">
+<h4>$cookie_value</h4>
+<code>mixed</code><p>cookie value</p></div>
+<div class="subelement argument">
+<h4>$cookie_expire</h4>
+<code>string</code><p>cookie expire date. By default, Textura does not set an explicit
+  expiration date. When this parameter is set, Textura uses the Expires parameter in the
+  Set-Cookie HTTP header to set an expire date.</p>
+</div>
+<div class="subelement argument">
+<h4>$cookie_path</h4>
+<code>string</code><p>cookie path. By default, Textura will use the path returned by
+  Textura\PathBuilder::getTexturaBaseURL().</p>
+</div>
+<div class="subelement argument">
+<h4>$cookie_domain</h4>
+<code>string</code><p>cookie domain</p></div>
+<div class="subelement argument">
+<h4>$cookie_secure</h4>
+<code>boolean</code><p>is cookie HTTPS only?</p>
+</div>
+<div class="subelement argument">
+<h4>$cookie_httponly</h4>
+<code>boolean</code><p>is cookie invisible to XHR requests?</p>
+</div>
+</div></div>
+</div>
+<a id="method_setHeader"></a><div class="element clickable method public method_setHeader" data-toggle="collapse" data-target=".method_setHeader .collapse">
+<h2>Sets a header in the response</h2>
+<pre>setHeader(string $key, mixed $value) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The headers to set</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to use for the header</p></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Contructior.</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This method is private, use Response::init to initialize
+the response object instead.</p></div></div></div>
+</div>
+<a id="method_sendBody"></a><div class="element clickable method private method_sendBody" data-toggle="collapse" data-target=".method_sendBody .collapse">
+<h2>Sends the body to the browser</h2>
+<pre>sendBody() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_sendCookies"></a><div class="element clickable method private method_sendCookies" data-toggle="collapse" data-target=".method_sendCookies .collapse">
+<h2>Sends all cookies associated with the current Response object.</h2>
+<pre>sendCookies() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_sendHeaders"></a><div class="element clickable method private method_sendHeaders" data-toggle="collapse" data-target=".method_sendHeaders .collapse">
+<h2>Sends the headers to the browser</h2>
+<pre>sendHeaders() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_setSessionCookie"></a><div class="element clickable method private method_setSessionCookie" data-toggle="collapse" data-target=".method_setSessionCookie .collapse">
+<h2>Sets session cookue (if currently active controller uses session).</h2>
+<pre>setSessionCookie() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_body"> </a><div class="element clickable property private property_body" data-toggle="collapse" data-target=".property_body .collapse">
+<h2>response body</h2>
+<pre>$body : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cookies"> </a><div class="element clickable property private property_cookies" data-toggle="collapse" data-target=".property_cookies .collapse">
+<h2>response cookies</h2>
+<pre>$cookies : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_headers"> </a><div class="element clickable property private property_headers" data-toggle="collapse" data-target=".property_headers .collapse">
+<h2>response headers</h2>
+<pre>$headers : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-28T21:11:02+01:00.<br></footer></div>
+</div>
+</body>
+</html>

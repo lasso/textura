@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -18,16 +18,50 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/**
+ * Textura
+ *
+ * @package Textura
+ * @subpackage Model
+ */
+
 namespace Textura\Model;
 
+/**
+ * Database adapter for SQLite(3)
+ */
 class SQLiteDBAdapter extends DBAdapter {
 
+  /**
+   * @var \SQLite3 database connection
+   */
   private $connection;
+
+  /**
+   * @var string path to SQLite database
+   */
   private $filename;
+
+  /**
+   * @var integer flags used when connecting to SQLite database
+   */
   private $flags;
+
+  /**
+   * @var string encryption key used when connecting to SQLite database
+   */
   private $encryption_key;
+
+  /**
+   * @var mixed database logger
+   */
   private $logger;
 
+  /**
+   * Constructor
+   *
+   * @param array $params connection parameters
+   */
   public function __construct(array $params) {
     $filtered_params = $this->validateParams($params);
     $this->filename = $filtered_params['filename'];
@@ -78,6 +112,7 @@ class SQLiteDBAdapter extends DBAdapter {
    * Executes a query that does not return any rows.
    *
    * @param string $query
+   * @param boolean $log_query true if query should be logged, false otherwise
    */
   public function exec($query, $log_query = true) {
     if (!$this->isConnected()) $this->connect();
@@ -116,6 +151,7 @@ class SQLiteDBAdapter extends DBAdapter {
    * Sends a query to the DB and returns the result as an associative array
    *
    * @param string $query
+   * @param boolean $log_query true if query should be logged, false otherwise
    * @return array
    */
   public function query($query, $log_query = true) {
@@ -132,6 +168,13 @@ class SQLiteDBAdapter extends DBAdapter {
     return $this->connection instanceof \SQLite3;
   }
 
+  /**
+   * Inserts a row into the underlying database.
+   *
+   * @param string $table table name
+   * @param array $values values to insert
+   * @return integer id of inserted row
+   */
   public function insertRow($table, array $values) {
     $query = 'INSERT INTO \'' . \SQLite3::escapeString($table) . '\' (';
     $num_values = count($values);
@@ -151,6 +194,12 @@ class SQLiteDBAdapter extends DBAdapter {
     return $this->connection->lastInsertRowID();
   }
 
+  /**
+   * Normalizes a value so that it isafe for SQLite to use it.
+   *
+   * @param mixed $value
+   * @return string
+   */
   public function normalizeValue($value) {
     if (is_null($value)) {
       return 'NULL';
@@ -163,6 +212,15 @@ class SQLiteDBAdapter extends DBAdapter {
     }
   }
 
+  /**
+   * Selects zero or more rows from the specified table.
+   *
+   * @param string $table table name
+   * @param array $conditions conditions for WHERE clause
+   * @param array $fields fields to select. If left unspecified, all fields are selected.
+   * @return array
+   * @throws \LogicException
+   */
   public function selectRows($table, array $conditions, array $fields = null) {
     if (empty($fields)) {
       $fields_as_string = '*';
@@ -215,6 +273,13 @@ class SQLiteDBAdapter extends DBAdapter {
     return $this->query($query);
   }
 
+  /**
+   * Updates one or more rows in the underlying database.
+   *
+   * @param string $table table name
+   * @param array $primary_keys id of rows to update
+   * @param array $values values to update the table with
+   */
   public function updateRow($table, array $primary_keys, array $values) {
     $query = 'UPDATE \'' . \SQLite3::escapeString($table) . '\' SET ';
     $num_values = count($values);
@@ -249,6 +314,13 @@ class SQLiteDBAdapter extends DBAdapter {
     return ($this->connection->querySingle($query) > 0);
   }
 
+  /**
+   * Validates the connection parameters for the current database adapter.
+   *
+   * @param array $params connection parameters
+   * @return array array with all invalid parameters filtered out
+   * @throws \LogicException if not all required params are present
+   */
   protected function validateParams(array $params) {
     $filtered_params = array();
     $required_params = array('filename');
@@ -283,6 +355,12 @@ class SQLiteDBAdapter extends DBAdapter {
     return $result_as_array;
   }
 
+  /**
+   * Translates a SQLite field type to a DBAdapter field type.
+   *
+   * @param string $type
+   * @return integer
+   */
   private function convertFieldType($type) {
     switch ($type) {
       case 'INT':

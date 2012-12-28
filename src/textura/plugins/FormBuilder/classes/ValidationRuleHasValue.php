@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -18,20 +18,47 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/**
+ * Textura
+ *
+ * @package Textura
+ */
+
 namespace Textura;
 
+/**
+ * Validation rule for ensuring that a field has a value.
+ */
 class ValidationRuleHasValue extends ValidationRule {
 
+  /**
+   * @var string message to use when validation fails
+   */
   private $message;
 
+  /**
+   * Constructor
+   *
+   * @param type $message
+   */
   public function __construct($message = null) {
     $this->message = $message;
   }
 
+  /**
+   * Returns the message associated with the current validation rule.
+   *
+   * @return string
+   */
   public function getMessage() {
     return strval($this->message);
   }
 
+  /**
+   * Renders the current validation rule (for client side validation only)
+   *
+   * @return string
+   */
   public function render() {
     $validate = "function(v) { return v.length > 0; }";
     $message = json_encode($this->message);
@@ -41,6 +68,12 @@ class ValidationRuleHasValue extends ValidationRule {
            "}";
   }
 
+  /**
+   * Validates a value against the current validation rule.
+   *
+   * @param mixed $value
+   * @return boolen true if validation succeeds, false otherwise
+   */
   public function validate($value) {
     return !!$value;
   }

@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Textura » \Textura\Model\SQLiteDBAdapter</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Textura</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Textura.html"><i class="icon-th"></i> Textura</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Textura.html"><i class="icon-folder-open"></i> Textura</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_exec" title="exec :: Executes a query that does not return any rows."><span class="description">Executes a query that does not return any rows.</span><pre>exec()</pre></a></li>
+<li class="method public "><a href="#method_getFields" title="getFields :: Gets available fields (name, data_type) from a table."><span class="description">Gets available fields (name, data_type) from a table.</span><pre>getFields()</pre></a></li>
+<li class="method public "><a href="#method_insertRow" title="insertRow :: Inserts a row into the underlying database."><span class="description">Inserts a row into the underlying database.</span><pre>insertRow()</pre></a></li>
+<li class="method public "><a href="#method_isConnected" title="isConnected :: Returns whether there exists an open connection to the DB or not"><span class="description">Returns whether there exists an open connection to the DB or not</span><pre>isConnected()</pre></a></li>
+<li class="method public "><a href="#method_normalizeValue" title="normalizeValue :: Normalizes a value so that it isafe for SQLite to use it."><span class="description">Normalizes a value so that it isafe for SQLite to use it.</span><pre>normalizeValue()</pre></a></li>
+<li class="method public "><a href="#method_query" title="query :: Sends a query to the DB and returns the result as an associative array"><span class="description">Sends a query to the DB and returns the result as an associative array</span><pre>query()</pre></a></li>
+<li class="method public "><a href="#method_selectRows" title="selectRows :: Selects zero or more rows from the specified table."><span class="description">Selects zero or more rows from the specified table.</span><pre>selectRows()</pre></a></li>
+<li class="method public "><a href="#method_tableExists" title="tableExists :: Returns whether a specific table exists or not"><span class="description">Returns whether a specific table exists or not</span><pre>tableExists()</pre></a></li>
+<li class="method public "><a href="#method_updateRow" title="updateRow :: Updates one or more rows in the underlying database."><span class="description">Updates one or more rows in the underlying database.</span><pre>updateRow()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_connect" title="connect :: Connects to the database"><span class="description">Connects to the database</span><pre>connect()</pre></a></li>
+<li class="method protected inherited"><a href="#method_isValidOperator" title="isValidOperator :: Returns whether an operator is a valid operator for database query."><span class="description">Returns whether an operator is a valid operator for database query.</span><pre>isValidOperator()</pre></a></li>
+<li class="method protected "><a href="#method_validateParams" title="validateParams :: Validates the connection parameters for the current database adapter."><span class="description">Validates the connection parameters for the current database adapter.</span><pre>validateParams()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_convertFieldType" title="convertFieldType :: Translates a SQLite field type to a DBAdapter field type."><span class="description">Translates a SQLite field type to a DBAdapter field type.</span><pre>convertFieldType()</pre></a></li>
+<li class="method private "><a href="#method_getResultAsArray" title="getResultAsArray :: Returns the result from a DB queray as an associative array."><span class="description">Returns the result from a DB queray as an associative array.</span><pre>getResultAsArray()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_connection" title="$connection :: "><span class="description">database connection</span><pre>$connection</pre></a></li>
+<li class="property private "><a href="#property_encryption_key" title="$encryption_key :: "><span class="description">encryption key used when connecting to SQLite database</span><pre>$encryption_key</pre></a></li>
+<li class="property private "><a href="#property_filename" title="$filename :: "><span class="description">path to SQLite database</span><pre>$filename</pre></a></li>
+<li class="property private "><a href="#property_flags" title="$flags :: "><span class="description">flags used when connecting to SQLite database</span><pre>$flags</pre></a></li>
+<li class="property private "><a href="#property_logger" title="$logger :: "><span class="description">database logger</span><pre>$logger</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  inherited"><a href="#constant_OP_EQ" title="OP_EQ :: "><span class="description">OP_EQ</span><pre>OP_EQ</pre></a></li>
+<li class="constant  inherited"><a href="#constant_OP_GET" title="OP_GET :: "><span class="description">OP_GET</span><pre>OP_GET</pre></a></li>
+<li class="constant  inherited"><a href="#constant_OP_GT" title="OP_GT :: "><span class="description">OP_GT</span><pre>OP_GT</pre></a></li>
+<li class="constant  inherited"><a href="#constant_OP_IN" title="OP_IN :: "><span class="description">OP_IN</span><pre>OP_IN</pre></a></li>
+<li class="constant  inherited"><a href="#constant_OP_LET" title="OP_LET :: "><span class="description">OP_LET</span><pre>OP_LET</pre></a></li>
+<li class="constant  inherited"><a href="#constant_OP_LT" title="OP_LT :: "><span class="description">OP_LT</span><pre>OP_LT</pre></a></li>
+<li class="constant  inherited"><a href="#constant_TYPE_FLOAT" title="TYPE_FLOAT :: "><span class="description">TYPE_FLOAT</span><pre>TYPE_FLOAT</pre></a></li>
+<li class="constant  inherited"><a href="#constant_TYPE_INTEGER" title="TYPE_INTEGER :: "><span class="description">TYPE_INTEGER</span><pre>TYPE_INTEGER</pre></a></li>
+<li class="constant  inherited"><a href="#constant_TYPE_MODEL" title="TYPE_MODEL :: "><span class="description">TYPE_MODEL</span><pre>TYPE_MODEL</pre></a></li>
+<li class="constant  inherited"><a href="#constant_TYPE_STRING" title="TYPE_STRING :: "><span class="description">TYPE_STRING</span><pre>TYPE_STRING</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Textura\Model\SQLiteDBAdapter"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Textura.html">Textura</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Textura.Model.html">Model</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Textura.Model.SQLiteDBAdapter.html">SQLiteDBAdapter</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Database adapter for SQLite(3)</p>
+<div class="details">
+<div class="long_description"></div>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(array $params) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>connection parameters</p></div>
+</div></div>
+</div>
+<a id="method_exec"></a><div class="element clickable method public method_exec" data-toggle="collapse" data-target=".method_exec .collapse">
+<h2>Executes a query that does not return any rows.</h2>
+<pre>exec(string $query, boolean $log_query) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$log_query</h4>
+<code>boolean</code><p>true if query should be logged, false otherwise</p></div>
+</div></div>
+</div>
+<a id="method_getFields"></a><div class="element clickable method public method_getFields" data-toggle="collapse" data-target=".method_getFields .collapse">
+<h2>Gets available fields (name, data_type) from a table.</h2>
+<pre>getFields(string $table) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the table does not exist, an
+exception will be thrown.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_insertRow"></a><div class="element clickable method public method_insertRow" data-toggle="collapse" data-target=".method_insertRow .collapse">
+<h2>Inserts a row into the underlying database.</h2>
+<pre>insertRow(string $table, array $values) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>values to insert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>id of inserted row</div>
+</div></div>
+</div>
+<a id="method_isConnected"></a><div class="element clickable method public method_isConnected" data-toggle="collapse" data-target=".method_isConnected .collapse">
+<h2>Returns whether there exists an open connection to the DB or not</h2>
+<pre>isConnected() : \Textura\Model\type</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Textura\Model\type</code></div>
+</div></div>
+</div>
+<a id="method_normalizeValue"></a><div class="element clickable method public method_normalizeValue" data-toggle="collapse" data-target=".method_normalizeValue .collapse">
+<h2>Normalizes a value so that it isafe for SQLite to use it.</h2>
+<pre>normalizeValue(mixed $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_query"></a><div class="element clickable method public method_query" data-toggle="collapse" data-target=".method_query .collapse">
+<h2>Sends a query to the DB and returns the result as an associative array</h2>
+<pre>query(string $query, boolean $log_query) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$log_query</h4>
+<code>boolean</code><p>true if query should be logged, false otherwise</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_selectRows"></a><div class="element clickable method public method_selectRows" data-toggle="collapse" data-target=".method_selectRows .collapse">
+<h2>Selects zero or more rows from the specified table.</h2>
+<pre>selectRows(string $table, array $conditions, array $fields) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>array</code><p>conditions for WHERE clause</p></div>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>array</code><p>fields to select. If left unspecified, all fields are selected.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_tableExists"></a><div class="element clickable method public method_tableExists" data-toggle="collapse" data-target=".method_tableExists .collapse">
+<h2>Returns whether a specific table exists or not</h2>
+<pre>tableExists(string $table) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_updateRow"></a><div class="element clickable method public method_updateRow" data-toggle="collapse" data-target=".method_updateRow .collapse">
+<h2>Updates one or more rows in the underlying database.</h2>
+<pre>updateRow(string $table, array $primary_keys, array $values) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<div class="subelement argument">
+<h4>$primary_keys</h4>
+<code>array</code><p>id of rows to update</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>values to update the table with</p></div>
+</div></div>
+</div>
+<a id="method_connect"></a><div class="element clickable method protected method_connect" data-toggle="collapse" data-target=".method_connect .collapse">
+<h2>Connects to the database</h2>
+<pre>connect() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_isValidOperator"></a><div class="element clickable method protected method_isValidOperator" data-toggle="collapse" data-target=".method_isValidOperator .collapse">
+<h2>Returns whether an operator is a valid operator for database query.</h2>
+<pre>isValidOperator(string $operator) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::isValidOperator()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$operator</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>true if the specified operator is valid, false otherwise</div>
+</div></div>
+</div>
+<a id="method_validateParams"></a><div class="element clickable method protected method_validateParams" data-toggle="collapse" data-target=".method_validateParams .collapse">
+<h2>Validates the connection parameters for the current database adapter.</h2>
+<pre>validateParams(array $params) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>connection parameters</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td>if not all required params are present</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>array with all invalid parameters filtered out</div>
+</div></div>
+</div>
+<a id="method_convertFieldType"></a><div class="element clickable method private method_convertFieldType" data-toggle="collapse" data-target=".method_convertFieldType .collapse">
+<h2>Translates a SQLite field type to a DBAdapter field type.</h2>
+<pre>convertFieldType(string $type) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_getResultAsArray"></a><div class="element clickable method private method_getResultAsArray" data-toggle="collapse" data-target=".method_getResultAsArray .collapse">
+<h2>Returns the result from a DB queray as an associative array.</h2>
+<pre>getResultAsArray(\SQLite3Result $result) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code><a href="http://php.net/manual/en/class.sqlite3result.php">\SQLite3Result</a></code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_connection"> </a><div class="element clickable property private property_connection" data-toggle="collapse" data-target=".property_connection .collapse">
+<h2>database connection</h2>
+<pre>$connection : <a href="http://php.net/manual/en/class.sqlite3.php">\SQLite3</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_encryption_key"> </a><div class="element clickable property private property_encryption_key" data-toggle="collapse" data-target=".property_encryption_key .collapse">
+<h2>encryption key used when connecting to SQLite database</h2>
+<pre>$encryption_key : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_filename"> </a><div class="element clickable property private property_filename" data-toggle="collapse" data-target=".property_filename .collapse">
+<h2>path to SQLite database</h2>
+<pre>$filename : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_flags"> </a><div class="element clickable property private property_flags" data-toggle="collapse" data-target=".property_flags .collapse">
+<h2>flags used when connecting to SQLite database</h2>
+<pre>$flags : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_logger"> </a><div class="element clickable property private property_logger" data-toggle="collapse" data-target=".property_logger .collapse">
+<h2>database logger</h2>
+<pre>$logger : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_OP_EQ"> </a><div class="element clickable constant  constant_OP_EQ" data-toggle="collapse" data-target=".constant_OP_EQ .collapse">
+<h2>OP_EQ</h2>
+<pre>OP_EQ </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::OP_EQ</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_OP_GET"> </a><div class="element clickable constant  constant_OP_GET" data-toggle="collapse" data-target=".constant_OP_GET .collapse">
+<h2>OP_GET</h2>
+<pre>OP_GET </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::OP_GET</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_OP_GT"> </a><div class="element clickable constant  constant_OP_GT" data-toggle="collapse" data-target=".constant_OP_GT .collapse">
+<h2>OP_GT</h2>
+<pre>OP_GT </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::OP_GT</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_OP_IN"> </a><div class="element clickable constant  constant_OP_IN" data-toggle="collapse" data-target=".constant_OP_IN .collapse">
+<h2>OP_IN</h2>
+<pre>OP_IN </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::OP_IN</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_OP_LET"> </a><div class="element clickable constant  constant_OP_LET" data-toggle="collapse" data-target=".constant_OP_LET .collapse">
+<h2>OP_LET</h2>
+<pre>OP_LET </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::OP_LET</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_OP_LT"> </a><div class="element clickable constant  constant_OP_LT" data-toggle="collapse" data-target=".constant_OP_LT .collapse">
+<h2>OP_LT</h2>
+<pre>OP_LT </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::OP_LT</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_TYPE_FLOAT"> </a><div class="element clickable constant  constant_TYPE_FLOAT" data-toggle="collapse" data-target=".constant_TYPE_FLOAT .collapse">
+<h2>TYPE_FLOAT</h2>
+<pre>TYPE_FLOAT </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::TYPE_FLOAT</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_TYPE_INTEGER"> </a><div class="element clickable constant  constant_TYPE_INTEGER" data-toggle="collapse" data-target=".constant_TYPE_INTEGER .collapse">
+<h2>TYPE_INTEGER</h2>
+<pre>TYPE_INTEGER </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::TYPE_INTEGER</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_TYPE_MODEL"> </a><div class="element clickable constant  constant_TYPE_MODEL" data-toggle="collapse" data-target=".constant_TYPE_MODEL .collapse">
+<h2>TYPE_MODEL</h2>
+<pre>TYPE_MODEL </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::TYPE_MODEL</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_TYPE_STRING"> </a><div class="element clickable constant  constant_TYPE_STRING" data-toggle="collapse" data-target=".constant_TYPE_STRING .collapse">
+<h2>TYPE_STRING</h2>
+<pre>TYPE_STRING </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Textura\Model\DBAdapter::TYPE_STRING</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-28T21:11:02+01:00.<br></footer></div>
+</div>
+</body>
+</html>

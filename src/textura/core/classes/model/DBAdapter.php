@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -18,8 +18,18 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/**
+ * Textura
+ *
+ * @package Textura
+ * @subpackage Model
+ */
+
 namespace Textura\Model;
 
+/**
+ * Abstract class representing a database adapter.
+ */
 abstract class DBAdapter {
 
   // Constants defining operators that the adapter should handle
@@ -36,14 +46,39 @@ abstract class DBAdapter {
   const TYPE_MODEL    = 3;
   const TYPE_STRING   = 4;
 
+  /**
+   * Constructor
+   *
+   * @param array $params parameters used to connect to the database
+   */
   abstract public function __construct(array $params);
 
+  /**
+   * Connects to the database.
+   */
   abstract protected function connect();
 
+  /**
+   * Sends a custom SQL query to the underlying database.
+   *
+   * @param string $query the query to send to the underlying database
+   */
   abstract public function query($query);
 
+  /**
+   * Returns whether the underlying database has a specified schema (table) or not.
+   *
+   * @param string $table table name
+   * @return boolean true if the table exists in the database, false otherwise
+   */
   abstract public function tableExists($table);
 
+  /**
+   * Returns whether an operator is a valid operator for database query.
+   *
+   * @param string $operator
+   * @return boolean true if the specified operator is valid, false otherwise
+   */
   protected function isValidOperator($operator) {
     return
       $operator === self::OP_GET ||
@@ -53,12 +88,38 @@ abstract class DBAdapter {
       $operator === self::OP_LT;
   }
 
+  /**
+   * Inserts a row inte a database table in the underlying database.
+   *
+   * @param string $table table name
+   * @param array $values values to insert into the table
+   */
   abstract public function insertRow($table, array $values);
 
+  /**
+   * Performs a SELECT query on the underlying database.
+   *
+   * @param string $table table name
+   * @param array $conditions conditions for WHERE clause
+   * @param array $fields fields to select. If left unspecified, all fields are selected.
+   */
   abstract public function selectRows($table, array $conditions, array $fields = null);
 
+  /**
+   * Updates one or more rows in the underlying database.
+   *
+   * @param string $table table name
+   * @param array $primary_keys id(s) for the rows that should be updated
+   * @param array $values values to update the table with
+   */
   abstract public function updateRow($table, array $primary_keys, array $values);
 
+  /**
+   * Returns whether the provided connection parmeters are valid or not.
+   *
+   * @param array $params connection parameters
+   * @return boolean true if parameters are valid, false otherwise
+   */
   abstract protected function validateParams(array $params);
 }
 ?>

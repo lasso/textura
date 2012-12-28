@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -20,11 +20,25 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Textura;
 
+/**
+ * Router. This class is responsible for mapping requests to controllers and actions.
+ */
 class Router {
 
+  /**
+   * @var array array holding the list of active controllers (controller_class => path)
+   */
   private static $controller_classes = null;
-  private static $controller_map = null;  // Map holding the list of active controllers
-  private static $default_actions = null; // Map holding default actions for active controllers
+
+  /**
+   * @var array array holding the list of active controllers (path => controller_class)
+   */
+  private static $controller_map = null;
+
+  /**
+   * @var array array holding default actions for active controllers
+   */
+  private static $default_actions = null;
 
   /**
    * Routes a request and emits a response.
@@ -111,6 +125,13 @@ class Router {
     $response->send404();
   }
 
+  /**
+   * Returns the path for a specific controller class
+   *
+   * @param Textura\Controller $controller_class
+   * @return string
+   * @throws \LogicException if controller class is not mapped in the current controller map
+   */
   public static function getControllerPath($controller_class) {
     if (!array_key_exists($controller_class, self::$controller_classes)) {
       throw new \LogicException("Controller class $controller_class is not mapped in router.");
@@ -157,8 +178,9 @@ class Router {
   /**
    * Renders a HAML template for the specified path
    *
+   * @param Textura\Controller $controller
    * @param string $template_path
-   * @param Response $response
+   * @param Textura\Response $response
    */
   private static function renderTemplate($controller, $template_path, $response) {
     require_once(PathBuilder::buildPath(TEXTURA_SRC_DIR, 'phamlp', 'haml', 'HamlParser.php'));

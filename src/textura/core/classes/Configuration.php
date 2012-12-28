@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -25,7 +25,9 @@ namespace Textura;
  */
 class Configuration {
 
-  // Current configuration
+  /**
+   * @var array current configuration
+   */
   private $configuration;
 
   /**

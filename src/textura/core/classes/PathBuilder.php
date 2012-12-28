@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -20,10 +20,21 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Textura;
 
+/**
+ * Class for handling paths in a uniform way
+ */
 class PathBuilder {
 
-  private static $textura_base_url;     // Keep track of Textura base URL
+  /**
+   * @var string keeps track of Textura's "base" url
+   */
+  private static $textura_base_url;
 
+  /**
+   * Builds a path in the file system from parameters sent to the method.
+   *
+   * @return string
+   */
   public static function buildPath() {
     $args = func_get_args();
     if (count($args) == 1 && is_array($args[0])) $args = $args[0];
@@ -74,7 +85,11 @@ class PathBuilder {
     return substr($string, strlen($string) -1, 1) == $slash_char ? $string : $string . $slash_char;
   }
 
-  // Returns Texturas "base url", ie the root of all requests passed through the framework
+  /**
+   * Returns Texturas "base" url, ie the root of all requests passed through the framework
+   *
+   * @return string
+   */
   public static function getTexturaBaseURL() {
     if (!isset(self::$textura_base_url)) {
       self::$textura_base_url = dirname(Current::request()->server_params['SCRIPT_NAME']);

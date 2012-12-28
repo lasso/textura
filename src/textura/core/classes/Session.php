@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -20,15 +20,44 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Textura;
 
+/**
+ * Class that represents a user session
+ */
 class Session {
 
+  /**
+   * @var array properties which the user can read from but not write to
+   */
   private static $RESERVED_INSTANCE_VARS = array('session_id', 'session_name');
+
+  /**
+   * @var string path to directory where sessions are saved
+   */
   private static $SESSION_SAVE_PATH = null;
+
+  /**
+   * @var string session name
+   */
   private static $SESSION_NAME = null;
 
+  /**
+   * @var array session variables
+   */
   private $instance_vars;
+
+  /**
+   * @var string session id
+   */
   private $id;
+
+  /**
+   * @var string session save path
+   */
   private $path;
+
+  /**
+   * @var boolen true whenever session has unsaved data, false otherwise
+   */
   private $dirty;
 
   /**

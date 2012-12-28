@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -20,10 +20,20 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Textura;
 
+/**
+ * Interface for classes acting as plugins for Textura
+ */
 interface Plugin extends Singleton {
 
+  /**
+   * Returns an array of paths where the classes needed by the plugin can be loaded from
+   */
   public function getPaths();
 
+  /**
+   * Called whenever a plugin is registered in Textura. If your plugin needs any type if magic
+   * initialization you should place your code in this method.
+   */
   public function register();
 
 }

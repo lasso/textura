@@ -21,5 +21,9 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 namespace Textura;
 
 interface Singleton {
+  
+  /**
+   * Should return a single anstance of the class implementing this interface.
+   */
   public static function getInstance();
 }

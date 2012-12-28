@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -25,14 +25,46 @@ namespace Textura;
  */
 class Current {
 
-  // Declare static variables
+  /**
+   * @var string current action
+   */
   private static $action = null;
+
+  /**
+   * @var Textura\Textura current application
+   */
   private static $application = null;
+
+  /**
+   * @var Textura\Controller current controller
+   */
   private static $controller = null;
+
+  /**
+   * @var Textura\Request current request
+   */
   private static $request = null;
+
+  /**
+   * @var Textura\Response current response
+   */
   private static $response = null;
+
+  /**
+   * @var Textura\Session current session
+   */
   private static $session = null;
 
+  /**
+   * Initializes the Textura\Current object. The Textura\Current object is a convenient way to
+   * reach any part of Textura from anywhere. It has methods for getting the current application,
+   * the current controller, the current request, the current response and the current session.
+   *
+   * @param \Textura\Textura $application
+   * @param \Textura\Request $request
+   * @param \Textura\Response $response
+   * @throws \LogicException if already initialized. This should *never* happen.
+   */
   public static function init(Textura $application, Request $request, Response $response) {
     // Never allow initialization more than once!
     if (!is_null(self::$application)) throw new \LogicException("Already initialized");
@@ -105,6 +137,12 @@ class Current {
     return self::$response;
   }
 
+  /**
+   * Returns the current session
+   *
+   * @return Textura\Session
+   * @throws \LogicException if sessions are disabled by the controller.
+   */
   public static function session() {
     if (is_null(self::$session)) {
       throw new \LogicException('Session not initialized.');
@@ -148,8 +186,8 @@ class Current {
     unset($_SESSION);
   }
 
-  /*
-   * Initializes a śession.
+  /**
+   * Initializes a new śession.
    */
   private function initSession() {
     self::$session = Session::init(); // Initialize session object

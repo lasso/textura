@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -20,16 +20,36 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Textura;
 
+/**
+ * Class for handling form validations
+ */
 class Validator {
 
+  /**
+   * @var array array of current validation errors
+   */
   private $errors;
+
+  /**
+   * @var array array of current validation rules
+   */
   private $validations;
 
+  /**
+   * Constructor
+   */
   public function __construct() {
     $this->validations = array();
     $this->errors = array();
   }
 
+  /**
+   * Adds a validation rule to the current Validator object.
+   *
+   * @param string $key the field that should be associated with the validation rule
+   * @param string $type the type of validation rule
+   * @param array $params validation rule parameters
+   */
   public function addValidation($key, $type, $params = array()) {
     $message = isset($params['message']) ? $params['message']: null;
     switch ($type) {
@@ -67,6 +87,12 @@ class Validator {
     $this->validations[$key][] = $rule;
   }
 
+  /**
+   * Returns an array of validation errors (if any). This method should only be called after
+   * the validate() method has been called.
+   *
+   * @return array
+   */
   public function getValidationErrors() {
     return $this->errors;
   }
@@ -116,6 +142,13 @@ class Validator {
     return implode("\n", $script_contents);
   }
 
+  /**
+   * Validates an array of values against the set of validation rules associated with the current
+   * Validator objet.
+   *
+   * @param array $values
+   * @return boolen true if the validation succeeded, false otherwise.
+   */
   public function validate(array $values) {
     $this->errors = array();
     foreach ($this->validations as $key => $validation_array) {

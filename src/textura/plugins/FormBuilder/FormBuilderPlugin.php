@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -20,11 +20,21 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Textura;
 
+/**
+ * Plugin for building forms dynamically.
+ */
 class FormBuilderPlugin implements Plugin {
 
-  // References the one and only instance of this class
+  /**
+   * @var Textura\FormBuilderPlugin references the one and only instance of this class
+   */
   private static $instance = null;
 
+  /**
+   * Returns the paths from where the current plugin's classes will be loaded.
+   *
+   * @return array
+   */
   public function getPaths() {
     $wd = realpath(dirname(__FILE__));
     return
@@ -33,10 +43,18 @@ class FormBuilderPlugin implements Plugin {
       );
   }
 
+  /**
+   * This method is automatically called by Textura whenever a plugin is registered.
+   */
   public function register() {
     // Nothing to see here. Move along!
   }
 
+  /**
+   * Returns a single instance of the FormBuilderPlugin class.
+   *
+   * @return Textura\FormBuilderPlugin
+   */
   public static function getInstance() {
     if (self::$instance == null) {
       self::$instance = new self();

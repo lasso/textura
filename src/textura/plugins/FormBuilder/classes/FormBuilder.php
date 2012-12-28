@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -20,17 +20,61 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Textura;
 
+/**
+ * Class for building forms dynamically.
+ */
 class FormBuilder {
 
+  /**
+   * @var string id to use for the <FORM>-element
+   */
   private $form_id;
+
+  /**
+   * @var string action (url) where form data should be sent
+   */
   private $action;
+
+  /**
+   * @var integer method to use when sending form data
+   */
   private $method;
+
+  /**
+   * @var string encoding to use when sending form data
+   */
   private $enctype;
+
+  /**
+   * @var array form elements used by the current FormBuilder object
+   */
   private $elems;
+
+  /**
+   * @var array keeps track of how many of each element type that the current FormBuilder
+   *   object uses
+   */
   private $elem_counts;
+
+  /**
+   * @var Textura\Validator Validator object used for form validation
+   */
   private $validator;
+
+  /**
+   * @var boolean keeps track of whether the current FormBuilder object uses client side validation
+   *   or not
+   */
   private $use_client_side_validation;
 
+  /**
+   * Constructor
+   *
+   * @param string $form_id id used by <FORM> tag
+   * @param string $action action (URL) where to send form data
+   * @param string $method method to use when sending form data (GET or POST)
+   * @param string $enctype encoding to use when sending form data
+   */
   public function __construct($form_id, $action = null, $method = null, $enctype = null) {
     require_once(PathBuilder::buildPath(TEXTURA_SRC_DIR, 'htmlbuilder', 'lib', 'Autoloader.php'));
     \HtmlBuilder\Autoloader::register(
@@ -60,10 +104,20 @@ class FormBuilder {
     $this->use_client_side_validation = false;
   }
 
+  /**
+   * Adds a button to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addButton(array $params = array()) {
     $this->addElem('button', $params);
   }
 
+  /**
+   * Adds a checkbox to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addCheckbox(array $params = array()) {
     if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('checkbox');
     if (!array_key_exists('label', $params)) $params['label'] = null;
@@ -73,15 +127,31 @@ class FormBuilder {
     $this->addElem('checkbox', $params);
   }
 
+  /**
+   * Adds custom content to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addCustomContent(array $params = array()) {
     if (!array_key_exists('id', $params)) $params['id'] = $this->getUniqueId('custom_content');
     $this->addElem('custom_content', $params);
   }
 
+  /**
+   * Adds a file upload control to the current FormBuilder object.
+   * @param array $params
+   * @throws \LogicException
+   * @ignore
+   */
   public function addFile(array $params = array()) {
-    // Not implemented yet
+    throw new \LogicException("Not yet implemented");
   }
 
+  /**
+   * Adds a hidden field to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addHidden(array $params = array()) {
     if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('hidden');
     if (!array_key_exists('label', $params)) $params['label'] = null;
@@ -90,6 +160,11 @@ class FormBuilder {
     $this->addElem('hidden', $params);
   }
 
+  /**
+   * Adds a password field to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addPassword(array $params = array()) {
     if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('text');
     if (!array_key_exists('label', $params)) $params['label'] = null;
@@ -98,10 +173,20 @@ class FormBuilder {
     $this->addElem('password', $params);
   }
 
+  /**
+   * Adds a radio button to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addRadio(array $params = array()) {
     $this->addElem('radio', $params);
   }
 
+  /**
+   * Adds a select box to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addSelect(array $params = array()) {
     if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('select');
     if (!array_key_exists('label', $params)) $params['label'] = null;
@@ -112,6 +197,11 @@ class FormBuilder {
     $this->addElem('select', $params);
   }
 
+  /**
+   * Adds a submit button to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addSubmit(array $params = array()) {
     if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('submit');
     if (!array_key_exists('label', $params)) $params['label'] = null;
@@ -120,6 +210,11 @@ class FormBuilder {
     $this->addElem('submit', $params);
   }
 
+  /**
+   * Adds a text field to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addText(array $params = array()) {
     if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('text');
     if (!array_key_exists('label', $params)) $params['label'] = null;
@@ -128,26 +223,61 @@ class FormBuilder {
     $this->addElem('text', $params);
   }
 
+  /**
+   * Adds a text area to the current FormBuilder object.
+   *
+   * @param array $params
+   */
   public function addTextarea(array $params = array()) {
     $this->addElem('textarea', $params);
   }
 
+  /**
+   * Adds validation to a field in the current FormBuilder object.
+   *
+   * @param string $key
+   * @param string $type
+   * @param array $params
+   */
   public function addValidation($key, $type, $params = array()) {
     $this->validator->addValidation($key, $type, $params);
   }
 
+  /**
+   * Returns an array of validation errors (if any) in the current FormBuilder object. This method
+   * should only be called after validate() has been called on the current FormBuilder object.
+   *
+   * @return array
+   */
   public function getValidationErrors() {
     return $this->validator->getValidationErrors();
   }
 
+  /**
+   * Returns whether the current FormBuilder object uses client side validation or not.
+   *
+   * @return boolean true if the current FormBuilder object uses client side validation,
+   *   false otherwise
+   */
   public function getUseClientSideValidation() {
     return $this->use_client_side_validation;
   }
 
+  /**
+   * Sets the action (URL) to where the form belonging to the current FormBuilder object
+   *   should be sent.
+   *
+   * @param string $action
+   */
   public function setAction($action) {
     $this->action = $action;
   }
 
+  /**
+   * Sets the method to use when sending form data. Should be set to either GET or POST.
+   *
+   * @param string $method
+   */
   public function setMethod($method) {
     if (strtolower($method) === 'get') {
       $this->method = \HTMLBuilder\Elements\Form\Form::METHOD_GET;
@@ -157,10 +287,21 @@ class FormBuilder {
     }
   }
 
+  /**
+   * Sets the encoding type for the form belong to the current FormBuilder object.
+   *
+   * @param string $enctype
+   */
   public function setEncType($enctype) {
     $this->enctype = $enctype;
   }
 
+  /**
+   * Sets whether the current FormBuilder object should use client side validation or not.
+   *
+   * @param boolena $bool true to use client side validation, false to not use
+   *   client side validation.
+   */
   public function setUseClientSideValidation($bool) {
     $this->use_client_side_validation = (bool) $bool;
   }
@@ -312,10 +453,22 @@ class FormBuilder {
     return false;
   }
 
+  /**
+   * Validates the data sent using the current FormBuilder object.
+   *
+   * @param array $values the values to validate
+   * @return boolean true if validation succeeds, false otherwise
+   */
   public function validate(array $values) {
     return $this->validator->validate($values);
   }
 
+  /**
+   * Adds an element to the current FormBuilder object.
+   *
+   * @param string $type
+   * @param array $params
+   */
   private function addElem($type, $params) {
     // Increment counter that keeps track of how many elements of each type that exist.
     $this->elem_counts[$type]++;
@@ -330,6 +483,14 @@ class FormBuilder {
     $this->elems[] = array($type, $params);
   }
 
+  /**
+   * Tries to fetch data for a field by inspecting the POST data sent with the current request.
+   * If data for the requested field is available in the POST data, that data will be returned. If
+   * the data is not avaialable, null will be returned instead.
+   *
+   * @param string $field
+   * @return mixed.
+   */
   public function getValueFromPost($field) {
     if (Current::request()->isPost() && array_key_exists($field, Current::request()->post_params)) {
       return Current::request()->post_params[$field];
@@ -339,6 +500,12 @@ class FormBuilder {
     }
   }
 
+  /**
+   * Returns an unique name for a specific element type.
+   *
+   * @param string $type
+   * @return string
+   */
   private function getUniqueId($type) {
     return $type . '_' . ($this->elem_counts[$type] + 1);
   }

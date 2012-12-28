@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -20,16 +20,30 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Textura;
 
+/**
+ * This class works as the base class for all controllers in Textura.
+ */
 abstract class Controller {
 
-  // Define some properties that the used may read but not change
+  /**
+   * @var array list of roperties that the user may read but not change
+   */
   private static $RESERVED_INSTANCE_VARS =
     array('action', 'application', 'controller', 'request', 'response', 'session');
 
+  /**
+   * @var boolean true to use sessions, false to disable sessions (for the current controller)
+   */
   protected static $use_session = false;
+
+  /**
+   * @var string scope for session. Can be set to either 'global', 'application' or 'controller'
+   */
   protected static $session_scope = 'application';
 
-  // List of user defined properties
+  /**
+   * @var array list of user defined properties
+   */
   private $instance_vars;
 
   /**
@@ -46,6 +60,11 @@ abstract class Controller {
     $this->instance_vars = array();
   }
 
+  /**
+   * Returns the "default action" for the current controller object.
+   *
+   * @return string
+   */
   public static function getDefaultAction() {
     return Router::getDefaultAction(self);
   }
@@ -204,6 +223,11 @@ abstract class Controller {
     $this->instance_vars[$key] = $value;
   }
 
+  /**
+   * Returns a string representation of the current object.
+   *
+   * @return string
+   */
   public function __toString() {
     return get_class($this);
   }

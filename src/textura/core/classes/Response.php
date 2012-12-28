@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -25,8 +25,19 @@ namespace Textura;
  */
 class Response {
 
+  /**
+   * @var array response cookies
+   */
   private $cookies;
+
+  /**
+   * @var array response headers
+   */
   private $headers;
+
+  /**
+   * @var string response body
+   */
   private $body;
 
   /**
@@ -175,6 +186,9 @@ class Response {
     echo $this->body;
   }
 
+  /**
+   * Sends all cookies associated with the current Response object.
+   */
   private function sendCookies() {
     foreach ($this->cookies as $cookie_name => $cookie_params) {
       setcookie(
@@ -213,18 +227,28 @@ class Response {
     $this->send();
   }
 
+  /**
+   * Adds a cookie to the response to the client
+   *
+   * @param string $cookie_name cookie name
+   * @param mixed $cookie_value cookie value
+   * @param string $cookie_expire cookie expire date. By default, Textura does not set an explicit
+   *   expiration date. When this parameter is set, Textura uses the Expires parameter in the
+   *   Set-Cookie HTTP header to set an expire date.
+   * @param string $cookie_path cookie path. By default, Textura will use the path returned by
+   *   Textura\PathBuilder::getTexturaBaseURL().
+   * @param string $cookie_domain cookie domain
+   * @param boolean $cookie_secure is cookie HTTPS only?
+   * @param boolean $cookie_httponly is cookie invisible to XHR requests?
+   */
   public function setCookie(
-    $cookie_name,             // Cookie name
-    $cookie_value,            // Cookie value
-    $cookie_expire = null,    // Cookie expire date. By default, Textura does not set an
-                              // explicit expiration date.
-                              // When this parameter is set, Textura uses the Expires parameter
-                              // in the Set-Cookie HTTP header to set an expire date.
-    $cookie_path = null,      // Cookie path. By default, Textura will use the path
-                              // returned by PathBuilder::getTexturaBaseURL().
-    $cookie_domain = null,    // Cookie domain
-    $cookie_secure = false,   // Is cookie HTTPS only?
-    $cookie_httponly = false  // Is cookie invisible to XHR requests?
+    $cookie_name,
+    $cookie_value,
+    $cookie_expire = null,
+    $cookie_path = null,
+    $cookie_domain = null,
+    $cookie_secure = false,
+    $cookie_httponly = false
   ) {
     $path = strval($cookie_path);
     // If a path has not been explicitly set, use Textura base URL

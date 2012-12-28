@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -26,13 +26,40 @@ namespace Textura;
  */
 class Request {
 
+  /**
+   * @var array cookies sent with request
+   */
   private $cookies;
+
+  /**
+   * @var array files uploaded with current request
+   */
   private $files;
+
+  /**
+   * @var array GET parameters sent with current request
+   */
   private $get_params;
+
+  /**
+   * @var array POST parameters sent with current request
+   */
   private $post_params;
+
+  /**
+   * @var array parameters automatically created by PHP
+   */
   private $server_params;
+
+  /**
+   * @var array validation errors (if any). There can only be validation errors in any of the
+   * isValidXXX are used.
+   */
   private $validation_errors;
 
+  /**
+   * constructor
+   */
   private function __construct() {
     $this->cookies = $_COOKIE;
     $this->files = $_FILES;
@@ -42,6 +69,11 @@ class Request {
     $this->validation_errors = array();
   }
 
+  /**
+   * Initializes a new instance of the current class
+   *
+   * @return Textura\Request
+   */
   public static function init() {
     return new self();
   }
@@ -143,9 +175,9 @@ class Request {
    * Returns whether the current request is considered a "valid" XHR request or not.
    *
    * @param array $required_params
-   * @param string $name      If this parameter is set, only the specified request method will be
-   *                          considered valid. If it is not set, any request method will be
-   *                          considered valid.
+   * @param string $request_method If this parameter is set, only the specified request method will
+   *                               be considered valid. If it is not set, any request method will be
+   *                               considered valid.
    * @return boolean
    */
   public function isValidXhr($required_params = array(), $request_method = null) {

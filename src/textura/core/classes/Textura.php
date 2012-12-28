@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb,se>
+Copyright 2012 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -31,15 +31,24 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Configuration.php');
  */
 class Textura implements Singleton {
 
-  // References the one and only instance of this class
+  /**
+   * @var Textura\Textura references the one and only instance of this class
+   */
   private static $instance = null;
 
-  // Current configuration
+  /**
+   * @var Textura\Configuration current configuration
+   */
   private $configuration;
 
-  // Currently registered plugins
+  /**
+   * @var array currently registered plugins
+   */
   private $plugins;
 
+  /**
+   * Constructor
+   */
   protected function __construct() {
     $this->configuration = new Configuration();
     $this->initPlugins();

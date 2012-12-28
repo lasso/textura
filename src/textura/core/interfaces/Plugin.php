@@ -20,35 +20,11 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Textura;
 
-/**
- * This class represents the Textura "application"
- */
-class Textura implements Singleton {
+interface Plugin extends Singleton {
 
-  // References the one and only instance of this class
-  private static $instance = null;
+  public function getPaths();
 
-  // Current configuration
-  private $configuration;
-
-  protected function __construct() {
-    $this->configuration = new Configuration();
-  }
-
-  public static function getInstance() {
-    if (self::$instance == null) {
-      self::$instance = new Textura();
-    }
-    return self::$instance;
-  }
-
-  public function getConfigurationOption($key) {
-    return $this->configuration->get($key);
-  }
-
-  public function setConfigurationOption($key, $value) {
-    return $this->configuration->set($key, $value);
-  }
+  public function register();
 
 }
 ?>

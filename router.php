@@ -19,16 +19,30 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 // Bootstrapping
-require_once(implode(DIRECTORY_SEPARATOR, array('src', 'textura', 'classes', 'PathBuilder.php')));
+require_once(
+  implode(
+    DIRECTORY_SEPARATOR,
+    array('src', 'textura', 'core', 'classes', 'PathBuilder.php')
+  )
+);
 
 define('TEXTURA_ROOT_DIR', dirname(__FILE__));
 define('TEXTURA_SITE_DIR', \Textura\PathBuilder::buildPath(TEXTURA_ROOT_DIR, 'site'));
 define('TEXTURA_CONTROLLER_DIR', \Textura\PathBuilder::buildPath(TEXTURA_SITE_DIR, 'controllers'));
 define('TEXTURA_MODEL_DIR', \Textura\PathBuilder::buildPath(TEXTURA_SITE_DIR, 'models'));
 define('TEXTURA_SRC_DIR', \Textura\PathBuilder::buildPath(TEXTURA_ROOT_DIR, 'src'));
+define('TEXTURA_CORE_DIR',
+  \Textura\PathBuilder::buildPath(TEXTURA_ROOT_DIR, 'src', 'textura', 'core')
+);
+define(
+  'TEXTURA_PLUGIN_DIR',
+  \Textura\PathBuilder::buildPath(TEXTURA_ROOT_DIR, 'src', 'textura', 'plugins')
+);
 
-// Bootstap autoloading
-require_once(\Textura\PathBuilder::buildPath(TEXTURA_SRC_DIR, 'textura', 'bootstrap.php'));
+// Initialize the singleton instance of Textura. This will also register all plugins and setup
+// autoloading.
+require_once(\Textura\PathBuilder::buildPath(TEXTURA_CORE_DIR, 'classes', 'Textura.php'));
+\Textura\Textura::getInstance();
 
 // Initialize global state
 \Textura\Current::init(

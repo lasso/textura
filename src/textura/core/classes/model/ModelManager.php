@@ -160,6 +160,23 @@ class ModelManager implements \Textura\Singleton {
   }
 
   /**
+   * Deletes a model instance from the underlying database.
+   *
+   * @param Textura\Model $model_instance
+   */
+  public function deleteModelInstance($model_instance) {
+    $model_class = get_class($model_instance);
+    $table = $this->model_map[$model_class]['table'];
+    $primary_key_field = $this->model_map[$model_class]['primary_key'];
+    $this->db_manager->deleteRows(
+      $table,
+      array($primary_key_field => $model_instance->$primary_key_field)
+    );
+    // Remove row id from model instance
+    $model_instance->$primary_key_field = null;
+  }
+
+  /**
    * Loads zero or more instances of the specified model class.
    *
    * @param string $model_class
@@ -205,7 +222,7 @@ class ModelManager implements \Textura\Singleton {
       $model_instance->$primary_key_field = $this->db_manager->insertRow($table, $properties);
     }
     else {
-      $this->db_manager->updateRow(
+      $this->db_manager->updateRows(
         $table,
         array($primary_key_field => $model_instance->$primary_key_field),
         $properties

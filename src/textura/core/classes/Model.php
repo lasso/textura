@@ -41,7 +41,7 @@ abstract class Model {
   const PROPERTY_TYPE_STRING      = 6;
 
   /**
-   * @var array Properties defined by database schema. 
+   * @var array Properties defined by database schema.
    */
   private $instance_properties;
 
@@ -49,10 +49,10 @@ abstract class Model {
    * @var string database schema (table) name
    */
   private static $table = null;
-  
+
   /**
    * @var array Properties defined outside of database schema. Override this property to
-   *   provide custom handling of values for specific properties. 
+   *   provide custom handling of values for specific properties.
    */
   private static $properties = array();
 
@@ -101,7 +101,7 @@ abstract class Model {
 
   /**
    * Returns an array of available properties.
-   * 
+   *
    * @return array
    */
   public function properties() {
@@ -109,8 +109,16 @@ abstract class Model {
   }
 
   /**
+   * Deletes the current model object from the database. Calling this method will *not* destroy the
+   * model object itself.
+   */
+  public function delete() {
+    Model\ModelManager::getInstance()->deleteModelInstance($this);
+  }
+
+  /**
    * Saves the current model object to the underlying data store.
-   * 
+   *
    * @return boolean true if the save operation succeeds, false otherwise
    */
   public function save() {
@@ -119,7 +127,7 @@ abstract class Model {
 
   /**
    * Magic property getter
-   * 
+   *
    * @param string $key
    * @return mixed
    * @throws \LogicException if the property does not exist
@@ -131,7 +139,7 @@ abstract class Model {
 
   /**
    * Magic property setter
-   * 
+   *
    * @param string $key
    * @param mixed $value
    * @throws \LogicException if the property does not exist

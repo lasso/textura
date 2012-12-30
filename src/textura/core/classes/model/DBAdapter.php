@@ -109,10 +109,10 @@ abstract class DBAdapter {
    * Updates one or more rows in the underlying database.
    *
    * @param string $table table name
-   * @param array $primary_keys id(s) for the rows that should be updated
+   * @param array $conditions conditions used in WHERE clause
    * @param array $values values to update the table with
    */
-  abstract public function updateRow($table, array $primary_keys, array $values);
+  abstract public function updateRows($table, array $conditions, array $values);
 
   /**
    * Returns whether the provided connection parmeters are valid or not.
@@ -121,5 +121,13 @@ abstract class DBAdapter {
    * @return boolean true if parameters are valid, false otherwise
    */
   abstract protected function validateParams(array $params);
+
+  /**
+   * Deletes zero or more rows from the underlying database.
+   *
+   * @param string $table table name
+   * @param array $conditions conditions to use in WHERE clause
+   */
+  abstract public function deleteRows($table, array $conditions);
 }
 ?>

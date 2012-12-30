@@ -63,12 +63,11 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method_deleteRows" title="deleteRows :: Deletes zero or more rows from the underlying database."><span class="description">Deletes zero or more rows from the underlying database.</span><pre>deleteRows()</pre></a></li>
-<li class="method public "><a href="#method_deleteSingleRow" title="deleteSingleRow :: Deletes a single row from the specified table in the underlying database."><span class="description">Deletes a single row from the specified table in the underlying database.</span><pre>deleteSingleRow()</pre></a></li>
 <li class="method public "><a href="#method_getFields" title="getFields :: Returns an array containing the field of the specified table from the underlying database."><span class="description">Returns an array containing the field of the specified table from the underlying database.</span><pre>getFields()</pre></a></li>
 <li class="method public "><a href="#method_getInstance" title="getInstance :: Returns the one and only instance of this class."><span class="description">Returns the one and only instance of this class.</span><pre>getInstance()</pre></a></li>
 <li class="method public "><a href="#method_insertRow" title="insertRow :: Inserts a row into the specified table in the underlying database."><span class="description">Inserts a row into the specified table in the underlying database.</span><pre>insertRow()</pre></a></li>
 <li class="method public "><a href="#method_selectRows" title="selectRows :: Select zero or more rows from the specified table from the underlying database."><span class="description">Select zero or more rows from the specified table from the underlying database.</span><pre>selectRows()</pre></a></li>
-<li class="method public "><a href="#method_updateRow" title="updateRow :: Updates one or more rows in the specified table in the underlying database."><span class="description">Updates one or more rows in the specified table in the underlying database.</span><pre>updateRow()</pre></a></li>
+<li class="method public "><a href="#method_updateRows" title="updateRows :: Updates one or more rows in the specified table in the underlying database."><span class="description">Updates one or more rows in the specified table in the underlying database.</span><pre>updateRows()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header private">» Private
@@ -123,31 +122,6 @@ to the database adapter.</p></div>
 <div class="subelement argument">
 <h4>$conditions</h4>
 <code>array</code><p>conditions for WHERE clause</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
-<td>always, since this method is not implemented yet</td>
-</tr></table>
-</div></div>
-</div>
-<a id="method_deleteSingleRow"></a><div class="element clickable method public method_deleteSingleRow" data-toggle="collapse" data-target=".method_deleteSingleRow .collapse">
-<h2>Deletes a single row from the specified table in the underlying database.</h2>
-<pre>deleteSingleRow(string $table, array $primary_key) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$table</h4>
-<code>string</code><p>table name</p></div>
-<div class="subelement argument">
-<h4>$primary_key</h4>
-<code>array</code><p>row id identifying the row to delete</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
-<td>always, since this method is not implemented yet</td>
-</tr></table>
 </div></div>
 </div>
 <a id="method_getFields"></a><div class="element clickable method public method_getFields" data-toggle="collapse" data-target=".method_getFields .collapse">
@@ -212,9 +186,9 @@ to the database adapter.</p></div>
 <div class="subelement response"><code>boolean</code></div>
 </div></div>
 </div>
-<a id="method_updateRow"></a><div class="element clickable method public method_updateRow" data-toggle="collapse" data-target=".method_updateRow .collapse">
+<a id="method_updateRows"></a><div class="element clickable method public method_updateRows" data-toggle="collapse" data-target=".method_updateRows .collapse">
 <h2>Updates one or more rows in the specified table in the underlying database.</h2>
-<pre>updateRow(string $table, array $primary_keys, array $values) : boolean</pre>
+<pre>updateRows(string $table, array $conditions, array $values) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -223,9 +197,8 @@ to the database adapter.</p></div>
 <h4>$table</h4>
 <code>string</code><p>table name</p></div>
 <div class="subelement argument">
-<h4>$primary_keys</h4>
-<code>array</code><p>array of row id(s) to update</p>
-</div>
+<h4>$conditions</h4>
+<code>array</code><p>conditions used in WHERE clause</p></div>
 <div class="subelement argument">
 <h4>$values</h4>
 <code>array</code><p>values to set in the database</p></div>
@@ -284,7 +257,7 @@ to the database adapter.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2012-12-30T12:00:11+01:00.<br></footer></div>
+            generated on 2012-12-30T19:37:51+01:00.<br></footer></div>
 </div>
 </body>
 </html>

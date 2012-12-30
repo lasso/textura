@@ -109,6 +109,23 @@ class SQLiteDBAdapter extends DBAdapter {
   }
 
   /**
+   * Deletes zero or more rows from the SQLite database.
+   *
+   * @param string $table table to delete rows from
+   * @param array $conditions array of conditions used in WHERE clause
+   */
+  public function deleteRows($table, array $conditions) {
+    $query = 'DELETE FROM \'' . \SQLite3::escapeString($table) . '\' WHERE ';
+    $num_keys = count($conditions);
+    $index = 1;
+    foreach ($conditions as $key => $value) {
+      $query .= \SQLite3::escapeString($key) . ' = ' . $this->normalizeValue($value);
+      if ($index++ < $num_keys) $query .= ' AND ';
+    }
+    $this->exec($query);
+  }
+
+  /**
    * Executes a query that does not return any rows.
    *
    * @param string $query
@@ -274,13 +291,13 @@ class SQLiteDBAdapter extends DBAdapter {
   }
 
   /**
-   * Updates one or more rows in the underlying database.
+   * Updates zero or more rows in the underlying database.
    *
    * @param string $table table name
-   * @param array $primary_keys id of rows to update
+   * @param array $conditions conditions in where clause
    * @param array $values values to update the table with
    */
-  public function updateRow($table, array $primary_keys, array $values) {
+  public function updateRows($table, array $conditions, array $values) {
     $query = 'UPDATE \'' . \SQLite3::escapeString($table) . '\' SET ';
     $num_values = count($values);
     $index = 1;
@@ -289,9 +306,9 @@ class SQLiteDBAdapter extends DBAdapter {
       if ($index++ < $num_values) $query .= ', ';
     }
     $query .= ' WHERE ';
-    $num_keys = count($primary_keys);
+    $num_keys = count($conditions);
     $index = 1;
-    foreach ($primary_keys as $key => $value) {
+    foreach ($conditions as $key => $value) {
       $query .= \SQLite3::escapeString($key) . ' = ' . $this->normalizeValue($value);
       if ($index++ < $num_keys) $query .= ' AND ';
     }

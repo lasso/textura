@@ -63,11 +63,12 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_deleteRows" title="deleteRows :: Deletes zero or more rows from the underlying database."><span class="description">Deletes zero or more rows from the underlying database.</span><pre>deleteRows()</pre></a></li>
 <li class="method public "><a href="#method_insertRow" title="insertRow :: Inserts a row inte a database table in the underlying database."><span class="description">Inserts a row inte a database table in the underlying database.</span><pre>insertRow()</pre></a></li>
 <li class="method public "><a href="#method_query" title="query :: Sends a custom SQL query to the underlying database."><span class="description">Sends a custom SQL query to the underlying database.</span><pre>query()</pre></a></li>
 <li class="method public "><a href="#method_selectRows" title="selectRows :: Performs a SELECT query on the underlying database."><span class="description">Performs a SELECT query on the underlying database.</span><pre>selectRows()</pre></a></li>
 <li class="method public "><a href="#method_tableExists" title="tableExists :: Returns whether the underlying database has a specified schema (table) or not."><span class="description">Returns whether the underlying database has a specified schema (table) or not.</span><pre>tableExists()</pre></a></li>
-<li class="method public "><a href="#method_updateRow" title="updateRow :: Updates one or more rows in the underlying database."><span class="description">Updates one or more rows in the underlying database.</span><pre>updateRow()</pre></a></li>
+<li class="method public "><a href="#method_updateRows" title="updateRows :: Updates one or more rows in the underlying database."><span class="description">Updates one or more rows in the underlying database.</span><pre>updateRows()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
@@ -123,6 +124,21 @@
 <div class="subelement argument">
 <h4>$params</h4>
 <code>array</code><p>parameters used to connect to the database</p></div>
+</div></div>
+</div>
+<a id="method_deleteRows"></a><div class="element clickable method public method_deleteRows" data-toggle="collapse" data-target=".method_deleteRows .collapse">
+<h2>Deletes zero or more rows from the underlying database.</h2>
+<pre>deleteRows(string $table, array $conditions) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>table name</p></div>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>array</code><p>conditions to use in WHERE clause</p></div>
 </div></div>
 </div>
 <a id="method_insertRow"></a><div class="element clickable method public method_insertRow" data-toggle="collapse" data-target=".method_insertRow .collapse">
@@ -185,9 +201,9 @@
 <code>boolean</code>true if the table exists in the database, false otherwise</div>
 </div></div>
 </div>
-<a id="method_updateRow"></a><div class="element clickable method public method_updateRow" data-toggle="collapse" data-target=".method_updateRow .collapse">
+<a id="method_updateRows"></a><div class="element clickable method public method_updateRows" data-toggle="collapse" data-target=".method_updateRows .collapse">
 <h2>Updates one or more rows in the underlying database.</h2>
-<pre>updateRow(string $table, array $primary_keys, array $values) </pre>
+<pre>updateRows(string $table, array $conditions, array $values) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -196,9 +212,8 @@
 <h4>$table</h4>
 <code>string</code><p>table name</p></div>
 <div class="subelement argument">
-<h4>$primary_keys</h4>
-<code>array</code><p>id(s) for the rows that should be updated</p>
-</div>
+<h4>$conditions</h4>
+<code>array</code><p>conditions used in WHERE clause</p></div>
 <div class="subelement argument">
 <h4>$values</h4>
 <code>array</code><p>values to update the table with</p></div>
@@ -310,7 +325,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2012-12-30T12:00:11+01:00.<br></footer></div>
+            generated on 2012-12-30T19:37:51+01:00.<br></footer></div>
 </div>
 </body>
 </html>

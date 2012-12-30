@@ -66,25 +66,13 @@ class DBManager implements \Textura\Singleton {
   }
 
   /**
-   * Deletes a single row from the specified table in the underlying database.
-   *
-   * @param string $table table name
-   * @param array $primary_key row id identifying the row to delete
-   * @throws \LogicException always, since this method is not implemented yet
-   */
-  public function deleteSingleRow($table, array $primary_key) {
-    throw new \LogicException("Not implemented yet");
-  }
-
-  /**
    * Deletes zero or more rows from the underlying database.
    *
    * @param string $table table name
    * @param array $conditions conditions for WHERE clause
-   * @throws \LogicException always, since this method is not implemented yet
    */
   public function deleteRows($table, array $conditions) {
-    throw new \LogicException("Not implemented yet");
+    return $this->adapter->deleteRows($table, $conditions);
   }
 
   /**
@@ -124,12 +112,12 @@ class DBManager implements \Textura\Singleton {
    * Updates one or more rows in the specified table in the underlying database.
    *
    * @param string $table table name
-   * @param array $primary_keys array of row id(s) to update
+   * @param array $conditions conditions used in WHERE clause
    * @param array $values values to set in the database
    * @return boolean
    */
-  public function updateRow($table, array $primary_keys, array $values) {
-    return $this->adapter->updateRow($table, $primary_keys, $values);
+  public function updateRows($table, array $conditions, array $values) {
+    return $this->adapter->updateRows($table, $conditions, $values);
   }
 
   /**

@@ -182,22 +182,22 @@ class Textura implements Singleton {
    * Register a plugin to be used by the framework.
    *
    * @param string $name Name of plugin to load.
-   * @param string $custom_dir custom directory where plugin can be found. If null, uses
+   * @param string $plugin_dir custom directory where plugin can be found. If null, uses
    *   TEXTURA_PLUGIN_DIR/$name.
-   * @param string $custom_file custom file name where plugin can be found. If null, uses
+   * @param string $plugin_file custom file name where plugin can be found. If null, uses
    *   plugin_dir/$name.php.
-   * @param string $custom_class custom class name that should be loaded. If null, uses
+   * @param string $plugin_class custom class name that should be loaded. If null, uses
    *   "{$name}Plugin".
-   * @param string $custom_namespace custom namespace that should be used to initialize the plugin
+   * @param string $plugin_namespace custom namespace that should be used to initialize the plugin
    *   class. If null, the "Textura" namespace is assumed.
    * @throws \LogicException if the plugin cannot be loaded for some reason.
    */
   private function registerPlugin(
-    $name, $custom_dir = null, $custom_file = null, $custom_class = null, $custom_namespace = null
+    $name, $plugin_dir = null, $plugin_file = null, $plugin_class = null, $plugin_namespace = null
   ) {
     $absolute_path =
-      !is_null($custom_dir) ?
-      strval($custom_dir) :
+      !is_null($plugin_dir) ?
+      strval($plugin_dir) :
       PathBuilder::buildPath(TEXTURA_PLUGIN_DIR, $name);
     $real_path = realpath($absolute_path);
     if (!$real_path) throw new \LogicException("Cannot find plugin path $absolute_path");
@@ -217,10 +217,10 @@ class Textura implements Singleton {
         );
       }
     }
-    $file = !is_null($custom_file) ? $custom_file : "{$name}Plugin.php";
+    $file = !is_null($plugin_file) ? $plugin_file : "{$name}Plugin.php";
     require_once(PathBuilder::buildPath($real_path, $file));
-    $class = !is_null($custom_class) ? $custom_class : "{$name}Plugin";
-    $namespace = !is_null($custom_namespace) ? $custom_namespace : 'Textura';
+    $class = !is_null($plugin_class) ? $plugin_class : "{$name}Plugin";
+    $namespace = !is_null($plugin_namespace) ? $plugin_namespace : 'Textura';
     $reflection_class = new \ReflectionClass("$namespace\\$class");
     $initializer = $reflection_class->getMethod('getInstance');
     $instance = $initializer->invokeArgs(null, array());

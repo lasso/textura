@@ -185,7 +185,7 @@
 </div>
 <a id="method_registerPlugin"></a><div class="element clickable method private method_registerPlugin" data-toggle="collapse" data-target=".method_registerPlugin .collapse">
 <h2>Register a plugin to be used by the framework.</h2>
-<pre>registerPlugin(string $name, string $custom_dir, string $custom_file, string $custom_class, string $custom_namespace) </pre>
+<pre>registerPlugin(string $name, string $plugin_dir, string $plugin_file, string $plugin_class, string $plugin_namespace) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -194,22 +194,22 @@
 <h4>$name</h4>
 <code>string</code><p>Name of plugin to load.</p></div>
 <div class="subelement argument">
-<h4>$custom_dir</h4>
+<h4>$plugin_dir</h4>
 <code>string</code><p>custom directory where plugin can be found. If null, uses
   TEXTURA_PLUGIN_DIR/$name.</p>
 </div>
 <div class="subelement argument">
-<h4>$custom_file</h4>
+<h4>$plugin_file</h4>
 <code>string</code><p>custom file name where plugin can be found. If null, uses
   plugin_dir/$name.php.</p>
 </div>
 <div class="subelement argument">
-<h4>$custom_class</h4>
+<h4>$plugin_class</h4>
 <code>string</code><p>custom class name that should be loaded. If null, uses
   "{$name}Plugin".</p>
 </div>
 <div class="subelement argument">
-<h4>$custom_namespace</h4>
+<h4>$plugin_namespace</h4>
 <code>string</code><p>custom namespace that should be used to initialize the plugin
   class. If null, the "Textura" namespace is assumed.</p>
 </div>
@@ -247,7 +247,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2012-12-28T21:11:02+01:00.<br></footer></div>
+            generated on 2012-12-30T10:11:37+01:00.<br></footer></div>
 </div>
 </body>
 </html>

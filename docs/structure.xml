@@ -4572,10 +4572,10 @@ if it uses the correct request type and and all required parameters are present.
       </method>
     </class>
   </file>
-  <file path="src/textura/core/classes/Textura.php" hash="bc1c3c91d4518080e71c7e6c0f82c345" package="Textura">
+  <file path="src/textura/core/classes/Textura.php" hash="e93800005387c8743c67d4e661d53f21" package="Textura">
     <docblock line="21">
       <description>Textura</description>
-      <long-description/>
+      <long-description></long-description>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
     <include line="29" type="Require Once" package="Default">
@@ -4600,14 +4600,14 @@ if it uses the correct request type and and all required parameters are present.
       <full_name>\Textura\Textura</full_name>
       <docblock line="35">
         <description>This class represents the Textura "application"</description>
-        <long-description/>
+        <long-description></long-description>
       </docblock>
       <property final="false" static="true" visibility="private" line="43" namespace="Textura" package="Default">
         <name>$instance</name>
         <default>null</default>
         <docblock line="40">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="40" name="var" description="references the one and only instance of this class" type="\Textura\Textura\Textura">
             <type by_reference="false">\Textura\Textura\Textura</type>
           </tag>
@@ -4615,10 +4615,10 @@ if it uses the correct request type and and all required parameters are present.
       </property>
       <property final="false" static="false" visibility="private" line="48" namespace="Textura" package="Default">
         <name>$configuration</name>
-        <default/>
+        <default></default>
         <docblock line="45">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="45" name="var" description="current configuration" type="\Textura\Textura\Configuration">
             <type by_reference="false">\Textura\Textura\Configuration</type>
           </tag>
@@ -4626,10 +4626,10 @@ if it uses the correct request type and and all required parameters are present.
       </property>
       <property final="false" static="false" visibility="private" line="53" namespace="Textura" package="Default">
         <name>$plugins</name>
-        <default/>
+        <default></default>
         <docblock line="50">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="50" name="var" description="currently registered plugins" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -4640,7 +4640,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>__construct</full_name>
         <docblock line="55">
           <description>Constructor</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
       <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="69" package="Default">
@@ -4648,7 +4648,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>autoload</full_name>
         <docblock line="63">
           <description>Loads classes from Textura core and Textura plugins automatically.</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="63" name="param" description="class to load" type="string" variable="$class_name">
             <type by_reference="false">string</type>
           </tag>
@@ -4658,7 +4658,7 @@ if it uses the correct request type and and all required parameters are present.
         </docblock>
         <argument line="69">
           <name>$class_name</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
@@ -4667,7 +4667,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>getInstance</full_name>
         <docblock line="118">
           <description>Returns the (single) instance of the Textura class.</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="118" name="return" description="" type="\Textura\Textura">
             <type by_reference="false">\Textura\Textura</type>
           </tag>
@@ -4688,7 +4688,7 @@ if it uses the correct request type and and all required parameters are present.
         </docblock>
         <argument line="136">
           <name>$key</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
@@ -4707,12 +4707,12 @@ if it uses the correct request type and and all required parameters are present.
         </docblock>
         <argument line="146">
           <name>$key</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="146">
           <name>$value</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
@@ -4721,7 +4721,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>getPluginPaths</full_name>
         <docblock line="150">
           <description>Return all paths registered by plugins.</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="150" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -4732,7 +4732,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>initPlugins</full_name>
         <docblock line="163">
           <description>Loads all plugins requested by configuration file.</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="195" package="Default">
@@ -4740,20 +4740,20 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>registerPlugin</full_name>
         <docblock line="181">
           <description>Register a plugin to be used by the framework.</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="181" name="param" description="Name of plugin to load." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="181" name="param" description="custom directory where plugin can be found. If null, uses&#10;  TEXTURA_PLUGIN_DIR/$name." type="string" variable="$custom_dir">
+          <tag line="181" name="param" description="custom directory where plugin can be found. If null, uses&#10;  TEXTURA_PLUGIN_DIR/$name." type="string" variable="$plugin_dir">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="181" name="param" description="custom file name where plugin can be found. If null, uses&#10;  plugin_dir/$name.php." type="string" variable="$custom_file">
+          <tag line="181" name="param" description="custom file name where plugin can be found. If null, uses&#10;  plugin_dir/$name.php." type="string" variable="$plugin_file">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="181" name="param" description="custom class name that should be loaded. If null, uses&#10;  &quot;{$name}Plugin&quot;." type="string" variable="$custom_class">
+          <tag line="181" name="param" description="custom class name that should be loaded. If null, uses&#10;  &quot;{$name}Plugin&quot;." type="string" variable="$plugin_class">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="181" name="param" description="custom namespace that should be used to initialize the plugin&#10;  class. If null, the &quot;Textura&quot; namespace is assumed." type="string" variable="$custom_namespace">
+          <tag line="181" name="param" description="custom namespace that should be used to initialize the plugin&#10;  class. If null, the &quot;Textura&quot; namespace is assumed." type="string" variable="$plugin_namespace">
             <type by_reference="false">string</type>
           </tag>
           <tag line="181" name="throws" description="if the plugin cannot be loaded for some reason." type="\LogicException">
@@ -4762,26 +4762,26 @@ if it uses the correct request type and and all required parameters are present.
         </docblock>
         <argument line="196">
           <name>$name</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="196">
-          <name>$custom_dir</name>
+          <name>$plugin_dir</name>
           <default>null</default>
           <type/>
         </argument>
         <argument line="196">
-          <name>$custom_file</name>
+          <name>$plugin_file</name>
           <default>null</default>
           <type/>
         </argument>
         <argument line="196">
-          <name>$custom_class</name>
+          <name>$plugin_class</name>
           <default>null</default>
           <type/>
         </argument>
         <argument line="196">
-          <name>$custom_namespace</name>
+          <name>$plugin_namespace</name>
           <default>null</default>
           <type/>
         </argument>

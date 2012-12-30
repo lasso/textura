@@ -27,3 +27,25 @@ debugging:
                                 # exception is thrown (Yes/No)?
   show_backtraces: No           # Should the backtrace be shown when an
                                 # exception is thrown (Yes/No)?
+plugins:
+  - name: FormBuilder           # Loads the FormBuilder plugin. Since the FormBuilder
+                                # plugin is a standard plugin, no more information is
+                                # needed in order to load the plugin.
+  - name: MyPlugin              # Your very own plugin
+    plugin_dir: /plugin/dir     # Textura's plugins are located in src/textura/plugins,
+                                # but your plugin is probabably located somewhere else.
+                                # This setting specifies in which directory your plugin
+                                # class is located.
+    plugin_file: MyPlugin.php   # File name for your plugin. If left unspecified,
+                                # the file name of the plugin is expected to match
+                                # "{$name}Plugin.php".
+    plugin_class: MyPlugin      # Since it is allowed to have several classes in the
+                                # same PHP file Textura needs to know what class in
+                                # the plugin file that should be used as a plugin class.
+                                # If this setting is left unspecified, the class name is
+                                # expected to match "{$name}Plugin".
+    plugin_namespace: my_ns     # If your plugin class lives in a namespace other than
+                                # the toplevel namespace, you need to specify the
+                                # namespace in this setting. If left unspecified,
+                                # Textura will assume that your plugin class lives in
+                                # the toplevel namespace.

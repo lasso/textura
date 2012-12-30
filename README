@@ -61,17 +61,20 @@ things.
     These special properties should be considered *read-only* from
     controller/view code.
 
-  - If you intend to send data directly to the browser without using a template,
+  - If you intend to send data directly to the client without using a template,
     you can use $this->response->appendToBody to add content and
     $this->response->setHeader to set headers. Of course you can also use stuff
-    like echo and var_dump, but that way of sending data is discouraged.
+    like echo and var_dump, but that way of sending data is discouraged as it
+    *will* mess up the Content-Length header and therefore might confuse some
+    clients.
 
-* Place your views (HAML files) in site/views. The directory structure under the
+* Place your views (Haml files) in site/views. The directory structure under the
   views directory should follow the controller mapping, so if you have a
   controller that handles /foo your views for that controller should be placed
   in views/foo. The file name of the template file should match the name of the
   action (method) in your controller. If Textura cannot find a matching template
-  it will simply ignore the missing file.
+  it will simply ignore the missing file. For more info about the Haml format,
+  please visit http://haml.info/.
 
   All properties set in the controller can be used in the template. If you use
   $this->username = 'Homer' in your controller code, you can refer to the same
@@ -88,7 +91,7 @@ things.
   roll your own.
 
 * Static content should be placed in the site/static folder. Some shortcut
-  aliases (/s and /static) are defined in the .htacess directory in the top
+  aliases (/s and /static) are defined in the .htacess file in the top
   level directory. If you want to use additional aliases please define them in
   the same file.
 
@@ -109,6 +112,29 @@ Globals are evil. Textura goes very far when dealing with this problem.
 $_GET, $_POST, $_FILES, $_REQUEST, $COOKIES, $_SERVER and $_SESSION are *not*
 available when using Textura. The data in those variables can all be fetched
 from the Textura\Request object instead.
+
+Plugins
+=======
+Textura is designed to be a very minimal framwork. Only the bare minimum of
+functionality are available in the core classes. In order to extend Textura
+without affecting the core functionality a simple plugin system is used for
+adding functionaliity. At the moment no "hooks" exist in the framework to let
+a plugin add data to the request/response "automatically", so adding a plugin
+simply allows some extra classes to be loading without manually requiring them.
+
+At the moment the following plugins are available:
+
+FormBuilder - a plugin for building forms dynamically.
+ThemeBuilder - a plugin for building "themes" dynamically.
+
+I you want to write your own Textura plugin, it must implement the
+Textura\Plugin interface. Please see the file
+src/textura/core/interfaces/Plugin.php for details on what methods you need to
+implement in order to transform your class into a Textura plugin.
+
+Loading a plugin is done by adding a reference to the plugin in the
+configuration file. Please see the section 'plugins' in the
+site/config.yml.sample file for details.
 
 External dependencies
 =====================

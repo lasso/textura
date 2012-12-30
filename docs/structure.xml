@@ -1135,6 +1135,633 @@ Validator objet.</description>
       </method>
     </class>
   </file>
+  <file path="src/textura/plugins/ThemeBuilder/classes/ThemeColumn.php" hash="0cf5d83e68e5252a2562730c6357d2cc" package="Textura">
+    <docblock line="21">
+      <description>Textura</description>
+      <long-description></long-description>
+      <tag line="21" name="package" description="Textura"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Textura" line="31" package="Default">
+      <extends>\Textura\ThemeElement</extends>
+      <name>ThemeColumn</name>
+      <full_name>\Textura\ThemeColumn</full_name>
+      <docblock line="28">
+        <description>Class implementing a column in a theme</description>
+        <long-description></long-description>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="36" namespace="Textura" package="Default">
+        <name>$id</name>
+        <default></default>
+        <docblock line="33">
+          <description></description>
+          <long-description></long-description>
+          <tag line="33" name="var" description="unique id used for this column" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="41" namespace="Textura" package="Default">
+        <name>$width</name>
+        <default></default>
+        <docblock line="38">
+          <description></description>
+          <long-description></long-description>
+          <tag line="38" name="var" description="number of &quot;columns units&quot; this column spans" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="49" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="43">
+          <description>Constructor</description>
+          <long-description></long-description>
+          <tag line="43" name="param" description="unique id" type="string" variable="$id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="43" name="param" description="number of &quot;column units&quot; to span" type="integer" variable="$width">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+        <argument line="49">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="49">
+          <name>$width</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="59" package="Default">
+        <name>getHash</name>
+        <full_name>getHash</full_name>
+        <docblock line="54">
+          <description>Returns a hash for the current column.</description>
+          <long-description></long-description>
+          <tag line="54" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="68" package="Default">
+        <name>getId</name>
+        <full_name>getId</full_name>
+        <docblock line="63">
+          <description>Returns the id of the current column.</description>
+          <long-description></long-description>
+          <tag line="63" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="77" package="Default">
+        <name>getWidth</name>
+        <full_name>getWidth</full_name>
+        <docblock line="72">
+          <description>Returns the number of "column units" the current column spans.</description>
+          <long-description></long-description>
+          <tag line="72" name="return" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/textura/plugins/ThemeBuilder/classes/ThemeBuilder.php" hash="abb24c67c1f1b4a096e1997deb7b6eaf" package="Textura">
+    <docblock line="21">
+      <description>Textura</description>
+      <long-description></long-description>
+      <tag line="21" name="package" description="Textura"/>
+    </docblock>
+    <include line="292" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="Textura" line="32" package="Default">
+      <extends/>
+      <name>ThemeBuilder</name>
+      <full_name>\Textura\ThemeBuilder</full_name>
+      <docblock line="29">
+        <description>Class for building themes.</description>
+        <long-description></long-description>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="37" namespace="Textura" package="Default">
+        <name>$css_dir</name>
+        <default></default>
+        <docblock line="34">
+          <description></description>
+          <long-description></long-description>
+          <tag line="34" name="var" description="directory for dynamic CSS content" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="42" namespace="Textura" package="Default">
+        <name>$columns</name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+          <tag line="39" name="var" description="array of ThemeColumn objects representing columns in the theme" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="47" namespace="Textura" package="Default">
+        <name>$column_width</name>
+        <default></default>
+        <docblock line="44">
+          <description></description>
+          <long-description></long-description>
+          <tag line="44" name="var" description="number of pixels compromising a &quot;column unit&quot;" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="52" namespace="Textura" package="Default">
+        <name>$gutter_width</name>
+        <default></default>
+        <docblock line="49">
+          <description></description>
+          <long-description></long-description>
+          <tag line="49" name="var" description="number of pixels between columns" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="57" namespace="Textura" package="Default">
+        <name>$included_css</name>
+        <default></default>
+        <docblock line="54">
+          <description></description>
+          <long-description></long-description>
+          <tag line="54" name="var" description="array of custom LESS files" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="62" namespace="Textura" package="Default">
+        <name>$template_dir</name>
+        <default></default>
+        <docblock line="59">
+          <description></description>
+          <long-description></long-description>
+          <tag line="59" name="var" description="directory for dynamic Haml content" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="67" namespace="Textura" package="Default">
+        <name>$width</name>
+        <default></default>
+        <docblock line="64">
+          <description></description>
+          <long-description></long-description>
+          <tag line="64" name="var" description="number of columns in theme" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="76" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="69">
+          <description>Constructor</description>
+          <long-description></long-description>
+          <tag line="69" name="param" description="base template to use when rendering" type="string" variable="$base_template">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="69" name="param" description="directory for dynamic Haml content" type="string" variable="$template_dir">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="69" name="param" description="directory for dynamic CSS content" type="string" variable="$css_dir">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="76">
+          <name>$base_template</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="76">
+          <name>$template_dir</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="76">
+          <name>$css_dir</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="93" package="Default">
+        <name>addColumn</name>
+        <full_name>addColumn</full_name>
+        <docblock line="87">
+          <description>Add a column to the current theme builder.</description>
+          <long-description></long-description>
+          <tag line="87" name="param" description="a ThemeColumn object" type="\Textura\ThemeColumn" variable="$column">
+            <type by_reference="false">\Textura\ThemeColumn</type>
+          </tag>
+          <tag line="87" name="throws" description="if a column with the same id is already present in the theme builder." type="\LogicException">
+            <type by_reference="false">\LogicException</type>
+          </tag>
+        </docblock>
+        <argument line="93">
+          <name>$column</name>
+          <default></default>
+          <type>\Textura\ThemeColumn</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="106" package="Default">
+        <name>getWidth</name>
+        <full_name>getWidth</full_name>
+        <docblock line="101">
+          <description>Returns the number of columns for the current theme builder.</description>
+          <long-description></long-description>
+          <tag line="101" name="return" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="117" package="Default">
+        <name>render</name>
+        <full_name>render</full_name>
+        <docblock line="110">
+          <description>Renders the view associated with the current theme builder.</description>
+          <long-description>&lt;p&gt;CSS files and HAML templates are
+automatically generated if needed.&lt;/p&gt;</long-description>
+          <tag line="110" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="110" name="throws" description="if the theme builder lacks all kinds of content." type="\LogicException">
+            <type by_reference="false">\LogicException</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="138" package="Default">
+        <name>getHash</name>
+        <full_name>getHash</full_name>
+        <docblock line="132">
+          <description>Returns a hash for the current theme builder.</description>
+          <long-description>&lt;p&gt;This is used to decide whether CSS files and
+HAML templates need to be generated or not in various situations.&lt;/p&gt;</long-description>
+          <tag line="132" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="157" package="Default">
+        <name>includeCSS</name>
+        <full_name>includeCSS</full_name>
+        <docblock line="152">
+          <description>Add styles from LESS file.</description>
+          <long-description></long-description>
+          <tag line="152" name="param" description="" type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="157">
+          <name>$path</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="166" package="Default">
+        <name>setBaseTemplate</name>
+        <full_name>setBaseTemplate</full_name>
+        <docblock line="161">
+          <description>Sets the base Haml template to use for rendering.</description>
+          <long-description></long-description>
+          <tag line="161" name="param" description="" type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="166">
+          <name>$path</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="175" package="Default">
+        <name>setColumnWidth</name>
+        <full_name>setColumnWidth</full_name>
+        <docblock line="170">
+          <description>Sets the number of pixels used as a column "unit".</description>
+          <long-description></long-description>
+          <tag line="170" name="param" description="" type="integer" variable="$width_in_pixels">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+        <argument line="175">
+          <name>$width_in_pixels</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="184" package="Default">
+        <name>setCSSDir</name>
+        <full_name>setCSSDir</full_name>
+        <docblock line="179">
+          <description>Sets the directory to use for dynamically created CSS files.</description>
+          <long-description></long-description>
+          <tag line="179" name="param" description="" type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="184">
+          <name>$path</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="195" package="Default">
+        <name>setContents</name>
+        <full_name>setContents</full_name>
+        <docblock line="188">
+          <description>Sets the contents for a specific column.</description>
+          <long-description></long-description>
+          <tag line="188" name="param" description="name identifying the column" type="string" variable="$column_id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="188" name="param" description="contents to display in the column" type="string" variable="$contents">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="188" name="throws" description="if the column cannot be found" type="\LogicException">
+            <type by_reference="false">\LogicException</type>
+          </tag>
+        </docblock>
+        <argument line="195">
+          <name>$column_id</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="195">
+          <name>$contents</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="208" package="Default">
+        <name>setGutterWidth</name>
+        <full_name>setGutterWidth</full_name>
+        <docblock line="203">
+          <description>Sets the spacing width between columns.</description>
+          <long-description></long-description>
+          <tag line="203" name="param" description="" type="integer" variable="$width_in_pixels">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+        <argument line="208">
+          <name>$width_in_pixels</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="217" package="Default">
+        <name>setTemplateDir</name>
+        <full_name>setTemplateDir</full_name>
+        <docblock line="212">
+          <description>Sets the directory where dynamtic HAML templates should be stored.</description>
+          <long-description></long-description>
+          <tag line="212" name="param" description="" type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="217">
+          <name>$path</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="224" package="Default">
+        <name>calculateTotalWidth</name>
+        <full_name>calculateTotalWidth</full_name>
+        <docblock line="221">
+          <description>Calculates the total number of "column uits" in the theme.</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="238" package="Default">
+        <name>getColumn</name>
+        <full_name>getColumn</full_name>
+        <docblock line="232">
+          <description>Returns a column by id.</description>
+          <long-description>&lt;p&gt;If the column is not present in the theme, null is returned.&lt;/p&gt;</long-description>
+          <tag line="232" name="param" description="" type="string" variable="$column_id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="232" name="return" description="" type="\Textura\ThemeColumn">
+            <type by_reference="false">\Textura\ThemeColumn</type>
+          </tag>
+        </docblock>
+        <argument line="238">
+          <name>$column_id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="255" package="Default">
+        <name>hasColumn</name>
+        <full_name>hasColumn</full_name>
+        <docblock line="249">
+          <description>Returns whether a specific column exists in the theme.</description>
+          <long-description></long-description>
+          <tag line="249" name="param" description="" type="string" variable="$column_id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="249" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="255">
+          <name>$column_id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="266" package="Default">
+        <name>less2CSS</name>
+        <full_name>less2CSS</full_name>
+        <docblock line="259">
+          <description>Converts a LESS file to a CSS file.</description>
+          <long-description></long-description>
+          <tag line="259" name="param" description="path to less file" type="string" variable="$input_path">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="259" name="param" description="destination path. If omitted, the original LESS file will be&#10;  overwritten by the CSS file." type="string" variable="$output_path">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="266">
+          <name>$input_path</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="266">
+          <name>$output_path</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="283" package="Default">
+        <name>renderTemplate</name>
+        <full_name>renderTemplate</full_name>
+        <docblock line="278">
+          <description>Renders the HAML template associated with the current theme builder</description>
+          <long-description></long-description>
+          <tag line="278" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="313" package="Default">
+        <name>writeCSS</name>
+        <full_name>writeCSS</full_name>
+        <docblock line="310">
+          <description>Writes a CSS file for the current theme.</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="347" package="Default">
+        <name>writeTemplate</name>
+        <full_name>writeTemplate</full_name>
+        <docblock line="344">
+          <description>Writes a HAML template file for the current theme.</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/textura/plugins/ThemeBuilder/classes/ThemeElement.php" hash="738fb1f0a627239383a9a3ccfe6be9c7" package="Textura">
+    <docblock line="21">
+      <description>Textura</description>
+      <long-description/>
+      <tag line="21" name="package" description="Textura"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Textura" line="31" package="Default">
+      <extends/>
+      <name>ThemeElement</name>
+      <full_name>\Textura\ThemeElement</full_name>
+      <docblock line="28">
+        <description>Class acting as a base class for all "theme elements"</description>
+        <long-description/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="36" namespace="Textura" package="Default">
+        <name>$contents</name>
+        <default/>
+        <docblock line="33">
+          <description/>
+          <long-description/>
+          <tag line="33" name="var" description="contents of this elemnent" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="43" package="Default">
+        <name>getContents</name>
+        <full_name>getContents</full_name>
+        <docblock line="38">
+          <description>Returns the contents of the current element.</description>
+          <long-description/>
+          <tag line="38" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="57" package="Default">
+        <name>getHash</name>
+        <full_name>getHash</full_name>
+        <docblock line="52">
+          <description>Returns a hash of the current element.</description>
+          <long-description/>
+          <tag line="52" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="71" package="Default">
+        <name>setContents</name>
+        <full_name>setContents</full_name>
+        <docblock line="66">
+          <description>Sets the contents of the current element.</description>
+          <long-description/>
+          <tag line="66" name="param" description="" type="\Textura\ThemeElement|String" variable="$theme_element_or_string">
+            <type by_reference="false">\Textura\ThemeElement</type>
+            <type by_reference="false">String</type>
+          </tag>
+        </docblock>
+        <argument line="71">
+          <name>$theme_element_or_string</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/textura/plugins/ThemeBuilder/ThemeBuilderPlugin.php" hash="609983930d54aed39e1dbb7384b24636" package="Textura">
+    <docblock line="21">
+      <description>Textura</description>
+      <long-description></long-description>
+      <tag line="21" name="package" description="Textura"/>
+    </docblock>
+    <include line="57" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="Textura" line="32" package="Default">
+      <extends/>
+      <implements>\Textura\Plugin</implements>
+      <name>ThemeBuilderPlugin</name>
+      <full_name>\Textura\ThemeBuilderPlugin</full_name>
+      <docblock line="29">
+        <description>Plugin for building themes dynamically.</description>
+        <long-description></long-description>
+      </docblock>
+      <property final="false" static="true" visibility="private" line="37" namespace="Textura" package="Default">
+        <name>$instance</name>
+        <default>null</default>
+        <docblock line="34">
+          <description></description>
+          <long-description></long-description>
+          <tag line="34" name="var" description="references the one and only instance of this class" type="\Textura\Textura\ThemeBuilderPlugin">
+            <type by_reference="false">\Textura\Textura\ThemeBuilderPlugin</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="44" package="Default">
+        <name>getPaths</name>
+        <full_name>getPaths</full_name>
+        <docblock line="39">
+          <description>Returns the paths from where the current plugin's classes will be loaded.</description>
+          <long-description></long-description>
+          <tag line="39" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="55" package="Default">
+        <name>register</name>
+        <full_name>register</full_name>
+        <docblock line="52">
+          <description>This method is automatically called by Textura whenever a plugin is registered.</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="67" package="Default">
+        <name>getInstance</name>
+        <full_name>getInstance</full_name>
+        <docblock line="62">
+          <description>Returns a single instance of the FormBuilderPlugin class.</description>
+          <long-description></long-description>
+          <tag line="62" name="return" description="" type="\Textura\Textura\ThemeBuilderPlugin">
+            <type by_reference="false">\Textura\Textura\ThemeBuilderPlugin</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
   <file path="src/textura/core/interfaces/Plugin.php" hash="131c7da5c710494d8dac2778704b8707" package="Textura">
     <docblock line="21">
       <description>Textura</description>
@@ -4575,7 +5202,7 @@ if it uses the correct request type and and all required parameters are present.
   <file path="src/textura/core/classes/Textura.php" hash="e93800005387c8743c67d4e661d53f21" package="Textura">
     <docblock line="21">
       <description>Textura</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
     <include line="29" type="Require Once" package="Default">
@@ -4600,14 +5227,14 @@ if it uses the correct request type and and all required parameters are present.
       <full_name>\Textura\Textura</full_name>
       <docblock line="35">
         <description>This class represents the Textura "application"</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
       <property final="false" static="true" visibility="private" line="43" namespace="Textura" package="Default">
         <name>$instance</name>
         <default>null</default>
         <docblock line="40">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="40" name="var" description="references the one and only instance of this class" type="\Textura\Textura\Textura">
             <type by_reference="false">\Textura\Textura\Textura</type>
           </tag>
@@ -4615,10 +5242,10 @@ if it uses the correct request type and and all required parameters are present.
       </property>
       <property final="false" static="false" visibility="private" line="48" namespace="Textura" package="Default">
         <name>$configuration</name>
-        <default></default>
+        <default/>
         <docblock line="45">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="45" name="var" description="current configuration" type="\Textura\Textura\Configuration">
             <type by_reference="false">\Textura\Textura\Configuration</type>
           </tag>
@@ -4626,10 +5253,10 @@ if it uses the correct request type and and all required parameters are present.
       </property>
       <property final="false" static="false" visibility="private" line="53" namespace="Textura" package="Default">
         <name>$plugins</name>
-        <default></default>
+        <default/>
         <docblock line="50">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="50" name="var" description="currently registered plugins" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -4640,7 +5267,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>__construct</full_name>
         <docblock line="55">
           <description>Constructor</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="69" package="Default">
@@ -4648,7 +5275,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>autoload</full_name>
         <docblock line="63">
           <description>Loads classes from Textura core and Textura plugins automatically.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="63" name="param" description="class to load" type="string" variable="$class_name">
             <type by_reference="false">string</type>
           </tag>
@@ -4658,7 +5285,7 @@ if it uses the correct request type and and all required parameters are present.
         </docblock>
         <argument line="69">
           <name>$class_name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -4667,7 +5294,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>getInstance</full_name>
         <docblock line="118">
           <description>Returns the (single) instance of the Textura class.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="118" name="return" description="" type="\Textura\Textura">
             <type by_reference="false">\Textura\Textura</type>
           </tag>
@@ -4688,7 +5315,7 @@ if it uses the correct request type and and all required parameters are present.
         </docblock>
         <argument line="136">
           <name>$key</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -4707,12 +5334,12 @@ if it uses the correct request type and and all required parameters are present.
         </docblock>
         <argument line="146">
           <name>$key</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="146">
           <name>$value</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -4721,7 +5348,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>getPluginPaths</full_name>
         <docblock line="150">
           <description>Return all paths registered by plugins.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="150" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -4732,7 +5359,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>initPlugins</full_name>
         <docblock line="163">
           <description>Loads all plugins requested by configuration file.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="195" package="Default">
@@ -4740,7 +5367,7 @@ if it uses the correct request type and and all required parameters are present.
         <full_name>registerPlugin</full_name>
         <docblock line="181">
           <description>Register a plugin to be used by the framework.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="181" name="param" description="Name of plugin to load." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -4762,7 +5389,7 @@ if it uses the correct request type and and all required parameters are present.
         </docblock>
         <argument line="196">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="196">

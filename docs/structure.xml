@@ -1077,10 +1077,10 @@ Validator objet.</description>
       </method>
     </class>
   </file>
-  <file path="src/textura/plugins/FormBuilder/FormBuilderPlugin.php" hash="aa0489990c79da14817ed9d8597f03fc" package="Textura">
+  <file path="src/textura/plugins/FormBuilder/FormBuilderPlugin.php" hash="dc1ba32be44397e158cbd8b39906dc9b" package="Textura">
     <docblock line="21">
       <description>Textura</description>
-      <long-description/>
+      <long-description></long-description>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
     <class final="false" abstract="false" namespace="Textura" line="32" package="Default">
@@ -1090,45 +1090,56 @@ Validator objet.</description>
       <full_name>\Textura\FormBuilderPlugin</full_name>
       <docblock line="29">
         <description>Plugin for building forms dynamically.</description>
-        <long-description/>
+        <long-description></long-description>
       </docblock>
       <property final="false" static="true" visibility="private" line="37" namespace="Textura" package="Default">
         <name>$instance</name>
         <default>null</default>
         <docblock line="34">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="34" name="var" description="references the one and only instance of this class" type="\Textura\Textura\FormBuilderPlugin">
             <type by_reference="false">\Textura\Textura\FormBuilderPlugin</type>
           </tag>
         </docblock>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="44" package="Default">
+        <name>getBasePath</name>
+        <full_name>getBasePath</full_name>
+        <docblock line="39">
+          <description>Returns the base path for the current plugin.</description>
+          <long-description></long-description>
+          <tag line="39" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="53" package="Default">
         <name>getPaths</name>
         <full_name>getPaths</full_name>
-        <docblock line="39">
+        <docblock line="48">
           <description>Returns the paths from where the current plugin's classes will be loaded.</description>
-          <long-description/>
-          <tag line="39" name="return" description="" type="array">
+          <long-description></long-description>
+          <tag line="48" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="55" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="64" package="Default">
         <name>register</name>
         <full_name>register</full_name>
-        <docblock line="52">
+        <docblock line="61">
           <description>This method is automatically called by Textura whenever a plugin is registered.</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="64" package="Default">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="73" package="Default">
         <name>getInstance</name>
         <full_name>getInstance</full_name>
-        <docblock line="59">
+        <docblock line="68">
           <description>Returns a single instance of the FormBuilderPlugin class.</description>
-          <long-description/>
-          <tag line="59" name="return" description="" type="\Textura\Textura\FormBuilderPlugin">
+          <long-description></long-description>
+          <tag line="68" name="return" description="" type="\Textura\Textura\FormBuilderPlugin">
             <type by_reference="false">\Textura\Textura\FormBuilderPlugin</type>
           </tag>
         </docblock>
@@ -1701,13 +1712,13 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
       </method>
     </class>
   </file>
-  <file path="src/textura/plugins/ThemeBuilder/ThemeBuilderPlugin.php" hash="609983930d54aed39e1dbb7384b24636" package="Textura">
+  <file path="src/textura/plugins/ThemeBuilder/ThemeBuilderPlugin.php" hash="c7cfd1b2bde3ed6bf054094637f8ddea" package="Textura">
     <docblock line="21">
       <description>Textura</description>
-      <long-description/>
+      <long-description></long-description>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
-    <include line="57" type="Require Once" package="Default">
+    <include line="66" type="Require Once" package="Default">
       <name/>
     </include>
     <class final="false" abstract="false" namespace="Textura" line="32" package="Default">
@@ -1717,55 +1728,66 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
       <full_name>\Textura\ThemeBuilderPlugin</full_name>
       <docblock line="29">
         <description>Plugin for building themes dynamically.</description>
-        <long-description/>
+        <long-description></long-description>
       </docblock>
       <property final="false" static="true" visibility="private" line="37" namespace="Textura" package="Default">
         <name>$instance</name>
         <default>null</default>
         <docblock line="34">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="34" name="var" description="references the one and only instance of this class" type="\Textura\Textura\ThemeBuilderPlugin">
             <type by_reference="false">\Textura\Textura\ThemeBuilderPlugin</type>
           </tag>
         </docblock>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="44" package="Default">
+        <name>getBasePath</name>
+        <full_name>getBasePath</full_name>
+        <docblock line="39">
+          <description>Returns the base path for the current plugin.</description>
+          <long-description></long-description>
+          <tag line="39" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="53" package="Default">
         <name>getPaths</name>
         <full_name>getPaths</full_name>
-        <docblock line="39">
+        <docblock line="48">
           <description>Returns the paths from where the current plugin's classes will be loaded.</description>
-          <long-description/>
-          <tag line="39" name="return" description="" type="array">
+          <long-description></long-description>
+          <tag line="48" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="55" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="64" package="Default">
         <name>register</name>
         <full_name>register</full_name>
-        <docblock line="52">
+        <docblock line="61">
           <description>This method is automatically called by Textura whenever a plugin is registered.</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="67" package="Default">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="76" package="Default">
         <name>getInstance</name>
         <full_name>getInstance</full_name>
-        <docblock line="62">
+        <docblock line="71">
           <description>Returns a single instance of the FormBuilderPlugin class.</description>
-          <long-description/>
-          <tag line="62" name="return" description="" type="\Textura\Textura\ThemeBuilderPlugin">
+          <long-description></long-description>
+          <tag line="71" name="return" description="" type="\Textura\Textura\ThemeBuilderPlugin">
             <type by_reference="false">\Textura\Textura\ThemeBuilderPlugin</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="src/textura/core/interfaces/Plugin.php" hash="131c7da5c710494d8dac2778704b8707" package="Textura">
+  <file path="src/textura/core/interfaces/Plugin.php" hash="f9df88acc77a48e4e6409c613ef252a7" package="Textura">
     <docblock line="21">
       <description>Textura</description>
-      <long-description/>
+      <long-description></long-description>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
     <interface namespace="Textura" line="32" package="Default">
@@ -1774,20 +1796,35 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
       <extends>\Textura\Singleton</extends>
       <docblock line="29">
         <description>Interface for classes acting as plugins for Textura</description>
-        <long-description/>
+        <long-description></long-description>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="37" package="Default">
-        <name>getPaths</name>
-        <full_name>getPaths</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="40" package="Default">
+        <name>getBasePath</name>
+        <full_name>getBasePath</full_name>
         <docblock line="34">
-          <description>Returns an array of paths where the classes needed by the plugin can be loaded from</description>
-          <long-description/>
+          <description>Returns the base path of the plugin.</description>
+          <long-description>&lt;p&gt;The base path should reflect the location of the directory
+of the plugin file.&lt;/p&gt;</long-description>
+          <tag line="34" name="return" description="base path for plugin" type="string">
+            <type by_reference="false">string</type>
+          </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="43" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="47" package="Default">
+        <name>getPaths</name>
+        <full_name>getPaths</full_name>
+        <docblock line="42">
+          <description>Returns an array of paths where the classes needed by the plugin can be loaded from</description>
+          <long-description></long-description>
+          <tag line="42" name="return" description="array of paths from where to load classes." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="53" package="Default">
         <name>register</name>
         <full_name>register</full_name>
-        <docblock line="39">
+        <docblock line="49">
           <description>Called whenever a plugin is registered in Textura.</description>
           <long-description>&lt;p&gt;If your plugin needs any type if magic
 initialization you should place your code in this method.&lt;/p&gt;</long-description>
@@ -2383,7 +2420,7 @@ the response object instead.&lt;/p&gt;</long-description>
   <file path="src/textura/core/classes/model/ModelManager.php" hash="f6bd0f30b7ecb60a88ae217a4ecb9f98" package="Textura\Model">
     <docblock line="21">
       <description>Textura</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="21" name="package" description="Textura"/>
       <tag line="21" name="subpackage" description="Model"/>
     </docblock>
@@ -2394,14 +2431,14 @@ the response object instead.&lt;/p&gt;</long-description>
       <full_name>\Textura\Model\ModelManager</full_name>
       <docblock line="30">
         <description>Class responsible for loading and saving model objects.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
       <property final="false" static="false" visibility="private" line="38" namespace="Textura\Model" package="Default">
         <name>$db_manager</name>
-        <default></default>
+        <default/>
         <docblock line="35">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="35" name="var" description="database manager" type="\Textura\Model\Textura\Mpdel\DBManager">
             <type by_reference="false">\Textura\Model\Textura\Mpdel\DBManager</type>
           </tag>
@@ -2409,10 +2446,10 @@ the response object instead.&lt;/p&gt;</long-description>
       </property>
       <property final="false" static="false" visibility="private" line="43" namespace="Textura\Model" package="Default">
         <name>$model_map</name>
-        <default></default>
+        <default/>
         <docblock line="40">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="40" name="var" description="array containing model definitions" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -2422,8 +2459,8 @@ the response object instead.&lt;/p&gt;</long-description>
         <name>$instance</name>
         <default>null</default>
         <docblock line="45">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="45" name="var" description="the one and only instance of this class" type="\Textura\Model\Textura\Model\ModelManager">
             <type by_reference="false">\Textura\Model\Textura\Model\ModelManager</type>
           </tag>
@@ -2434,7 +2471,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>__construct</full_name>
         <docblock line="50">
           <description>Constructor</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="true" visibility="public" namespace="Textura\Model" line="63" package="Default">
@@ -2442,7 +2479,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>getInstance</full_name>
         <docblock line="58">
           <description>Returns the one and only instance of this class.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="58" name="return" description="" type="\Textura\Model\Textura\Model\ModelManager">
             <type by_reference="false">\Textura\Model\Textura\Model\ModelManager</type>
           </tag>
@@ -2453,7 +2490,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>getMap</full_name>
         <docblock line="68">
           <description>Returns an array containing the currently mapped model classes.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="68" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -2464,7 +2501,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>getProperties</full_name>
         <docblock line="77">
           <description>Returns an array containing the properties defined by the specified model class.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="77" name="param" description="" type="string" variable="$model_class">
             <type by_reference="false">string</type>
           </tag>
@@ -2477,7 +2514,7 @@ the response object instead.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="84">
           <name>$model_class</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2486,7 +2523,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>getPropertyNames</full_name>
         <docblock line="94">
           <description>Returns an array containing the property names defined by the specified model class.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="94" name="param" description="" type="string" variable="$model_class">
             <type by_reference="false">string</type>
           </tag>
@@ -2496,7 +2533,7 @@ the response object instead.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="100">
           <name>$model_class</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2505,7 +2542,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>getTable</full_name>
         <docblock line="104">
           <description>Returns the table name mapped to the specified model class.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="104" name="param" description="" type="string" variable="$model_class">
             <type by_reference="false">string</type>
           </tag>
@@ -2518,7 +2555,7 @@ the response object instead.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="111">
           <name>$model_class</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2527,7 +2564,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>loadSingleModelInstance</full_name>
         <docblock line="121">
           <description>Loads a single instance of the specified model class.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="121" name="param" description="" type="string" variable="$model_class">
             <type by_reference="false">string</type>
           </tag>
@@ -2544,12 +2581,12 @@ the response object instead.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="129">
           <name>$model_class</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="129">
           <name>$primary_key_value</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2558,14 +2595,14 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>deleteModelInstance</full_name>
         <docblock line="162">
           <description>Deletes a model instance from the underlying database.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="162" name="param" description="" type="\Textura\Model\Textura\Model" variable="$model_instance">
             <type by_reference="false">\Textura\Model\Textura\Model</type>
           </tag>
         </docblock>
         <argument line="167">
           <name>$model_instance</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2574,7 +2611,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>loadModelInstances</full_name>
         <docblock line="179">
           <description>Loads zero or more instances of the specified model class.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="179" name="param" description="" type="string" variable="$model_class">
             <type by_reference="false">string</type>
           </tag>
@@ -2590,12 +2627,12 @@ the response object instead.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="187">
           <name>$model_class</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="187">
           <name>$conditions</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -2604,14 +2641,14 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>saveModelInstance</full_name>
         <docblock line="210">
           <description>Saves a model instance</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="210" name="param" description="" type="\Textura\Model" variable="$model_instance">
             <type by_reference="false">\Textura\Model</type>
           </tag>
         </docblock>
         <argument line="215">
           <name>$model_instance</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2620,7 +2657,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>loadModel</full_name>
         <docblock line="233">
           <description>Loads the model definition for the specified model class and caches it in the model map.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="233" name="param" description="" type="string" variable="$model_class">
             <type by_reference="false">string</type>
           </tag>
@@ -2633,7 +2670,7 @@ the response object instead.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="240">
           <name>$model_class</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2642,7 +2679,7 @@ the response object instead.&lt;/p&gt;</long-description>
         <full_name>modelIsLoaded</full_name>
         <docblock line="277">
           <description>Returns whether the specified model class is already cached in the model map or not.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="277" name="param" description="" type="string" variable="$model_class">
             <type by_reference="false">string</type>
           </tag>
@@ -2652,7 +2689,7 @@ the response object instead.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="283">
           <name>$model_class</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2895,7 +2932,7 @@ to the database adapter.&lt;/p&gt;</long-description>
   <file path="src/textura/core/classes/model/SQLiteDBAdapter.php" hash="62ccbe581ba9a59e0824f3faa6302fbf" package="Textura\Model">
     <docblock line="21">
       <description>Textura</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="21" name="package" description="Textura"/>
       <tag line="21" name="subpackage" description="Model"/>
     </docblock>
@@ -2905,14 +2942,14 @@ to the database adapter.&lt;/p&gt;</long-description>
       <full_name>\Textura\Model\SQLiteDBAdapter</full_name>
       <docblock line="30">
         <description>Database adapter for SQLite(3)</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
       <property final="false" static="false" visibility="private" line="38" namespace="Textura\Model" package="Default">
         <name>$connection</name>
-        <default></default>
+        <default/>
         <docblock line="35">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="35" name="var" description="database connection" type="\SQLite3">
             <type by_reference="false">\SQLite3</type>
           </tag>
@@ -2920,10 +2957,10 @@ to the database adapter.&lt;/p&gt;</long-description>
       </property>
       <property final="false" static="false" visibility="private" line="43" namespace="Textura\Model" package="Default">
         <name>$filename</name>
-        <default></default>
+        <default/>
         <docblock line="40">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="40" name="var" description="path to SQLite database" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2931,10 +2968,10 @@ to the database adapter.&lt;/p&gt;</long-description>
       </property>
       <property final="false" static="false" visibility="private" line="48" namespace="Textura\Model" package="Default">
         <name>$flags</name>
-        <default></default>
+        <default/>
         <docblock line="45">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="45" name="var" description="flags used when connecting to SQLite database" type="integer">
             <type by_reference="false">integer</type>
           </tag>
@@ -2942,10 +2979,10 @@ to the database adapter.&lt;/p&gt;</long-description>
       </property>
       <property final="false" static="false" visibility="private" line="53" namespace="Textura\Model" package="Default">
         <name>$encryption_key</name>
-        <default></default>
+        <default/>
         <docblock line="50">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="50" name="var" description="encryption key used when connecting to SQLite database" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2953,10 +2990,10 @@ to the database adapter.&lt;/p&gt;</long-description>
       </property>
       <property final="false" static="false" visibility="private" line="58" namespace="Textura\Model" package="Default">
         <name>$logger</name>
-        <default></default>
+        <default/>
         <docblock line="55">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="55" name="var" description="database logger" type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
@@ -2967,14 +3004,14 @@ to the database adapter.&lt;/p&gt;</long-description>
         <full_name>__construct</full_name>
         <docblock line="60">
           <description>Constructor</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="60" name="param" description="connection parameters" type="array" variable="$params">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="65">
           <name>$params</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -2983,7 +3020,7 @@ to the database adapter.&lt;/p&gt;</long-description>
         <full_name>connect</full_name>
         <docblock line="91">
           <description>Connects to the database</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Textura\Model" line="117" package="Default">
@@ -2991,7 +3028,7 @@ to the database adapter.&lt;/p&gt;</long-description>
         <full_name>deleteRows</full_name>
         <docblock line="111">
           <description>Deletes zero or more rows from the SQLite database.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="111" name="param" description="table to delete rows from" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3001,12 +3038,12 @@ to the database adapter.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="117">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="117">
           <name>$conditions</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -3015,7 +3052,7 @@ to the database adapter.&lt;/p&gt;</long-description>
         <full_name>exec</full_name>
         <docblock line="128">
           <description>Executes a query that does not return any rows.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="128" name="param" description="" type="string" variable="$query">
             <type by_reference="false">string</type>
           </tag>
@@ -3025,7 +3062,7 @@ to the database adapter.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="134">
           <name>$query</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="134">
@@ -3053,7 +3090,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="148">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3062,7 +3099,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>query</full_name>
         <docblock line="167">
           <description>Sends a query to the DB and returns the result as an associative array</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="167" name="param" description="" type="string" variable="$query">
             <type by_reference="false">string</type>
           </tag>
@@ -3075,7 +3112,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="174">
           <name>$query</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="174">
@@ -3089,7 +3126,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>isConnected</full_name>
         <docblock line="180">
           <description>Returns whether there exists an open connection to the DB or not</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="180" name="return" description="" type="\Textura\Model\type">
             <type by_reference="false">\Textura\Model\type</type>
           </tag>
@@ -3100,7 +3137,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>insertRow</full_name>
         <docblock line="188">
           <description>Inserts a row into the underlying database.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="188" name="param" description="table name" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3113,12 +3150,12 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="195">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="195">
           <name>$values</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -3127,7 +3164,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>normalizeValue</full_name>
         <docblock line="214">
           <description>Normalizes a value so that it isafe for SQLite to use it.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="214" name="param" description="" type="mixed" variable="$value">
             <type by_reference="false">mixed</type>
           </tag>
@@ -3137,7 +3174,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="220">
           <name>$value</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3146,7 +3183,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>selectRows</full_name>
         <docblock line="232">
           <description>Selects zero or more rows from the specified table.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="232" name="param" description="table name" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3165,12 +3202,12 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="241">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="241">
           <name>$conditions</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
         <argument line="241">
@@ -3184,7 +3221,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>updateRows</full_name>
         <docblock line="293">
           <description>Updates zero or more rows in the underlying database.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="293" name="param" description="table name" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3197,17 +3234,17 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="300">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="300">
           <name>$conditions</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
         <argument line="300">
           <name>$values</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -3216,7 +3253,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>tableExists</full_name>
         <docblock line="318">
           <description>Returns whether a specific table exists or not</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="318" name="param" description="" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3226,7 +3263,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="324">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3235,7 +3272,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>validateParams</full_name>
         <docblock line="334">
           <description>Validates the connection parameters for the current database adapter.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="334" name="param" description="connection parameters" type="array" variable="$params">
             <type by_reference="false">array</type>
           </tag>
@@ -3248,7 +3285,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="341">
           <name>$params</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -3257,7 +3294,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>getResultAsArray</full_name>
         <docblock line="361">
           <description>Returns the result from a DB queray as an associative array.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="361" name="param" description="" type="\SQLite3Result" variable="$result">
             <type by_reference="false">\SQLite3Result</type>
           </tag>
@@ -3267,7 +3304,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="367">
           <name>$result</name>
-          <default></default>
+          <default/>
           <type>\SQLite3Result</type>
         </argument>
       </method>
@@ -3276,7 +3313,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>convertFieldType</full_name>
         <docblock line="375">
           <description>Translates a SQLite field type to a DBAdapter field type.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="375" name="param" description="" type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
@@ -3286,7 +3323,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="381">
           <name>$type</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3295,7 +3332,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
   <file path="src/textura/core/classes/model/DBAdapter.php" hash="31d62342578537fd8f6ae56786aab0e8" package="Textura\Model">
     <docblock line="21">
       <description>Textura</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="21" name="package" description="Textura"/>
       <tag line="21" name="subpackage" description="Model"/>
     </docblock>
@@ -3305,7 +3342,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
       <full_name>\Textura\Model\DBAdapter</full_name>
       <docblock line="30">
         <description>Abstract class representing a database adapter.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
       <constant namespace="Textura\Model" line="36" package="Default">
         <name>OP_EQ</name>
@@ -3362,14 +3399,14 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>__construct</full_name>
         <docblock line="49">
           <description>Constructor</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="49" name="param" description="parameters used to connect to the database" type="array" variable="$params">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="54">
           <name>$params</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -3378,7 +3415,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>connect</full_name>
         <docblock line="56">
           <description>Connects to the database.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="true" static="false" visibility="public" namespace="Textura\Model" line="66" package="Default">
@@ -3386,14 +3423,14 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>query</full_name>
         <docblock line="61">
           <description>Sends a custom SQL query to the underlying database.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="61" name="param" description="the query to send to the underlying database" type="string" variable="$query">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
         <argument line="66">
           <name>$query</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3402,7 +3439,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>tableExists</full_name>
         <docblock line="68">
           <description>Returns whether the underlying database has a specified schema (table) or not.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="68" name="param" description="table name" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3412,7 +3449,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="74">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3421,7 +3458,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>isValidOperator</full_name>
         <docblock line="76">
           <description>Returns whether an operator is a valid operator for database query.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="76" name="param" description="" type="string" variable="$operator">
             <type by_reference="false">string</type>
           </tag>
@@ -3431,7 +3468,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="82">
           <name>$operator</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3440,7 +3477,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>insertRow</full_name>
         <docblock line="91">
           <description>Inserts a row inte a database table in the underlying database.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="91" name="param" description="table name" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3450,12 +3487,12 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="97">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="97">
           <name>$values</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -3464,7 +3501,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>selectRows</full_name>
         <docblock line="99">
           <description>Performs a SELECT query on the underlying database.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="99" name="param" description="table name" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3477,12 +3514,12 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="106">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="106">
           <name>$conditions</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
         <argument line="106">
@@ -3496,7 +3533,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>updateRows</full_name>
         <docblock line="108">
           <description>Updates one or more rows in the underlying database.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="108" name="param" description="table name" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3509,17 +3546,17 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="115">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="115">
           <name>$conditions</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
         <argument line="115">
           <name>$values</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -3528,7 +3565,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>validateParams</full_name>
         <docblock line="117">
           <description>Returns whether the provided connection parmeters are valid or not.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="117" name="param" description="connection parameters" type="array" variable="$params">
             <type by_reference="false">array</type>
           </tag>
@@ -3538,7 +3575,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="123">
           <name>$params</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -3547,7 +3584,7 @@ exception will be thrown.&lt;/p&gt;</long-description>
         <full_name>deleteRows</full_name>
         <docblock line="125">
           <description>Deletes zero or more rows from the underlying database.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="125" name="param" description="table name" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -3557,12 +3594,12 @@ exception will be thrown.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="131">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="131">
           <name>$conditions</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -4706,7 +4743,7 @@ session and initialize one if needed.&lt;/p&gt;</long-description>
   <file path="src/textura/core/classes/Model.php" hash="fd7107fce67e11de2258166f8e1c48d1" package="Textura">
     <docblock line="21">
       <description>Textura</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
     <class final="false" abstract="true" namespace="Textura" line="32" package="Default">
@@ -4715,7 +4752,7 @@ session and initialize one if needed.&lt;/p&gt;</long-description>
       <full_name>\Textura\Model</full_name>
       <docblock line="29">
         <description>Abstract class representing a database model.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
       <constant namespace="Textura" line="36" package="Default">
         <name>PROPERTY_TYPE_INTEGER</name>
@@ -4749,10 +4786,10 @@ session and initialize one if needed.&lt;/p&gt;</long-description>
       </constant>
       <property final="false" static="false" visibility="private" line="46" namespace="Textura" package="Default">
         <name>$instance_properties</name>
-        <default></default>
+        <default/>
         <docblock line="43">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="43" name="var" description="Properties defined by database schema." type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -4762,8 +4799,8 @@ session and initialize one if needed.&lt;/p&gt;</long-description>
         <name>$table</name>
         <default>null</default>
         <docblock line="48">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="48" name="var" description="database schema (table) name" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -4773,8 +4810,8 @@ session and initialize one if needed.&lt;/p&gt;</long-description>
         <name>$properties</name>
         <default>array()</default>
         <docblock line="53">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="53" name="var" description="Properties defined outside of database schema. Override this property to provide custom handling of values for specific properties." type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -4796,7 +4833,7 @@ null is returned.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="66">
           <name>$id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -4805,7 +4842,7 @@ null is returned.&lt;/p&gt;</long-description>
         <full_name>loadAll</full_name>
         <docblock line="70">
           <description>Loads all  available instances of a particular model</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="70" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -4827,7 +4864,7 @@ conditions can be found, an empty array is returned.&lt;/p&gt;</long-description
         </docblock>
         <argument line="87">
           <name>$conditions</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -4836,7 +4873,7 @@ conditions can be found, an empty array is returned.&lt;/p&gt;</long-description
         <full_name>__construct</full_name>
         <docblock line="91">
           <description>Constructor</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="107" package="Default">
@@ -4844,7 +4881,7 @@ conditions can be found, an empty array is returned.&lt;/p&gt;</long-description
         <full_name>properties</full_name>
         <docblock line="102">
           <description>Returns an array of available properties.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="102" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -4864,7 +4901,7 @@ model object itself.&lt;/p&gt;</long-description>
         <full_name>save</full_name>
         <docblock line="119">
           <description>Saves the current model object to the underlying data store.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="119" name="return" description="true if the save operation succeeds, false otherwise" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
@@ -4875,7 +4912,7 @@ model object itself.&lt;/p&gt;</long-description>
         <full_name>__get</full_name>
         <docblock line="128">
           <description>Magic property getter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="128" name="param" description="" type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
@@ -4888,7 +4925,7 @@ model object itself.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="135">
           <name>$key</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -4897,7 +4934,7 @@ model object itself.&lt;/p&gt;</long-description>
         <full_name>__set</full_name>
         <docblock line="140">
           <description>Magic property setter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="140" name="param" description="" type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
@@ -4910,12 +4947,12 @@ model object itself.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="147">
           <name>$key</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="147">
           <name>$value</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>

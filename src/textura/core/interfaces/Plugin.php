@@ -32,7 +32,17 @@ namespace Textura;
 interface Plugin extends Singleton {
 
   /**
+   * Returns the base path of the plugin. The base path should reflect the location of the directory
+   * of the plugin file.
+   *
+   * @return string base path for plugin
+   */
+  public function getBasePath();
+
+  /**
    * Returns an array of paths where the classes needed by the plugin can be loaded from
+   *
+   * @return array array of paths from where to load classes.
    */
   public function getPaths();
 

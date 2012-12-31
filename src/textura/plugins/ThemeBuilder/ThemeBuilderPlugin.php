@@ -37,6 +37,15 @@ class ThemeBuilderPlugin implements Plugin {
   private static $instance = null;
 
   /**
+   * Returns the base path for the current plugin.
+   *
+   * @return string
+   */
+  public function getBasePath() {
+    return realpath(dirname(__FILE__));
+  }
+
+  /**
    * Returns the paths from where the current plugin's classes will be loaded.
    *
    * @return array

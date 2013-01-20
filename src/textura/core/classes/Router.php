@@ -115,7 +115,7 @@ class Router {
           // and append the rendered data to the response
           $template_path = self::getTemplatePath($path, $action);
           if ($template_path) {
-            self::renderTemplate($controller, $template_path, $response);
+            ViewHelper::renderTemplate($template_path, $controller, $response);
           }
           // Check if debugging is enabled
           if ($request->debug) \Textura\Debugger::debug_request($request, $response);
@@ -179,29 +179,6 @@ class Router {
   private static function getTemplatePath($path, $action) {
     $view_path = PathBuilder::buildPath(TEXTURA_SITE_DIR, 'views', ltrim($path, '/'), $action) . '.haml';
     return (file_exists($view_path) && is_readable($view_path) ? $view_path : null);
-  }
-
-  /**
-   * Renders a HAML template for the specified path
-   *
-   * @param Textura\Controller $controller
-   * @param string $template_path
-   * @param Textura\Response $response
-   */
-  private static function renderTemplate($controller, $template_path, $response) {
-    require_once(PathBuilder::buildPath(TEXTURA_SRC_DIR, 'phamlp', 'haml', 'HamlParser.php'));
-    $haml_parser = new \HamlParser();
-    ob_start();
-    // Extract $controller instance vars into global scope so that they can be referenced by HAML
-    $instance_vars = $controller->getInstanceVars();
-    extract($instance_vars);
-    // Eval HAML
-    eval(preg_replace('/^\<\?php\s/', '', $haml_parser->haml2PHP($template_path), 1));
-    $response->appendToBody(ob_get_contents());
-    ob_end_clean();
-    // Remove instance variables from global scope again
-    foreach ($instance_vars as $current_instance_var)
-      unset($current_instance_vars);
   }
 
   /**

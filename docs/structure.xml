@@ -103,7 +103,7 @@
       </method>
     </class>
   </file>
-  <file path="src/textura/plugins/FormBuilder/classes/FormBuilder.php" hash="6d4eb967e47054e0e9aa062d5ef44d01" package="Textura">
+  <file path="src/textura/plugins/FormBuilder/classes/FormBuilder.php" hash="bcfb1544477a693f4acecb0325429c7f" package="Textura">
     <docblock line="21">
       <description>Textura</description>
       <long-description/>
@@ -428,253 +428,253 @@
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="248" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="252" package="Default">
         <name>addValidation</name>
         <full_name>addValidation</full_name>
-        <docblock line="241">
+        <docblock line="245">
           <description>Adds validation to a field in the current FormBuilder object.</description>
           <long-description/>
-          <tag line="241" name="param" description="" type="string" variable="$key">
+          <tag line="245" name="param" description="" type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="241" name="param" description="" type="string" variable="$type">
+          <tag line="245" name="param" description="" type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="241" name="param" description="" type="array" variable="$params">
+          <tag line="245" name="param" description="" type="array" variable="$params">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="248">
+        <argument line="252">
           <name>$key</name>
           <default/>
           <type/>
         </argument>
-        <argument line="248">
+        <argument line="252">
           <name>$type</name>
           <default/>
           <type/>
         </argument>
-        <argument line="248">
+        <argument line="252">
           <name>$params</name>
           <default>array()</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="258" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="262" package="Default">
         <name>getValidationErrors</name>
         <full_name>getValidationErrors</full_name>
-        <docblock line="252">
+        <docblock line="256">
           <description>Returns an array of validation errors (if any) in the current FormBuilder object.</description>
           <long-description>&lt;p&gt;This method
 should only be called after validate() has been called on the current FormBuilder object.&lt;/p&gt;</long-description>
-          <tag line="252" name="return" description="" type="array">
+          <tag line="256" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="268" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="272" package="Default">
         <name>getUseClientSideValidation</name>
         <full_name>getUseClientSideValidation</full_name>
-        <docblock line="262">
+        <docblock line="266">
           <description>Returns whether the current FormBuilder object uses client side validation or not.</description>
           <long-description/>
-          <tag line="262" name="return" description="true if the current FormBuilder object uses client side validation,&#10;  false otherwise" type="boolean">
+          <tag line="266" name="return" description="true if the current FormBuilder object uses client side validation,&#10;  false otherwise" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="278" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="282" package="Default">
         <name>setAction</name>
         <full_name>setAction</full_name>
-        <docblock line="272">
+        <docblock line="276">
           <description>Sets the action (URL) to where the form belonging to the current FormBuilder object
   should be sent.</description>
           <long-description/>
-          <tag line="272" name="param" description="" type="string" variable="$action">
+          <tag line="276" name="param" description="" type="string" variable="$action">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="278">
+        <argument line="282">
           <name>$action</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="287" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="291" package="Default">
         <name>setMethod</name>
         <full_name>setMethod</full_name>
-        <docblock line="282">
+        <docblock line="286">
           <description>Sets the method to use when sending form data.</description>
           <long-description>&lt;p&gt;Should be set to either GET or POST.&lt;/p&gt;</long-description>
-          <tag line="282" name="param" description="" type="string" variable="$method">
+          <tag line="286" name="param" description="" type="string" variable="$method">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="287">
+        <argument line="291">
           <name>$method</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="301" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="305" package="Default">
         <name>setEncType</name>
         <full_name>setEncType</full_name>
-        <docblock line="296">
+        <docblock line="300">
           <description>Sets the encoding type for the form belong to the current FormBuilder object.</description>
           <long-description/>
-          <tag line="296" name="param" description="" type="string" variable="$enctype">
+          <tag line="300" name="param" description="" type="string" variable="$enctype">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="301">
+        <argument line="305">
           <name>$enctype</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="311" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="315" package="Default">
         <name>setUseClientSideValidation</name>
         <full_name>setUseClientSideValidation</full_name>
-        <docblock line="305">
+        <docblock line="309">
           <description>Sets whether the current FormBuilder object should use client side validation or not.</description>
           <long-description/>
-          <tag line="305" name="param" description="true to use client side validation, false to not use&#10;  client side validation." type="\Textura\boolena" variable="$bool">
+          <tag line="309" name="param" description="true to use client side validation, false to not use&#10;  client side validation." type="\Textura\boolena" variable="$bool">
             <type by_reference="false">\Textura\boolena</type>
           </tag>
         </docblock>
-        <argument line="311">
+        <argument line="315">
           <name>$bool</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="321" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="325" package="Default">
         <name>render</name>
         <full_name>render</full_name>
-        <docblock line="315">
+        <docblock line="319">
           <description>Renders the form, including javscript methods for validation</description>
           <long-description/>
-          <tag line="315" name="return" description="" type="\Textura\type">
+          <tag line="319" name="return" description="" type="\Textura\type">
             <type by_reference="false">\Textura\type</type>
           </tag>
-          <tag line="315" name="throws" description="" type="\LogicException">
+          <tag line="319" name="throws" description="" type="\LogicException">
             <type by_reference="false">\LogicException</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="449" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="453" package="Default">
         <name>updateAttribute</name>
         <full_name>updateAttribute</full_name>
-        <docblock line="440">
+        <docblock line="444">
           <description>Updates an attribute for an element in the current element list.</description>
           <long-description>&lt;p&gt;This is useful when something
 needs to be changed after the original structure has been created.&lt;/p&gt;</long-description>
-          <tag line="440" name="param" description="The id of the element to change" type="string" variable="$elem_id">
+          <tag line="444" name="param" description="The id of the element to change" type="string" variable="$elem_id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="440" name="param" description="The name of the attribute to change" type="string" variable="$attribute">
+          <tag line="444" name="param" description="The name of the attribute to change" type="string" variable="$attribute">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="440" name="param" description="The new value of the attribute" type="string" variable="$value">
+          <tag line="444" name="param" description="The new value of the attribute" type="string" variable="$value">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="440" name="return" description="True if the update succeeded, false otherwise" type="boolean">
+          <tag line="444" name="return" description="True if the update succeeded, false otherwise" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="449">
+        <argument line="453">
           <name>$elem_id</name>
           <default/>
           <type/>
         </argument>
-        <argument line="449">
+        <argument line="453">
           <name>$attribute</name>
           <default/>
           <type/>
         </argument>
-        <argument line="449">
+        <argument line="453">
           <name>$value</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="468" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="472" package="Default">
         <name>validate</name>
         <full_name>validate</full_name>
-        <docblock line="462">
+        <docblock line="466">
           <description>Validates the data sent using the current FormBuilder object.</description>
           <long-description/>
-          <tag line="462" name="param" description="the values to validate" type="array" variable="$values">
+          <tag line="466" name="param" description="the values to validate" type="array" variable="$values">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="462" name="return" description="true if validation succeeds, false otherwise" type="boolean">
+          <tag line="466" name="return" description="true if validation succeeds, false otherwise" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="468">
+        <argument line="472">
           <name>$values</name>
           <default/>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="478" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="482" package="Default">
         <name>addElem</name>
         <full_name>addElem</full_name>
-        <docblock line="472">
+        <docblock line="476">
           <description>Adds an element to the current FormBuilder object.</description>
           <long-description/>
-          <tag line="472" name="param" description="" type="string" variable="$type">
+          <tag line="476" name="param" description="" type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="472" name="param" description="" type="array" variable="$params">
+          <tag line="476" name="param" description="" type="array" variable="$params">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="478">
+        <argument line="482">
           <name>$type</name>
           <default/>
           <type/>
         </argument>
-        <argument line="478">
+        <argument line="482">
           <name>$params</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="500" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="504" package="Default">
         <name>getValueFromPost</name>
         <full_name>getValueFromPost</full_name>
-        <docblock line="492">
+        <docblock line="496">
           <description>Tries to fetch data for a field by inspecting the POST data sent with the current request.</description>
           <long-description>&lt;p&gt;If data for the requested field is available in the POST data, that data will be returned. If
 the data is not avaialable, null will be returned instead.&lt;/p&gt;</long-description>
-          <tag line="492" name="param" description="" type="string" variable="$field">
+          <tag line="496" name="param" description="" type="string" variable="$field">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="492" name="return" description="" type="\Textura\mixed.">
+          <tag line="496" name="return" description="" type="\Textura\mixed.">
             <type by_reference="false">\Textura\mixed.</type>
           </tag>
         </docblock>
-        <argument line="500">
+        <argument line="504">
           <name>$field</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="515" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Textura" line="519" package="Default">
         <name>getUniqueId</name>
         <full_name>getUniqueId</full_name>
-        <docblock line="509">
+        <docblock line="513">
           <description>Returns an unique name for a specific element type.</description>
           <long-description/>
-          <tag line="509" name="param" description="" type="string" variable="$type">
+          <tag line="513" name="param" description="" type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="509" name="return" description="" type="string">
+          <tag line="513" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="515">
+        <argument line="519">
           <name>$type</name>
           <default/>
           <type/>
@@ -1080,7 +1080,7 @@ Validator objet.</description>
   <file path="src/textura/plugins/FormBuilder/FormBuilderPlugin.php" hash="dc1ba32be44397e158cbd8b39906dc9b" package="Textura">
     <docblock line="21">
       <description>Textura</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
     <class final="false" abstract="false" namespace="Textura" line="32" package="Default">
@@ -1090,14 +1090,14 @@ Validator objet.</description>
       <full_name>\Textura\FormBuilderPlugin</full_name>
       <docblock line="29">
         <description>Plugin for building forms dynamically.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
       <property final="false" static="true" visibility="private" line="37" namespace="Textura" package="Default">
         <name>$instance</name>
         <default>null</default>
         <docblock line="34">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="34" name="var" description="references the one and only instance of this class" type="\Textura\Textura\FormBuilderPlugin">
             <type by_reference="false">\Textura\Textura\FormBuilderPlugin</type>
           </tag>
@@ -1108,7 +1108,7 @@ Validator objet.</description>
         <full_name>getBasePath</full_name>
         <docblock line="39">
           <description>Returns the base path for the current plugin.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="39" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -1119,7 +1119,7 @@ Validator objet.</description>
         <full_name>getPaths</full_name>
         <docblock line="48">
           <description>Returns the paths from where the current plugin's classes will be loaded.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="48" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -1130,7 +1130,7 @@ Validator objet.</description>
         <full_name>register</full_name>
         <docblock line="61">
           <description>This method is automatically called by Textura whenever a plugin is registered.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="73" package="Default">
@@ -1138,7 +1138,7 @@ Validator objet.</description>
         <full_name>getInstance</full_name>
         <docblock line="68">
           <description>Returns a single instance of the FormBuilderPlugin class.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="68" name="return" description="" type="\Textura\Textura\FormBuilderPlugin">
             <type by_reference="false">\Textura\Textura\FormBuilderPlugin</type>
           </tag>
@@ -1715,7 +1715,7 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
   <file path="src/textura/plugins/ThemeBuilder/ThemeBuilderPlugin.php" hash="c7cfd1b2bde3ed6bf054094637f8ddea" package="Textura">
     <docblock line="21">
       <description>Textura</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
     <include line="66" type="Require Once" package="Default">
@@ -1728,14 +1728,14 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
       <full_name>\Textura\ThemeBuilderPlugin</full_name>
       <docblock line="29">
         <description>Plugin for building themes dynamically.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
       <property final="false" static="true" visibility="private" line="37" namespace="Textura" package="Default">
         <name>$instance</name>
         <default>null</default>
         <docblock line="34">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="34" name="var" description="references the one and only instance of this class" type="\Textura\Textura\ThemeBuilderPlugin">
             <type by_reference="false">\Textura\Textura\ThemeBuilderPlugin</type>
           </tag>
@@ -1746,7 +1746,7 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
         <full_name>getBasePath</full_name>
         <docblock line="39">
           <description>Returns the base path for the current plugin.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="39" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -1757,7 +1757,7 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
         <full_name>getPaths</full_name>
         <docblock line="48">
           <description>Returns the paths from where the current plugin's classes will be loaded.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="48" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -1768,7 +1768,7 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
         <full_name>register</full_name>
         <docblock line="61">
           <description>This method is automatically called by Textura whenever a plugin is registered.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="76" package="Default">
@@ -1776,7 +1776,7 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
         <full_name>getInstance</full_name>
         <docblock line="71">
           <description>Returns a single instance of the FormBuilderPlugin class.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="71" name="return" description="" type="\Textura\Textura\ThemeBuilderPlugin">
             <type by_reference="false">\Textura\Textura\ThemeBuilderPlugin</type>
           </tag>
@@ -1787,7 +1787,7 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
   <file path="src/textura/core/interfaces/Plugin.php" hash="f9df88acc77a48e4e6409c613ef252a7" package="Textura">
     <docblock line="21">
       <description>Textura</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
     <interface namespace="Textura" line="32" package="Default">
@@ -1796,7 +1796,7 @@ HAML templates need to be generated or not in various situations.&lt;/p&gt;</lon
       <extends>\Textura\Singleton</extends>
       <docblock line="29">
         <description>Interface for classes acting as plugins for Textura</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Textura" line="40" package="Default">
         <name>getBasePath</name>
@@ -1815,7 +1815,7 @@ of the plugin file.&lt;/p&gt;</long-description>
         <full_name>getPaths</full_name>
         <docblock line="42">
           <description>Returns an array of paths where the classes needed by the plugin can be loaded from</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="42" name="return" description="array of paths from where to load classes." type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -4263,15 +4263,12 @@ returns the current value. If key cannot be found in current session data, retur
       </method>
     </class>
   </file>
-  <file path="src/textura/core/classes/Router.php" hash="e21284cd06f278f21c44f45bad423c14" package="Textura">
+  <file path="src/textura/core/classes/Router.php" hash="b083d1e2f503ec18a65c91d079b2595d" package="Textura">
     <docblock line="21">
       <description>Textura</description>
       <long-description/>
       <tag line="21" name="package" description="Textura"/>
     </docblock>
-    <include line="192" type="Require Once" package="Default">
-      <name/>
-    </include>
     <class final="false" abstract="false" namespace="Textura" line="32" package="Default">
       <extends/>
       <name>Router</name>
@@ -4443,42 +4440,10 @@ returns the current value. If key cannot be found in current session data, retur
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="Textura" line="191" package="Default">
-        <name>renderTemplate</name>
-        <full_name>renderTemplate</full_name>
-        <docblock line="184">
-          <description>Renders a HAML template for the specified path</description>
-          <long-description/>
-          <tag line="184" name="param" description="" type="\Textura\Textura\Controller" variable="$controller">
-            <type by_reference="false">\Textura\Textura\Controller</type>
-          </tag>
-          <tag line="184" name="param" description="" type="string" variable="$template_path">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="184" name="param" description="" type="\Textura\Textura\Response" variable="$response">
-            <type by_reference="false">\Textura\Textura\Response</type>
-          </tag>
-        </docblock>
-        <argument line="191">
-          <name>$controller</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="191">
-          <name>$template_path</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="191">
-          <name>$response</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="Textura" line="211" package="Default">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="Textura" line="188" package="Default">
         <name>initializeControllerMap</name>
         <full_name>initializeControllerMap</full_name>
-        <docblock line="207">
+        <docblock line="184">
           <description>This method is responsible for initializing the controller map.</description>
           <long-description>&lt;p&gt;It will also calculate
 default actions for all controllers.&lt;/p&gt;</long-description>
@@ -5275,6 +5240,65 @@ if it uses the correct request type and and all required parameters are present.
           <name>$required_params</name>
           <default>array()</default>
           <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/textura/core/classes/ViewHelper.php" hash="65ddb31ef1c193d1a9d64d0d92608130" package="Textura">
+    <docblock line="21">
+      <description>Textura</description>
+      <long-description/>
+      <tag line="21" name="package" description="Textura"/>
+    </docblock>
+    <include line="51" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="Textura" line="32" package="Default">
+      <extends/>
+      <name>ViewHelper</name>
+      <full_name>\Textura\ViewHelper</full_name>
+      <docblock line="29">
+        <description>This helper renders HAML templates.</description>
+        <long-description/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Textura" line="43" package="Default">
+        <name>renderTemplate</name>
+        <full_name>renderTemplate</full_name>
+        <docblock line="34">
+          <description>Renders a HAML template.</description>
+          <long-description/>
+          <tag line="34" name="param" description="path to HAML file" type="string" variable="$template_path">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="34" name="param" description="a Textura controller containing variables to use in the&#10;  HAML template" type="\Textura\Controller" variable="$controller_obj">
+            <type by_reference="false">\Textura\Controller</type>
+          </tag>
+          <tag line="34" name="param" description="a Textura Response object that should handle the output" type="\Textura\Response" variable="$response_obj">
+            <type by_reference="false">\Textura\Response</type>
+          </tag>
+          <tag line="34" name="param" description="any other variables that should be available in the HAML template" type="array" variable="$extra_vars">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="44">
+          <name>$template_path</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="45">
+          <name>$controller_obj</name>
+          <default>null</default>
+          <type>\Textura\Controller</type>
+        </argument>
+        <argument line="46">
+          <name>$response_obj</name>
+          <default>null</default>
+          <type>\Textura\Response</type>
+        </argument>
+        <argument line="47">
+          <name>$extra_vars</name>
+          <default>null</default>
+          <type>array</type>
         </argument>
       </method>
     </class>

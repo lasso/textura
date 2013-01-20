@@ -235,6 +235,10 @@ class FormBuilder {
    * @param array $params
    */
   public function addTextarea(array $params = array()) {
+    if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('textarea');
+    if (!array_key_exists('label', $params)) $params['label'] = null;
+    if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
+    if (!array_key_exists('value', $params)) $params['value'] = '';
     $this->addElem('textarea', $params);
   }
 

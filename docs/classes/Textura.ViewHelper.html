@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Textura » \Textura\Plugin</title>
+<title>Textura » \Textura\ViewHelper</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -60,73 +60,46 @@
 </div>
 <ul class="side-nav nav nav-list"><li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
-                    <ul>
-<li class="method public "><a href="#method_getBasePath" title="getBasePath :: Returns the base path of the plugin."><span class="description">Returns the base path of the plugin.</span><pre>getBasePath()</pre></a></li>
-<li class="method public inherited"><a href="#method_getInstance" title="getInstance :: Should return a single anstance of the class implementing this interface."><span class="description">Should return a single anstance of the class implementing this interface.</span><pre>getInstance()</pre></a></li>
-<li class="method public "><a href="#method_getPaths" title="getPaths :: Returns an array of paths where the classes needed by the plugin can be loaded from"><span class="description">Returns an array of paths where the classes needed by the plugin can be loaded from</span><pre>getPaths()</pre></a></li>
-<li class="method public "><a href="#method_register" title="register :: Called whenever a plugin is registered in Textura."><span class="description">Called whenever a plugin is registered in Textura.</span><pre>register()</pre></a></li>
-</ul>
+                    <ul><li class="method public "><a href="#method_renderTemplate" title="renderTemplate :: Renders a HAML template."><span class="description">Renders a HAML template.</span><pre>renderTemplate()</pre></a></li></ul>
 </li></ul>
 </div>
 <div class="span8">
-<a id="\Textura\Plugin"></a><ul class="breadcrumb">
+<a id="\Textura\ViewHelper"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/Textura.html">Textura</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Textura.Plugin.html">Plugin</a>
+<span class="divider">\</span><a href="../classes/Textura.ViewHelper.html">ViewHelper</a>
 </li>
 </ul>
-<div class="element interface">
-<p class="short_description">Interface for classes acting as plugins for Textura</p>
+<div class="element class">
+<p class="short_description">This helper renders HAML templates.</p>
 <div class="details">
 <div class="long_description"></div>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method_getBasePath"></a><div class="element clickable method public method_getBasePath" data-toggle="collapse" data-target=".method_getBasePath .collapse">
-<h2>Returns the base path of the plugin.</h2>
-<pre>getBasePath() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>The base path should reflect the location of the directory
-of the plugin file.</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>base path for plugin</div>
-</div></div>
-</div>
-<a id="method_getInstance"></a><div class="element clickable method public method_getInstance" data-toggle="collapse" data-target=".method_getInstance .collapse">
-<h2>Should return a single anstance of the class implementing this interface.</h2>
-<pre>getInstance() </pre>
-<div class="labels">
-<span class="label">Inherited</span><span class="label">Static</span>
-</div>
+<a id="method_renderTemplate"></a><div class="element clickable method public method_renderTemplate" data-toggle="collapse" data-target=".method_renderTemplate .collapse">
+<h2>Renders a HAML template.</h2>
+<pre>renderTemplate(string $template_path, \Textura\Controller $controller_obj, \Textura\Response $response_obj, array $extra_vars) </pre>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Textura\Singleton::getInstance()</td>
-</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template_path</h4>
+<code>string</code><p>path to HAML file</p></div>
+<div class="subelement argument">
+<h4>$controller_obj</h4>
+<code><a href="../classes/Textura.Controller.html">\Textura\Controller</a></code><p>a Textura controller containing variables to use in the
+  HAML template</p></div>
+<div class="subelement argument">
+<h4>$response_obj</h4>
+<code><a href="../classes/Textura.Response.html">\Textura\Response</a></code><p>a Textura Response object that should handle the output</p></div>
+<div class="subelement argument">
+<h4>$extra_vars</h4>
+<code>array</code><p>any other variables that should be available in the HAML template</p></div>
 </div></div>
-</div>
-<a id="method_getPaths"></a><div class="element clickable method public method_getPaths" data-toggle="collapse" data-target=".method_getPaths .collapse">
-<h2>Returns an array of paths where the classes needed by the plugin can be loaded from</h2>
-<pre>getPaths() : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>array of paths from where to load classes.</div>
-</div></div>
-</div>
-<a id="method_register"></a><div class="element clickable method public method_register" data-toggle="collapse" data-target=".method_register .collapse">
-<h2>Called whenever a plugin is registered in Textura.</h2>
-<pre>register() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>If your plugin needs any type if magic
-initialization you should place your code in this method.</p></div></div></div>
 </div>
 </div>
 </div>

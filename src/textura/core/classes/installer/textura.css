@@ -1,0 +1,17 @@
+body {
+  background-color: silver;
+  color: black;
+  font-size: 16px;
+}
+
+div#main_div {
+  background-color: snow;
+  border: 2px ridge silver;
+  border-radius: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  min-height: 480px;
+  padding: 16px;
+  width: 960px;
+}

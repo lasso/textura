@@ -42,10 +42,8 @@ class Configuration {
    * @param string $config_file_path      If a soecific configuration file should be loaded
    */
   public function __construct($config_file_path = null) {
-    if (is_null($config_file_path)) {
-      $config_file_path = PathBuilder::buildPath(TEXTURA_SITE_DIR, 'config.yml');
-    }
-    $this->loadConfig($config_file_path);
+    $this->configuration = array();
+    if (!is_null($config_file_path)) $this->loadConfig($config_file_path);
   }
 
   /**
@@ -93,12 +91,37 @@ class Configuration {
   public function set($key, $value) {
     $parts = explode('.', $key);
     $num_parts = count($parts);
-    $current = $this->configuration;
+    $current = &$this->configuration;
     for ($i = 0; $i < $num_parts - 1; $i++) {
       if (!array_key_exists($parts[$i], $current)) $current[$parts[$i]] = array();
-      $current = $current[$parts[$i]];
+      $current = &$current[$parts[$i]];
+
     }
     $current[$parts[$num_parts - 1]] = $value;
+  }
+
+  public static function getDefaultConfiguration() {
+    $instance = new self();
+    $instance->set(
+      'controllers.controller_map',
+      array(
+        array(
+          'class'           =>  'Textura\Installer',
+          'path'            =>  '/',
+          'active'          =>  true,
+          'default_action'  =>  'index'
+        )
+      )
+    );
+    $instance->set(
+      'debugging',
+      array(
+        'allow_debugging' => true,
+        'show_errors'     => true,
+        'show_backtraces' => true
+      )
+    );
+    return $instance;
   }
 
 }

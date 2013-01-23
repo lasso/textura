@@ -56,7 +56,16 @@ class Textura implements Singleton {
    * Constructor
    */
   protected function __construct() {
-    $this->configuration = new Configuration();
+    // Check if Textura configuration file exists
+    $config_file_path = PathBuilder::buildPath(TEXTURA_SITE_DIR, 'config.yml');
+    if (file_exists($config_file_path) && is_readable($config_file_path)) {
+      // Configuration file exists and is readable
+      $this->configuration = new Configuration($config_file_path);
+    }
+    else {
+      // Textura is not configured yet. Use the default configuration.
+      $this->configuration = Configuration::getDefaultConfiguration();
+    }
     $this->initPlugins();
   }
 

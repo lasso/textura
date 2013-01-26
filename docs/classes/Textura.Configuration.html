@@ -64,7 +64,9 @@
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#method_get" title="get :: Returns a specific configuration option."><span class="description">Returns a specific configuration option.</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_getDefaultConfiguration" title='getDefaultConfiguration :: Returns a "default" configuration for Textura.'><span class="description">Returns a "default" configuration for Textura.</span><pre>getDefaultConfiguration()</pre></a></li>
 <li class="method public "><a href="#method_loadConfig" title="loadConfig :: Loads a configuration file"><span class="description">Loads a configuration file</span><pre>loadConfig()</pre></a></li>
+<li class="method public "><a href="#method_saveConfig" title="saveConfig :: Saves the current configuration to the specified path."><span class="description">Saves the current configuration to the specified path.</span><pre>saveConfig()</pre></a></li>
 <li class="method public "><a href="#method_set" title="set :: Sets a specific configuration option."><span class="description">Sets a specific configuration option.</span><pre>set()</pre></a></li>
 </ul>
 </li>
@@ -123,6 +125,16 @@ mykey and mynamespace.mykey are valid keys.</p>
 <div class="subelement response"><code>mixed</code></div>
 </div></div>
 </div>
+<a id="method_getDefaultConfiguration"></a><div class="element clickable method public method_getDefaultConfiguration" data-toggle="collapse" data-target=".method_getDefaultConfiguration .collapse">
+<h2>Returns a "default" configuration for Textura.</h2>
+<pre>getDefaultConfiguration() : \self</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The default configuration will allow the user to configure Textura using a web interface.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\self</code></div>
+</div></div>
+</div>
 <a id="method_loadConfig"></a><div class="element clickable method public method_loadConfig" data-toggle="collapse" data-target=".method_loadConfig .collapse">
 <h2>Loads a configuration file</h2>
 <pre>loadConfig(string $config_file_path) </pre>
@@ -137,6 +149,24 @@ mykey and mynamespace.mykey are valid keys.</p>
 <table class="table table-bordered"><tr>
 <th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
 <td>If the configuration file cannot be found</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_saveConfig"></a><div class="element clickable method public method_saveConfig" data-toggle="collapse" data-target=".method_saveConfig .collapse">
+<h2>Saves the current configuration to the specified path.</h2>
+<pre>saveConfig(string $config_file_path) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$config_file_path</h4>
+<code>string</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.logicexception.php">\LogicException</a></code></th>
+<td>if the configuration file cannot be saved</td>
 </tr></table>
 </div></div>
 </div>
@@ -173,7 +203,7 @@ mykey and mynamespace.mykey are valid keys.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-01-20T22:58:35+01:00.<br></footer></div>
+            generated on 2013-01-26T22:15:40+01:00.<br></footer></div>
 </div>
 </body>
 </html>

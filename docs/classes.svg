@@ -53,7 +53,7 @@
 </a>
 </g>
 <!-- \\Textura\\Model\\ModelManager&#45;&gt;\\Textura\\Singleton -->
-<g id="edge21" class="edge"><title>\\Textura\\Model\\ModelManager&#45;&gt;\\Textura\\Singleton</title>
+<g id="edge23" class="edge"><title>\\Textura\\Model\\ModelManager&#45;&gt;\\Textura\\Singleton</title>
 <path fill="none" stroke="black" stroke-dasharray="1,5" d="M195.753,-959.888C190.932,-957.198 186.242,-954.23 182,-951 141.698,-920.313 105.77,-873.149 85.4628,-843.735"/>
 <polygon fill="none" stroke="black" points="88.1889,-841.519 79.6744,-835.214 82.3986,-845.453 88.1889,-841.519"/>
 </g>
@@ -65,7 +65,7 @@
 </a>
 </g>
 <!-- \\Textura\\Model\\DBManager&#45;&gt;\\Textura\\Singleton -->
-<g id="edge23" class="edge"><title>\\Textura\\Model\\DBManager&#45;&gt;\\Textura\\Singleton</title>
+<g id="edge25" class="edge"><title>\\Textura\\Model\\DBManager&#45;&gt;\\Textura\\Singleton</title>
 <path fill="none" stroke="black" stroke-dasharray="1,5" d="M202.492,-911.529C195.523,-908.724 188.421,-905.521 182,-902 150.769,-884.873 118.53,-860.051 96.3395,-841.649"/>
 <polygon fill="none" stroke="black" points="98.549,-838.934 88.6393,-835.186 94.0487,-844.296 98.549,-838.934"/>
 </g>
@@ -162,7 +162,7 @@
 </a>
 </g>
 <!-- \\Textura\\FormBuilderPlugin&#45;&gt;\\Textura\\Plugin -->
-<g id="edge17" class="edge"><title>\\Textura\\FormBuilderPlugin&#45;&gt;\\Textura\\Plugin</title>
+<g id="edge19" class="edge"><title>\\Textura\\FormBuilderPlugin&#45;&gt;\\Textura\\Plugin</title>
 <path fill="none" stroke="black" stroke-dasharray="1,5" d="M406.296,-782.089C365.423,-777.091 314.036,-770.808 279.718,-766.612"/>
 <polygon fill="none" stroke="black" points="279.996,-763.12 269.645,-765.38 279.147,-770.068 279.996,-763.12"/>
 </g>
@@ -200,9 +200,9 @@
 </a>
 </g>
 <!-- \\Textura\\ThemeBuilderPlugin&#45;&gt;\\Textura\\Plugin -->
-<g id="edge19" class="edge"><title>\\Textura\\ThemeBuilderPlugin&#45;&gt;\\Textura\\Plugin</title>
-<path fill="none" stroke="black" stroke-dasharray="1,5" d="M402.771,-699.443C392.4,-702.43 381.871,-705.656 372,-709 369.629,-709.803 316.744,-731.411 279.167,-746.784"/>
-<polygon fill="none" stroke="black" points="277.437,-743.711 269.507,-750.737 280.088,-750.189 277.437,-743.711"/>
+<g id="edge21" class="edge"><title>\\Textura\\ThemeBuilderPlugin&#45;&gt;\\Textura\\Plugin</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M402.771,-699.443C392.4,-702.43 381.871,-705.656 372,-709 340.068,-719.819 304.689,-734.421 278.91,-745.558"/>
+<polygon fill="none" stroke="black" points="277.3,-742.442 269.528,-749.642 280.093,-748.86 277.3,-742.442"/>
 </g>
 <!-- \\Textura\\Plugin&#45;&gt;\\Textura\\Singleton -->
 <g id="edge13" class="edge"><title>\\Textura\\Plugin&#45;&gt;\\Textura\\Singleton</title>
@@ -219,41 +219,53 @@
 <!-- \\Textura\\Controller -->
 <g id="node22" class="node"><title>\\Textura\\Controller</title>
 <a xlink:href="src.textura.core.classes.Controller.html" xlink:title="«abstract»&lt;br/&gt;Controller" target="_parent">
-<polygon fill="none" stroke="black" points="514.5,-592 429.5,-592 429.5,-556 514.5,-556 514.5,-592"/>
-<text text-anchor="start" x="438" y="-577.7" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
-<text text-anchor="start" x="438" y="-566.7" font-family="Courier,monospace" font-size="11.00">Controller</text>
+<polygon fill="none" stroke="black" points="283.5,-578 198.5,-578 198.5,-542 283.5,-542 283.5,-578"/>
+<text text-anchor="start" x="207" y="-563.7" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="207" y="-552.7" font-family="Courier,monospace" font-size="11.00">Controller</text>
 </a>
 </g>
 <!-- \\Textura\\FileLogger -->
 <g id="node23" class="node"><title>\\Textura\\FileLogger</title>
 <a xlink:href="src.textura.core.classes.FileLogger.html" xlink:title="FileLogger" target="_parent">
-<polygon fill="none" stroke="black" points="514,-538 430,-538 430,-502 514,-502 514,-538"/>
-<text text-anchor="middle" x="472" y="-517.2" font-family="Courier,monospace" font-size="11.00">FileLogger</text>
+<polygon fill="none" stroke="black" points="514,-592 430,-592 430,-556 514,-556 514,-592"/>
+<text text-anchor="middle" x="472" y="-571.2" font-family="Courier,monospace" font-size="11.00">FileLogger</text>
 </a>
 </g>
 <!-- \\Textura\\Session -->
 <g id="node24" class="node"><title>\\Textura\\Session</title>
 <a xlink:href="src.textura.core.classes.Session.html" xlink:title="Session" target="_parent">
-<polygon fill="none" stroke="black" points="504,-484 440,-484 440,-448 504,-448 504,-484"/>
-<text text-anchor="middle" x="472" y="-463.2" font-family="Courier,monospace" font-size="11.00">Session</text>
+<polygon fill="none" stroke="black" points="504,-538 440,-538 440,-502 504,-502 504,-538"/>
+<text text-anchor="middle" x="472" y="-517.2" font-family="Courier,monospace" font-size="11.00">Session</text>
 </a>
 </g>
 <!-- \\Textura\\Router -->
 <g id="node25" class="node"><title>\\Textura\\Router</title>
 <a xlink:href="src.textura.core.classes.Router.html" xlink:title="Router" target="_parent">
-<polygon fill="none" stroke="black" points="500.5,-430 443.5,-430 443.5,-394 500.5,-394 500.5,-430"/>
-<text text-anchor="middle" x="472" y="-409.2" font-family="Courier,monospace" font-size="11.00">Router</text>
+<polygon fill="none" stroke="black" points="500.5,-484 443.5,-484 443.5,-448 500.5,-448 500.5,-484"/>
+<text text-anchor="middle" x="472" y="-463.2" font-family="Courier,monospace" font-size="11.00">Router</text>
 </a>
 </g>
+<!-- \\Textura\\Installer -->
+<g id="node26" class="node"><title>\\Textura\\Installer</title>
+<a xlink:href="src.textura.core.classes.Installer.html" xlink:title="Installer" target="_parent">
+<polygon fill="none" stroke="black" points="510.5,-430 433.5,-430 433.5,-394 510.5,-394 510.5,-430"/>
+<text text-anchor="middle" x="472" y="-409.2" font-family="Courier,monospace" font-size="11.00">Installer</text>
+</a>
+</g>
+<!-- \\Textura\\Installer&#45;&gt;\\Textura\\Controller -->
+<g id="edge17" class="edge"><title>\\Textura\\Installer&#45;&gt;\\Textura\\Controller</title>
+<path fill="none" stroke="black" d="M433.046,-415.986C413.39,-419.544 389.839,-426.274 372,-439 330.855,-468.352 347.278,-501.193 308,-533 303.377,-536.743 298.165,-540.033 292.747,-542.906"/>
+<polygon fill="none" stroke="black" points="290.995,-539.866 283.503,-547.357 294.032,-546.173 290.995,-539.866"/>
+</g>
 <!-- \\Textura\\Current -->
-<g id="node26" class="node"><title>\\Textura\\Current</title>
+<g id="node27" class="node"><title>\\Textura\\Current</title>
 <a xlink:href="src.textura.core.classes.Current.html" xlink:title="Current" target="_parent">
 <polygon fill="none" stroke="black" points="504,-376 440,-376 440,-340 504,-340 504,-376"/>
 <text text-anchor="middle" x="472" y="-355.2" font-family="Courier,monospace" font-size="11.00">Current</text>
 </a>
 </g>
 <!-- \\Textura\\Model -->
-<g id="node27" class="node"><title>\\Textura\\Model</title>
+<g id="node28" class="node"><title>\\Textura\\Model</title>
 <a xlink:href="src.textura.core.classes.Model.html" xlink:title="«abstract»&lt;br/&gt;Model" target="_parent">
 <polygon fill="none" stroke="black" points="514.5,-322 429.5,-322 429.5,-286 514.5,-286 514.5,-322"/>
 <text text-anchor="start" x="438" y="-307.7" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
@@ -261,47 +273,47 @@
 </a>
 </g>
 <!-- \\Textura\\Request -->
-<g id="node28" class="node"><title>\\Textura\\Request</title>
+<g id="node29" class="node"><title>\\Textura\\Request</title>
 <a xlink:href="src.textura.core.classes.Request.html" xlink:title="Request" target="_parent">
 <polygon fill="none" stroke="black" points="504,-268 440,-268 440,-232 504,-232 504,-268"/>
 <text text-anchor="middle" x="472" y="-247.2" font-family="Courier,monospace" font-size="11.00">Request</text>
 </a>
 </g>
 <!-- \\Textura\\ViewHelper -->
-<g id="node29" class="node"><title>\\Textura\\ViewHelper</title>
+<g id="node30" class="node"><title>\\Textura\\ViewHelper</title>
 <a xlink:href="src.textura.core.classes.ViewHelper.html" xlink:title="ViewHelper" target="_parent">
 <polygon fill="none" stroke="black" points="514,-214 430,-214 430,-178 514,-178 514,-214"/>
 <text text-anchor="middle" x="472" y="-193.2" font-family="Courier,monospace" font-size="11.00">ViewHelper</text>
 </a>
 </g>
 <!-- \\Textura\\Textura -->
-<g id="node30" class="node"><title>\\Textura\\Textura</title>
+<g id="node31" class="node"><title>\\Textura\\Textura</title>
 <a xlink:href="src.textura.core.classes.Textura.html" xlink:title="Textura" target="_parent">
-<polygon fill="none" stroke="black" points="273,-726 209,-726 209,-690 273,-690 273,-726"/>
-<text text-anchor="middle" x="241" y="-705.2" font-family="Courier,monospace" font-size="11.00">Textura</text>
+<polygon fill="none" stroke="black" points="273,-524 209,-524 209,-488 273,-488 273,-524"/>
+<text text-anchor="middle" x="241" y="-503.2" font-family="Courier,monospace" font-size="11.00">Textura</text>
 </a>
 </g>
 <!-- \\Textura\\Textura&#45;&gt;\\Textura\\Singleton -->
-<g id="edge25" class="edge"><title>\\Textura\\Textura&#45;&gt;\\Textura\\Singleton</title>
-<path fill="none" stroke="black" stroke-dasharray="1,5" d="M208.747,-721.242C199.925,-725.328 190.435,-730.062 182,-735 152.523,-752.256 121.166,-775.184 98.8155,-792.408"/>
-<polygon fill="none" stroke="black" points="96.4605,-789.805 90.7131,-798.706 100.756,-795.332 96.4605,-789.805"/>
+<g id="edge27" class="edge"><title>\\Textura\\Textura&#45;&gt;\\Textura\\Singleton</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M208.946,-515.386C199.323,-519.528 189.334,-525.26 182,-533 110.916,-608.027 82.0369,-733.02 72.2666,-788.719"/>
+<polygon fill="none" stroke="black" points="68.7615,-788.458 70.5604,-798.899 75.6652,-789.615 68.7615,-788.458"/>
 </g>
 <!-- \\Textura\\Configuration -->
-<g id="node31" class="node"><title>\\Textura\\Configuration</title>
+<g id="node32" class="node"><title>\\Textura\\Configuration</title>
 <a xlink:href="src.textura.core.classes.Configuration.html" xlink:title="Configuration" target="_parent">
 <polygon fill="none" stroke="black" points="524,-160 420,-160 420,-124 524,-124 524,-160"/>
 <text text-anchor="middle" x="472" y="-139.2" font-family="Courier,monospace" font-size="11.00">Configuration</text>
 </a>
 </g>
 <!-- \\Textura\\Debugger -->
-<g id="node32" class="node"><title>\\Textura\\Debugger</title>
+<g id="node33" class="node"><title>\\Textura\\Debugger</title>
 <a xlink:href="src.textura.core.classes.Debugger.html" xlink:title="Debugger" target="_parent">
 <polygon fill="none" stroke="black" points="507.5,-106 436.5,-106 436.5,-70 507.5,-70 507.5,-106"/>
 <text text-anchor="middle" x="472" y="-85.2" font-family="Courier,monospace" font-size="11.00">Debugger</text>
 </a>
 </g>
 <!-- \\Textura\\PathBuilder -->
-<g id="node33" class="node"><title>\\Textura\\PathBuilder</title>
+<g id="node34" class="node"><title>\\Textura\\PathBuilder</title>
 <a xlink:href="src.textura.core.classes.PathBuilder.html" xlink:title="PathBuilder" target="_parent">
 <polygon fill="none" stroke="black" points="517.5,-52 426.5,-52 426.5,-16 517.5,-16 517.5,-52"/>
 <text text-anchor="middle" x="472" y="-31.2" font-family="Courier,monospace" font-size="11.00">PathBuilder</text>

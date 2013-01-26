@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb.se>
+Copyright 2012, 2013 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -63,6 +63,31 @@ class Configuration {
   }
 
   /**
+   * Saves the current configuration to the specified path.
+   *
+   * @param string $config_file_path
+   * @throws \LogicException if the configuration file cannot be saved
+   */
+  public function saveConfig($config_file_path) {
+
+    if (file_exists($config_file_path)) {
+      $config_is_writable = is_writable($config_file_path);
+    }
+    else {
+      // File does not exist.Check if parent firectory is writable
+      $config_is_writable = is_writable(dirname($config_file_path));
+    }
+
+    if ($config_is_writable) {
+      require_once(PathBuilder::buildPath(TEXTURA_SRC_DIR, 'spyc', 'spyc.php'));
+      file_put_contents($config_file_path, \Spyc::YAMLDump($this->configuration));
+    }
+    else {
+      throw new \LogicException("Unable to save configuration file $config_file_path");
+    }
+  }
+
+  /**
    * Returns a specific configuration option. Keys support namespaces by using dot notation, so both
    * mykey and mynamespace.mykey are valid keys.
    *
@@ -100,6 +125,13 @@ class Configuration {
     $current[$parts[$num_parts - 1]] = $value;
   }
 
+  /**
+   * Returns a "default" configuration for Textura.
+   *
+   * The default configuration will allow the user to configure Textura using a web interface.
+   *
+   * @return \self
+   */
   public static function getDefaultConfiguration() {
     $instance = new self();
     $instance->set(
@@ -119,6 +151,12 @@ class Configuration {
         'allow_debugging' => true,
         'show_errors'     => true,
         'show_backtraces' => true
+      )
+    );
+    $instance->set(
+      'plugins',
+      array(
+        array('name' => 'FormBuilder')
       )
     );
     return $instance;

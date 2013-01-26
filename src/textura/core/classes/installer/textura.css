@@ -6,7 +6,7 @@ body {
 
 div#main_div {
   background-color: snow;
-  border: 2px ridge silver;
+  border: 1px solid #999999;
   border-radius: 16px;
   margin-left: auto;
   margin-right: auto;
@@ -14,4 +14,54 @@ div#main_div {
   min-height: 480px;
   padding: 16px;
   width: 960px;
+}
+
+#installer_form fieldset {
+  border: 1px solid #999999;
+  border-radius: 8px;
+  display: table;
+  padding: 16px 8px 16px 8px;
+}
+
+#installer_form div {
+  display: table-row;
+}
+
+#installer_form div.section {
+  font-weight: bold;
+  line-height: 2em;
+}
+
+#installer_form .form_elem_label, #installer_form .form_elem_field {
+  display: table-cell;
+}
+
+#installer_form .form_elem_label {
+  padding-bottom: 8px;
+  padding-right: 8px;
+}
+
+#installer_form #btnSubmit {
+  margin-top: 32px;
+  float: right;
+}
+
+.error-block {
+  background-color: red;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.info-block {
+  background-color: green;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.small {
+  font-size: smaller;
 }

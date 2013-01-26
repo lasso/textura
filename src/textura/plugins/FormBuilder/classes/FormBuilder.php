@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2012 Lars Olsson <lasso@lassoweb.se>
+Copyright 2012, 2013 Lars Olsson <lasso@lassoweb.se>
 
 This file is part of Textura.
 
@@ -116,6 +116,11 @@ class FormBuilder {
    * @param array $params
    */
   public function addButton(array $params = array()) {
+    if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('submit');
+    if (!array_key_exists('label', $params)) $params['label'] = null;
+    if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
+    if (!array_key_exists('value', $params)) $params['value'] = '';
+    if (!array_key_exists('disabled', $params)) $params['disabled'] = false;
     $this->addElem('button', $params);
   }
 
@@ -130,6 +135,7 @@ class FormBuilder {
     if (!array_key_exists('value', $params)) $params['value'] = 1;
     if (!array_key_exists('checked', $params)) $params['checked'] = false;
     if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
+    if (!array_key_exists('disabled', $params)) $params['disabled'] = false;
     $this->addElem('checkbox', $params);
   }
 
@@ -176,6 +182,7 @@ class FormBuilder {
     if (!array_key_exists('label', $params)) $params['label'] = null;
     if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
     if (!array_key_exists('value', $params)) $params['value'] = '';
+    if (!array_key_exists('disabled', $params)) $params['disabled'] = false;
     $this->addElem('password', $params);
   }
 
@@ -185,6 +192,12 @@ class FormBuilder {
    * @param array $params
    */
   public function addRadio(array $params = array()) {
+    if (!array_key_exists('name', $params)) $params['name'] = $this->getUniqueId('radio');
+    if (!array_key_exists('label', $params)) $params['label'] = null;
+    if (!array_key_exists('value', $params)) $params['value'] = 1;
+    if (!array_key_exists('checked', $params)) $params['checked'] = false;
+    if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
+    if (!array_key_exists('disabled', $params)) $params['disabled'] = false;
     $this->addElem('radio', $params);
   }
 
@@ -200,6 +213,7 @@ class FormBuilder {
     if (!array_key_exists('options', $params)) $params['options'] = array();
     if (!array_key_exists('multiple', $params)) $params['multiple'] = false;
     if (!array_key_exists('size', $params)) $params['size'] = null;
+    if (!array_key_exists('disabled', $params)) $params['disabled'] = false;
     $this->addElem('select', $params);
   }
 
@@ -213,6 +227,7 @@ class FormBuilder {
     if (!array_key_exists('label', $params)) $params['label'] = null;
     if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
     if (!array_key_exists('value', $params)) $params['value'] = '';
+    if (!array_key_exists('disabled', $params)) $params['disabled'] = false;
     $this->addElem('submit', $params);
   }
 
@@ -226,6 +241,7 @@ class FormBuilder {
     if (!array_key_exists('label', $params)) $params['label'] = null;
     if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
     if (!array_key_exists('value', $params)) $params['value'] = '';
+    if (!array_key_exists('disabled', $params)) $params['disabled'] = false;
     $this->addElem('text', $params);
   }
 
@@ -239,6 +255,7 @@ class FormBuilder {
     if (!array_key_exists('label', $params)) $params['label'] = null;
     if (!array_key_exists('id', $params)) $params['id'] = $params['name'];
     if (!array_key_exists('value', $params)) $params['value'] = '';
+    if (!array_key_exists('disabled', $params)) $params['disabled'] = false;
     $this->addElem('textarea', $params);
   }
 
@@ -357,6 +374,7 @@ class FormBuilder {
           $field->setInnerHTML($params['value']);
           $field->setName($params['name']);
           $field->setType($type);
+          $field->setDisabled($params['disabled']);
           break;
         case 'hidden':
         case 'password':
@@ -366,6 +384,7 @@ class FormBuilder {
           $field->setName($params['name']);
           $field->setType($type);
           $field->setValue($params['value']);
+          $field->setDisabled($params['disabled']);
           break;
         case 'select': {
           $field = new \HTMLBuilder\Elements\Form\Select();
@@ -373,6 +392,7 @@ class FormBuilder {
           $field->setName($params['name']);
           $field->setMultiple($params['multiple']);
           if ($params['size']) $field->setSize($params['size']);
+          $field->setDisabled($params['disabled']);
           foreach ($params['options'] as $current_option) {
             $option_elem = new \HTMLBuilder\Elements\Form\Option();
             if (isset($current_option['selected'])) {
@@ -392,8 +412,19 @@ class FormBuilder {
           $field = new \HTMLBuilder\Elements\Form\Textarea();
           $field->setId($params['id']);
           $field->setName($params['name']);
+          $field->setDisabled($params['disabled']);
           $field->setInnerHTML($params['value']);
           break;
+        case 'checkbox':
+        case 'radio': {
+          $field = new \HTMLBuilder\Elements\Form\Input();
+          $field->setId($params['id']);
+          $field->setName($params['name']);
+          $field->setType($type);
+          $field->setValue($params['value']);
+          $field->setChecked($params['checked']);
+          $field->setDisabled($params['disabled']);
+        }
       }
       if ($type != 'custom_content') {
         $field->setClass("form_elem_field form_elem_field_$type");

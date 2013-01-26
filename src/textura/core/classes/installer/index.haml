@@ -10,5 +10,34 @@
       %h3 Welcome to Textura!
       %p
         First off, thanks for trying Textura! You are just a few tiny steps away from  
-        completing the installation. In just a few moments you will have your very own
+        completing the installation. In just a few moments you will have your very own  
         instance of Textura up and running. Just follow the instruction below.
+      - if ($enabled)
+        %p.info-block
+          Fill in the form below and click on
+          %em Create configuration file
+          to create a configuration file for your Textura installation.
+          %br
+          %br
+          The configuration file will be located at
+          %em
+            = $config_path
+          and can be edited using any text editor.
+          %br
+          %br
+          If you ever want to run this configuration  
+          guide again, just delete or rename the configuration file and you will be automatically  
+          redirected to this page again.
+      - else
+        %p.error-block
+          The path  
+          %em
+            = dirname($config_path)
+          (or one of it's subdirectories)  
+          cannot be written to by the web server. Please correct this and hit the reload button  
+          in your browser.
+      %div#installer_form_div
+        = $form->render()
+      - if ($error)
+        %p.error-block
+          = $error
